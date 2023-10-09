@@ -1,0 +1,9 @@
+* {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background: rgb(105,60,59);
+    background: linear-gradient(90deg, rgba(105,60,59,1) 0%, rgba(24,30,65,1) 99%);
+    color: white;
+}

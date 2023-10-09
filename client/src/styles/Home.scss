@@ -1,0 +1,54 @@
+$darkBackGround: #493e52;
+$lightText: rgba(255, 255, 255, 0.5);
+$darkText: #a54df9;
+$br6: 6px;
+$br10: 10px;
+$br184: 184px;
+$br206: 206.71px;
+$p13: 13px;
+$fs18: 18.78;
+
+#homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+
+    .lightParag {
+        color: $lightText;
+    }
+
+    .topSectionBtns {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 5%;
+
+        button {
+            background-color: $darkText;
+            border-radius: $br206;
+            padding: $p13;
+            color: white;
+            font-size: $fs18;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .secondSection {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        
+    }
+
+    .bottomSection {
+        padding: 30px 20px;
+
+    }
+}
