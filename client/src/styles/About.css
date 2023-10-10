@@ -7,7 +7,9 @@
     height: 3780px;
     position: relative;
     width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .about-us-page .overlap-group {

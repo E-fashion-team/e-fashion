@@ -35,7 +35,11 @@ const Footer = () => {
                                     <div className="text-wrapper-26">Contact</div>
                                     <div className="text-wrapper-27">+012 3456789</div>
                                     <div className="text-wrapper-28">adorableprogrammer@gmail.com</div>
-                                    
+                                </div>
+                                <div className='group-23'>
+                                <img src={IconDiscord} alt="" />
+                                    <img src={IconInstagram} alt="" />
+                                    <img src={IconYoutube} alt="" />
                                 </div>
                             </footer>
                             <div className="text-wrapper-32">LOGO</div>

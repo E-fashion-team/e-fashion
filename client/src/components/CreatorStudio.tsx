@@ -1,5 +1,12 @@
 import React from 'react'
 import '../styles/CreatorStudio.css'
+import rec1 from '../images/Rectangle 31.png'
+import rec2 from '../images/Rectangle 32.png'
+import rec3 from '../images/Rectangle 33.png'
+import rec4 from '../images/rect17.png'
+import rec5 from '../images/rect18.png'
+import rec6 from '../images/rect19.png'
+
 export const CreatorStudioPage = () => {
     return (
         <div className="creator-studio-page">
@@ -203,33 +210,7 @@ export const CreatorStudioPage = () => {
                     </div>
                     <div className="group-15">
                         <div className="overlap-3">
-                            <footer className="footer">
-                                <div className="group-16">
-                                    <div className="text-wrapper-21">About</div>
-                                    <div className="text-wrapper-22">Product</div>
-                                    <div className="text-wrapper-23">Resource</div>
-                                    <div className="text-wrapper-24">Term &amp; Condition</div>
-                                    <div className="text-wrapper-25">FAQ</div>
-                                </div>
-                                <div className="group-17">
-                                    <div className="text-wrapper-21">Company</div>
-                                    <div className="text-wrapper-22">Our Team</div>
-                                    <div className="text-wrapper-23">Partner With Us</div>
-                                    <div className="text-wrapper-24">Privacy &amp; Policy</div>
-                                    <div className="text-wrapper-25">Features</div>
-                                </div>
-                                <div className="group-18">
-                                    <p className="text-wrapper-26">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque donec non pellentesque ut.
-                                    </p>
-                                </div>
-                                <div className="group-19">
-                                    <div className="text-wrapper-21">Contact</div>
-                                    <div className="text-wrapper-22">+012 3456789</div>
-                                    <div className="text-wrapper-23">adorableprogrammer@gmail.com</div>
-                                
-                                </div>
-                            </footer>
+                            
                             <div className="text-wrapper-27">LOGO</div>
                         </div>
                     </div>
@@ -248,9 +229,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-21">
                                     <div className="overlap-group-5">
-                                        <img className="rectangle" alt="Rectangle" src="rectangle-33.png" />
-                                        <img className="rectangle-2" alt="Rectangle" src="rectangle-32.png" />
-                                        <img className="rectangle-3" alt="Rectangle" src="rectangle-31.png" />
+                                        <img className="rectangle" alt="Rectangle" src={rec3}/>
+                                        <img className="rectangle-2" alt="Rectangle" src={rec2} />
+                                        <img className="rectangle-3" alt="Rectangle" src={rec1} />
                                     </div>
                                 </div>
                             </div>
@@ -272,9 +253,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-24">
                                     <div className="overlap-group-6">
-                                        <img className="rectangle-4" alt="Rectangle" src="rectangle-33-2.png" />
-                                        <img className="rectangle-5" alt="Rectangle" src="rectangle-32-2.png" />
-                                        <img className="rectangle-6" alt="Rectangle" src="rectangle-31-2.png" />
+                                        <img className="rectangle-4" alt="Rectangle" src={rec3} />
+                                        <img className="rectangle-5" alt="Rectangle" src={rec2}/>
+                                        <img className="rectangle-6" alt="Rectangle" src={rec1} />
                                     </div>
                                 </div>
                             </div>
@@ -292,9 +273,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-26">
                                     <div className="overlap-group-6">
-                                        <img className="rectangle-4" alt="Rectangle" src="rectangle-33-3.png" />
-                                        <img className="rectangle-5" alt="Rectangle" src="rectangle-32-3.png" />
-                                        <img className="rectangle-6" alt="Rectangle" src="rectangle-31-3.png" />
+                                        <img className="rectangle-4" alt="Rectangle" src={rec3} />
+                                        <img className="rectangle-5" alt="Rectangle" src={rec2} />
+                                        <img className="rectangle-6" alt="Rectangle" src={rec1} />
                                     </div>
                                 </div>
                             </div>

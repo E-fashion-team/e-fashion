@@ -1,14 +1,14 @@
 import React from "react";
-import "../style/About.css";
-import rect1 from '../assets/Rectangle 1.png'
-import rect2 from '../assets/Rectangle 2.png'
-import rect3 from '../assets/Rectangle 3.png'
-import rect4 from '../assets/Rectangle 4.png'
-import rect5 from '../assets/Rectangle 5.png'
-import rect6 from '../assets/Rectangle 6.png'
-import rect7 from '../assets/Rectangle 7.png'
-import rect8 from '../assets/Rectangle 8.png'
-import rect9 from '../assets/Rectangle 9.png'
+import "../styles/About.css";
+import rect1 from '../images/Rectangle 1.png'
+import rect2 from '../images/Rectangle 2.png'
+import rect3 from '../images/Rectangle 3.png'
+import rect4 from '../images/Rectangle 4.png'
+import rect5 from '../images/Rectangle 5.png'
+import rect6 from '../images/Rectangle 6.png'
+import rect7 from '../images/Rectangle 7.png'
+import rect8 from '../images/Rectangle 8.png'
+import rect9 from '../images/Rectangle 9.png'
 
 
 
@@ -138,38 +138,7 @@ export default function About (){
                             <div className="text-wrapper-25">Gerald Kim</div>
                         </div>
                     </div>
-                    <div className="group-18">
-                        <div className="overlap-2">
-                            <footer className="footer">
-                                <div className="group-19">
-                                    <div className="text-wrapper-26">About</div>
-                                    <div className="text-wrapper-27">Product</div>
-                                    <div className="text-wrapper-28">Resource</div>
-                                    <div className="text-wrapper-29">Term &amp; Condition</div>
-                                    <div className="text-wrapper-30">FAQ</div>
-                                </div>
-                                <div className="group-20">
-                                    <div className="text-wrapper-26">Company</div>
-                                    <div className="text-wrapper-27">Our Team</div>
-                                    <div className="text-wrapper-28">Partner With Us</div>
-                                    <div className="text-wrapper-29">Privacy &amp; Policy</div>
-                                    <div className="text-wrapper-30">Features</div>
-                                </div>
-                                <div className="group-21">
-                                    <p className="text-wrapper-31">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque donec non pellentesque ut.
-                                    </p>
-                                </div>
-                                <div className="group-22">
-                                    <div className="text-wrapper-26">Contact</div>
-                                    <div className="text-wrapper-27">+012 3456789</div>
-                                    <div className="text-wrapper-28">adorableprogrammer@gmail.com</div>
-                                    
-                                </div>
-                            </footer>
-                            <div className="text-wrapper-32">LOGO</div>
-                        </div>
-                    </div>
+                  
                 </div>
             </div>
         </div>
