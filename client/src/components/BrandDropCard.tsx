@@ -5,7 +5,7 @@ const BrandDropCard = () => {
   return (
     <div>
  <div className="card shadow">
-    <img src={rectangle} alt="" />
+    <img className='imgg' src={rectangle} alt="" />
 </div>
     </div>
   )

@@ -1,6 +1,6 @@
 .card {
-    width: 200px;
-    height: 350px;
+    width: 280px;
+    height: 450px;
     background-color:inherit ;
     border-radius: 10px;
     transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -11,10 +11,11 @@
                 0 0  0 2px rgb(190, 190, 190),
                 0.3em 0.3em 1em rgba(0,0,0,0.3);
    }
-   img{
-    width: 180px;
-    height: 200px;
-    margin: 10px;
+   .imgg{
+    width: 200px;
+    height: 250px;
+    margin-left: 40px;
+    margin-top: 10%;
     border-radius: 1rem;
    }
    
