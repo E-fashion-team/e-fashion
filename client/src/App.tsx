@@ -1,39 +1,25 @@
 import Drops from './components/Drops';
 import React,{useState}  from 'react';
+import {Cloudinary} from "@cloudinary/url-gen";
 import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import EditProfile from "./components/editProfile/editProfile"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from 'axios'
-
+import About from './components/About';
+import { CreatorStudioPage } from './components/CreatorStudio';
 function App() {
-
-
-// const updateUser=(name:string,newUser:object)=>{
-
-// axios.put(`http://localhost:5000/api/user/${name}`,newUser).then((response)=>{
-
-
-// }).catch((error)=>{
-// console.log(error)
-// })
-// }
-
-
   return (
 
     <div className="App">
-      <NavBar/>
-      <Drops/>
-   {/* <Routes> */}
+ <NavBar/>
+  <Routes>
+<Route path='/about' element={<About/>}/>
+<Route path='/creatorStudio' element={<CreatorStudioPage/>}/>
 {/* <Route path='/' element={</>}/>
 <Route path='/' element={</>}/>
-<Route path='/' element={</>}/>
-<Route path='/' element={</>}/>
 <Route path='/' element={</>}/> */}
-   {/* </Routes> */}
-   <Footer/>
+   </Routes>
+ <Footer/>
     </div>
 
   );

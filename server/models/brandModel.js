@@ -2,7 +2,7 @@ module.exports=(sequelize, DataTypes,connection)=>{
 
     const Brand = connection.define('Brand', {
     
-        id: {
+       id: {
            type: DataTypes.INTEGER,
            allowNull: false,
            primaryKey:true,
