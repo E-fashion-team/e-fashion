@@ -1,7 +1,7 @@
 .about-us-page .group-18 {
     height: 202px;
     left: 122px;
-    position: absolute;
+    position: flex;
     top: 500px;
     width: 1199px;
 }
@@ -154,4 +154,12 @@
     position: absolute;
     text-align: center;
     top: 0;
+}
+.about-us-page .group-23 {
+    height: 200px;
+    left: 1000px;
+    position: absolute;
+    top: 150px;
+    width: 270px;
+    
 }

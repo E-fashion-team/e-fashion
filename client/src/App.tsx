@@ -1,3 +1,4 @@
+import Drops from './components/Drops';
 import React,{useState}  from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
@@ -22,20 +23,19 @@ function App() {
 
   return (
 
-        <BrowserRouter>
-       
+    <div className="App">
+      <NavBar/>
+      <Drops/>
+   {/* <Routes> */}
+{/* <Route path='/' element={</>}/>
+<Route path='/' element={</>}/>
+<Route path='/' element={</>}/>
+<Route path='/' element={</>}/>
+<Route path='/' element={</>}/> */}
+   {/* </Routes> */}
+   <Footer/>
+    </div>
 
-      <Routes>
-        <Route path="/edit" element={<EditProfile />}>
-       
-       
-        </Route>
-      </Routes>
-  
-    </BrowserRouter>
-
-
-  
   );
 }
 
