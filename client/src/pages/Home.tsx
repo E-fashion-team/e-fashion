@@ -15,8 +15,6 @@ const Home: FunctionComponent = () => {
 
     return (
         <div id='homePage'>
-            <div>Navbar</div>
-            {/*  */}
             <div className="topSectionBtns">
                 <button className='mainColl'>Main Collection</button>
                 <button className='creatorsMarket'>Creators Market</button>
@@ -58,21 +56,6 @@ const Home: FunctionComponent = () => {
                         </div>
                     </span>
                     <span className='rightSection'>
-                        {/* <div className='allImgs'>
-                            <div>
-                                <img src={img1} id='img1'/>
-                                <img src={img2} id='img2'/>
-                            </div>
-                            <div>
-                                <img src={img3} id='img3'/>
-                                <img src={img4} id='img4'/>
-                            </div>
-                            <div>
-                                <img src={img5} id='img5'/>
-                                <img src={img6} id='img6'/>
-                            </div>
-                        </div>
-                        <img src={img7} id='img7'/> */}
                         <img src={allImgs} alt="" />
                     </span>
                 </span>
@@ -195,8 +178,6 @@ const Home: FunctionComponent = () => {
                         <button>Get Started</button>
                     </div>
             </div>
-            {/*  */}
-            <div>Footer</div>
         </div>
     )
 }
