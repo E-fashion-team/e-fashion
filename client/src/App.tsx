@@ -9,6 +9,8 @@ import axios from 'axios'
 import ExplorePage from "./components/explorePqge/explore"
 import Home  from "./pages/Home"
 import EditProfile from './components/editProfile/editProfile'
+import About from './components/About'
+import {CreatorStudioPage} from './components/CreatorStudio'
 
 function App() {
   return (
@@ -21,7 +23,8 @@ function App() {
     <Route path="/home"      element={<Home/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
 <Route path='/edit' element={< EditProfile/>}/>
-
+<Route path='/about' element={< About/>}/>
+<Route path='/studio'   element={< CreatorStudioPage/>} />
 
   </Routes> 
    <Footer/>
