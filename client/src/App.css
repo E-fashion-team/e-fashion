@@ -7,3 +7,7 @@ body {
     background: linear-gradient(90deg, rgba(105,60,59,1) 0%, rgba(24,30,65,1) 99%);
     color: white;
 }
+
+button {
+    cursor: pointer;
+}
