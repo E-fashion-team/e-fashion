@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Home.scss'
+import { FunctionComponent } from 'react'
 import adidas from './imgs/adidas.png'
 import puma from './imgs/puma.png'
 import lacoste from './imgs/lacoste.png'
@@ -7,17 +8,10 @@ import FashionThatSpeaks from './imgs/FashionThatSpeaks.png'
 import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
-import img1 from './imgs/img1.png'
-import img2 from './imgs/img2.png'
-import img3 from './imgs/img3.png'
-import img4 from './imgs/img4.png'
-import img5 from './imgs/img5.png'
-import img6 from './imgs/img6.png'
-import img7 from './imgs/img7.png'
 import allImgs from './imgs/allImgs.png'
 
 
-const Home = () => {
+const Home: FunctionComponent = () => {
 
     return (
         <div id='homePage'>
