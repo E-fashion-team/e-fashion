@@ -6,7 +6,8 @@ import Footer from './components/Footer';
 import EditProfile from "./components/editProfile/editProfile"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios'
-
+import ExplorePage from "./components/explorePqge/explore"
+import Home  from "./pages/Home"
 
 function App() {
 
@@ -28,8 +29,9 @@ function App() {
       <NavBar/>
    
    
-  <Routes> 
-
+  <Routes>
+    <Route path="/home"      element={<Home/>}/> 
+<Route  path="/explore"  element={<ExplorePage/>}  />
 <Route path='/edit' element={< EditProfile/>}/>
 
 
