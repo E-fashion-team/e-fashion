@@ -30,3 +30,17 @@ p{
 input{
     border: 2px solid white;
 }
+.Add-btn{
+ background-color: #6c5dd3;
+display: flex;
+gap: 13.41px;
+
+}
+input{
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background-color: inherit;
+    border-bottom: solid 1px white;
+    color: white;
+}

@@ -11,6 +11,8 @@ export default function CreateBrand (){
 <div className="brand-Image">
 <p>Insert your image:</p>
 <br></br>
-<input type="file" /></div>
+<input type="file" />
+<br></br>
+<button className="Add-btn">Add brand</button></div>
     </div>)
 }
