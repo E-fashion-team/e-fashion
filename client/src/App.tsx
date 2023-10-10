@@ -7,6 +7,7 @@ import EditProfile from "./components/editProfile/editProfile"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios'
 
+
 function App() {
 
 
@@ -23,18 +24,18 @@ function App() {
 
   return (
 
-    <div className="App">
+    <BrowserRouter   >
       <NavBar/>
-      <Drops/>
-   {/* <Routes> */}
-{/* <Route path='/' element={</>}/>
-<Route path='/' element={</>}/>
-<Route path='/' element={</>}/>
-<Route path='/' element={</>}/>
-<Route path='/' element={</>}/> */}
-   {/* </Routes> */}
+   
+   
+  <Routes> 
+
+<Route path='/edit' element={< EditProfile/>}/>
+
+
+  </Routes> 
    <Footer/>
-    </div>
+   </BrowserRouter>
 
   );
 }
