@@ -4,10 +4,8 @@ import rectangle from '../images/Rectangle 23.png'
 const BrandDropCard = () => {
   return (
     <div>
-         <div className="box">
-         <img  className="rectangle" src={rectangle} alt="" />
-<div />
-
+ <div className="card shadow">
+    <img src={rectangle} alt="" />
 </div>
     </div>
   )
