@@ -38,11 +38,10 @@ const SignUp: FunctionComponent = () => {
     email: '',
     password: '',
     dateOfBirth: {
-      day: '',
-      month: '',
-      year: '',
+      day: '1', // Set default day value here (1 for example)
+      month: '1', // Set default month value here (1 for January)
+      year: '2000', // Set default year value here (2000 for example)
     },
-    // role: UserRole.Follower,
   });
 
   const user = useSelector((state: RootState) => state)
@@ -60,44 +59,48 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 
 
   const [error, setError] = useState<string>('');
-  const handleSubmit = async (e: React.MouseEvent) => {
+  const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.password ) {
-      setError('Please fill in all fields.');
+    const { day, month, year } = formData.dateOfBirth;
+    if (!day || !month || !year) {
+      setError('Invalid date of birth.');
       return;
     }
-    dispatch(signupUser(formData))
-    const { day, month, year } = formData.dateOfBirth;
-    const formattedDateOfBirth = `${year}-${month}-${day}`;
-    console.log(user);
-    
-    // console.log(formattedDateOfBirth);
+
+    const paddedDay = day.padStart(2, '0');
+    const paddedMonth = month.padStart(2, '0');
+    const paddedYear = year.padStart(4, '0');
+    const formattedDateOfBirth = `${paddedYear}-${paddedMonth}-${paddedDay}`;
+
+    // Dispatch signupUser action with the updated formData
+    dispatch(signupUser({ ...formData, dateOfBirth: formattedDateOfBirth }));
   };
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
-    const { name, value } = e.target;
   
-    if (name === 'month' || name === 'day' || name === 'year') {
-      setFormData((prevData) => ({
-        ...prevData,
-        dateOfBirth: {
-          ...prevData.dateOfBirth,
+    const renderOptions = (options: string[]) => {
+      return options.map((option, index) => (
+        <option key={index} value={String(index + 1)}>{option}</option>
+      ));
+    };
+
+    // console.log(formattedDateOfBirth);
+  
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+      const { name, value } = e.target;
+      if (name === "day" || name === "month" || name === "year") {
+        setFormData((prevData) => ({
+          ...prevData,
+          dateOfBirth: {
+            ...prevData.dateOfBirth,
+            [name]: value,
+          },
+        }));
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
           [name]: value,
-        },
-      }));
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
-  };
-
-  const renderOptions = (options: string[]) => {
-    return options.map((option, index) => (
-      <option key={index} value={String(index + 1)}>{option}</option>
-    ));
-  };
-
+        }));
+      }
+    }    
   return (
     <div className="signUp"> 
 <div className="signUpChild" />
