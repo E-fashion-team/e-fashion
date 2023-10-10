@@ -1,0 +1,363 @@
+$darkBackGround: #493E52;
+$lightText: rgba(255, 255, 255, 0.5);
+$lightBlue: #be96f5;
+$hoverLightBlue: #ac7af3;
+$heavyBlue: #6C5DD3;
+$hoverLightColor: rgba(255, 255, 255, 0.16);
+$hoverHeavyColor: #4e3cc0;
+$br6: 6px;
+$br10: 10px;
+$br184: 184px;
+$br206: 206.71px;
+$p13: 13px;
+$fs18: 18.78;
+$fs20: 20px;
+$fs28: 28px;
+$fs30: 30px;
+$fs36: 36px;
+$fs40: 40px;
+$fs50: 50px;
+$fs60: 60px;
+
+#homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+    .lightParag {
+        color: $lightText;
+    }
+    
+    .topSectionBtns {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 5%;
+        margin: 50px 0px;
+
+        button {
+            border-radius: $br206;
+            padding: $p13;
+            color: white;
+            font-size: $fs18;
+            font-weight: 600;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainColl:hover {
+            background-color: $hoverHeavyColor;
+        }
+
+        .creatorsMarket:hover {
+            background-color: $hoverLightColor;
+        }
+
+        .mainColl {
+            background-color: $heavyBlue;
+        }
+
+        .creatorsMarket {
+            background-color: $darkBackGround;
+        }
+    }
+    
+    .bottomSection {
+
+        .secondSection {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 130px;
+            height: 500px;
+
+            .leftSection {
+                width: 30%;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+
+                h1 {
+                    font-size: $fs60;
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 20px;
+                    
+                    .explore {
+                        color: white;
+                        background-color: $heavyBlue;
+                    }
+
+                    .create {
+                        color: white;
+                        background-color: $darkBackGround;
+                    }
+
+                    .explore:hover {
+                        background-color: $hoverHeavyColor;
+                    }
+            
+                    .create:hover {
+                        background-color: $hoverLightColor;
+                    }
+
+                    button {
+                        padding: 10px 20px;
+                        font-size: $fs20;
+                        border-radius: $br10;
+                        border: none;
+                    }
+                }
+
+                #statistics {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 120px;
+
+                    span {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+
+                        h4 {
+                            margin: 0;
+                            font-size: $fs30;
+                        }
+
+                        h5 {
+                            font-size: $fs20;
+                        }
+                    }
+                }
+            }
+
+            .rightSection {
+
+                .allImgs {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    #img1 {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                    
+                    #img2 {
+                        position: relative;
+                        top: 0;
+                    }
+                
+                    #img3 {
+                    position: relative;
+                    }
+
+                    #img4 {
+                        position: relative;
+                    }
+
+                    #img5 {
+                        position: relative;
+                        bottom: 0;
+                    }
+
+                    #img6 {
+                        position: relative;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    #img7 {
+                        position: relative;
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 250px;
+            margin-top: 130px;
+            
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        .aboutUs {
+            margin: 50px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+            h2 {
+                font-size: $fs40;
+            }
+            
+            p {
+                width: 423px;
+                font-size: $fs20;
+            }
+        }
+
+        .fashionSpeaks {
+            margin: 50px 0px;
+            padding: 0px 200px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 560px;
+            gap: 90px;
+            
+            .imgContainer {
+                height: 100%;
+                width: 50%;
+            }
+            
+            .description {
+                height: 100%;
+                width: 50%;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+                h2 {
+                    font-size: $fs36;
+                }
+                
+                p {
+                    font-size: $fs20;
+                    line-height: 200%;
+                }
+
+                .showMore {
+                    padding: 10px 20px;
+                    font-size: $fs20;
+                    background-color: $heavyBlue;
+                    border: none;
+                    color: white;
+                    border-radius: $br6;
+                }
+
+                .showMore:hover {
+                    background-color: $hoverHeavyColor;
+                }
+            }
+        }
+        
+        .allCollections {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            h2 {
+                font-size: $fs40;
+            }
+            
+            p {
+                font-style: $fs20;
+            }
+        }
+
+        .complexThings {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 250px;
+            margin-left: 80px;
+            
+            span {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            
+            h4 {
+                padding: 10px 70px;
+                background-color: $darkBackGround;
+                border-radius: $br10;
+                cursor: pointer;
+            }
+
+            h4:hover {
+                background-color: $hoverLightColor;
+            }
+        }
+        .supportQuest {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            padding: 20px;
+
+            input {
+                color: white;
+                height: 50px;
+                outline: none;
+                border: none;
+                background-color: inherit;
+                border-bottom: solid 1px white;
+                font-size: $fs20;
+            }
+        }
+
+        .getStarted {
+            background: rgb(183,92,255);
+            background: linear-gradient(270deg, rgba(183,92,255,1) 0%, rgba(103,26,228,1) 99%);
+            height: 320px;
+            width: 1000px;
+            border-radius: $br10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 16%;
+
+            h1 {
+                font-size: $fs50;
+            }
+
+            button {
+                background-color: $lightBlue;
+                color: white;
+                font-size: $fs20;
+                padding: 10px 20px;
+                border: none;
+                border-radius: $br10;
+            }
+            
+            button:hover {
+                background-color: $hoverLightBlue;
+            }
+        }
+    }
+}
