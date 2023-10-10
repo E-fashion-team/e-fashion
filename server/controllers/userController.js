@@ -78,7 +78,8 @@ module.exports={
             const userUpdate= await db.User.update(req.body,{
           where:{  name:req.params.name }
             })
-            res.send(userUpdate)
+            const updated=userUpdate.dataValues
+            res.send(updated)
         } catch (error) {
             throw error
         }
