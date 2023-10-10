@@ -1,0 +1,379 @@
+.header {
+    height: 101px;
+    position: relative;
+    width: 1440px;
+}
+
+.header .text-wrapper {
+    color: #6c5dd3;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 36px;
+    font-weight: 700;
+    left: 51px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 27px;
+    white-space: nowrap;
+}
+
+.header .div {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 570px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    white-space: nowrap;
+}
+
+.header .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 760px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    white-space: nowrap;
+}
+
+.header .search-bar {
+    height: 48px;
+    left: 172px;
+    position: absolute;
+    top: 26px;
+    width: 360px;
+}
+
+.header .overlap-group {
+    border: 0.5px solid;
+    border-color: #ffffff80;
+    border-radius: 184px;
+    height: 48px;
+    position: relative;
+    width: 358px;
+}
+
+.header .vector {
+    height: 21px;
+    left: 14px;
+    position: absolute;
+    top: 14px;
+    width: 21px;
+}
+
+.header .p {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 50px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 16px;
+}
+
+.header .ellipse {
+    height: 44px;
+    left: 1364px;
+    object-fit: cover;
+    position: absolute;
+    top: 29px;
+    width: 44px;
+}
+
+.header .img {
+    height: 9px;
+    left: 1340px;
+    position: absolute;
+    top: 46px;
+    width: 13px;
+}
+
+.header .group {
+    height: 19px;
+    left: 654px;
+    position: absolute;
+    top: 41px;
+    width: 68px;
+}
+
+.header .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+}
+
+.header .vector-2 {
+    height: 6px;
+    left: 57px;
+    position: absolute;
+    top: 8px;
+    width: 10px;
+}
+
+.header .group-2 {
+    height: 21px;
+    left: 1140px;
+    position: absolute;
+    top: 40px;
+    width: 57px;
+}
+
+.header .text-wrapper-4 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 938px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    white-space: nowrap;
+}
+
+.header .group-3 {
+    height: 19px;
+    left: 1021px;
+    position: absolute;
+    top: 41px;
+    width: 53px;
+}
+
+.header .vector-3 {
+    height: 6px;
+    left: 42px;
+    position: absolute;
+    top: 8px;
+    width: 10px;
+}
+
+.header .frame {
+    align-items: center;
+    border: 0.5px solid;
+    border-color: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 38px;
+    justify-content: center;
+    left: 1217px;
+    padding: 10px;
+    position: absolute;
+    top: 32px;
+    width: 108px;
+}
+
+.header .text-wrapper-5 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+/* search */
+.inputBox_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    max-width: 200em;
+    width: fit-content;
+    height: fit-content;
+    background-color: #5c6370;
+    border-radius: 0.8em;
+    overflow: hidden;
+  }
+  
+  .search_icon {
+    height: 1em;
+    padding: 0 0.5em 0 0.8em;
+    fill: #abb2bf;
+  }
+  
+  .inputBox {
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    width: 100%;
+    border: 0;
+    padding: 0.5em 1.5em 0.5em 0;
+    font-size: 1em;
+  }
+  
+  ::placeholder {
+    color: #abb2bf;
+  }
+/* dropDown */
+.drop-down-open {
+    background-color: #212749;
+    border-radius: 10px;
+    box-shadow: 0px 0px 24px #00000040;
+    height: 269px;
+    overflow: hidden;
+    position: relative;
+    width: 189px;
+}
+
+.drop-down-open .text-wrapper {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 14px;
+}
+
+.Ddrop-down-open .Ddiv {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 52px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-2 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 88px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-3 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 128px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-4 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 164px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-5 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 202px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-6 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 15px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 238px;
+}
+
+.Ddrop-down-open .Dtext-wrapper-7 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 86px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 19578px;
+}
+
+.Ddrop-down-open .Dline {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 42px;
+    width: 161px;
+}
+
+.Ddrop-down-open .Dimg {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 78px;
+    width: 161px;
+}
+
+.Ddrop-down-open .Dline-2 {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 118px;
+    width: 161px;
+}
+
+.Ddrop-down-open .Dline-3 {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 154px;
+    width: 161px;
+}
+
+.Ddrop-down-open .Dline-4 {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 192px;
+    width: 161px;
+}
+
+.Ddrop-down-open .Dline-5 {
+    height: 1px;
+    left: 15px;
+    position: absolute;
+    top: 228px;
+    width: 161px;
+}
