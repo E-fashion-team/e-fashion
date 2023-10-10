@@ -1,0 +1,17 @@
+/* card */
+.box {
+    height: 671px;
+    width: 389px;
+}
+
+.box .rectangle {
+    background-color: #313554;
+    border-radius: 10px;
+    box-shadow: 0px 5px 4px #00000040;
+    height: 400px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 389px;
+    margin-top: 10%;
+}
