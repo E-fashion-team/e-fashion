@@ -2,13 +2,17 @@ import React,{ FunctionComponent, useCallback,useState, ChangeEvent, FormEvent  
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "../SignUp.css";
+import { useDispatch, useSelector } from "react-redux";
+import { signupUser } from "../store/auth";
+import { RootState, AppDispatch } from '../store/index'
+import { log } from "console";
 
 
-enum UserRole {
-  Brand = 'brand',
-  Follower = 'follower',
-  Fashionista  = 'fashionista',
-}
+// enum UserRole {
+//   Brand = 'brand',
+//   Follower = 'follower',
+//   Fashionista  = 'fashionista',
+// }
 
 interface FormData {
   name: string;
@@ -19,7 +23,7 @@ interface FormData {
     month: string;
     year: string;
   };
-  role: UserRole.Follower,
+  // role: UserRole.Follower,
 }
 
 
@@ -38,8 +42,14 @@ const SignUp: FunctionComponent = () => {
       month: '',
       year: '',
     },
-    role: UserRole.Follower,
+    // role: UserRole.Follower,
   });
+
+  const user = useSelector((state: RootState) => state)
+  console.log(user)
+  const dispatch = useDispatch<AppDispatch>()
+  
+
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -50,38 +60,35 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 
 
   const [error, setError] = useState<string>('');
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      dateOfBirth: {
-        ...formData.dateOfBirth,
-        [name]: value,
-      },
-    });
-  };
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    try {
-      if (!formData.name || !formData.email || !formData.password || !formData.role) {
-        setError('Please fill in all fields.');
-        return;
-      }
-      const { day, month, year } = formData.dateOfBirth;
-      const formattedDateOfBirth = `${year}-${month}-${day}`;
-
-      console.log(formattedDateOfBirth);
-
-       const response = await axios.post('http://localhost:5000/api/user/singup', {
+    if (!formData.name || !formData.email || !formData.password ) {
+      setError('Please fill in all fields.');
+      return;
+    }
+    dispatch(signupUser(formData))
+    const { day, month, year } = formData.dateOfBirth;
+    const formattedDateOfBirth = `${year}-${month}-${day}`;
+    console.log(user);
+    
+    // console.log(formattedDateOfBirth);
+  };
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value } = e.target;
+  
+    if (name === 'month' || name === 'day' || name === 'year') {
+      setFormData((prevData) => ({
+        ...prevData,
+        dateOfBirth: {
+          ...prevData.dateOfBirth,
+          [name]: value,
+        },
+      }));
+    } else {
+      setFormData({
         ...formData,
-        dateOfBirth: formattedDateOfBirth,
+        [name]: value,
       });
-
-      if (response.status === 200) {
-        // Handle success
-      }
-    } catch (error) {
-      console.error(error);
     }
   };
 
@@ -107,21 +114,21 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 </span>
 </div>
 <div className="emailAddressParent">
-<input className="emailAddress" type="text"/>Email Address
+<input className="emailAddress" type="text" name="email" onChange={handleChange}/>Email Address
 <div className="groupItem" />
 </div>
 <div className="vectorParent">
 <img className="vectorIcon2" alt="" src="Vector.svg" />
-<input className="emailAddress" type="password"/>Password
+<input className="emailAddress" type="password" name="password" onChange={handleChange}/>Password
 <div className="groupItem" />
 </div>
 <div className="groupParent">
 <div className="fullNameParent">
-<input className="emailAddress" type="text"/>Full Name
+<input className="emailAddress" type="text" name="name" onChange={handleChange}/>Full Name
 <div className="lineDiv" />
 </div>
 <div className="lastNameParent">
-<input className="emailAddress"type="text"/>Last Name
+<input className="emailAddress"type="text" />Last Name
 <div className="groupChild1" />
 </div>
 </div>
@@ -149,7 +156,7 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 <img className="vectorIcon3" alt="" src="Vector.svg" />
 </div>
 <div className="createAccountWrapper">
-<div className="createAccount">Create Account</div>
+<div className="createAccount" onClick={handleSubmit}>Create Account</div>
 </div>
 </div>
 <img className="image8Icon" alt="" src="image 8.png" />
