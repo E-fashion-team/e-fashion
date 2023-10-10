@@ -1,0 +1,46 @@
+.title{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    color: white;
+}
+.brand-name{
+    height: 200px;
+    left: 150px;
+    position:relative;
+    top: 75px;
+    width: 350px;
+
+    border-style: solid;
+}
+.brand-Image{
+    height: 180px;
+    left: 800px;
+    position:relative;
+    top:0;
+    width: 350px;
+    border-style: solid;
+}
+p{
+ font-size: 18pt;
+ font-style: oblique 18deg;
+ color: white;
+}
+input{
+    border: 2px solid white;
+}
+.Add-btn{
+ background-color: #6c5dd3;
+display: flex;
+gap: 13.41px;
+
+}
+input{
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background-color: inherit;
+    border-bottom: solid 1px white;
+    color: white;
+}
