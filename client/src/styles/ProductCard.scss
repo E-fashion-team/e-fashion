@@ -1,0 +1,83 @@
+$darkBackGround: #493E52;
+$lightText: rgba(255, 255, 255, 0.5);
+$heavyBlue: #6C5DD3;
+$hoverHeavyColor: #4e3cc0;
+$br10: 10px;
+$g20: 20px;
+$p20: 20px;
+$p10_20: 10px 20px;
+$fs15: 15px;
+$fs20: 20px;
+
+.productCard {
+    background-color: $darkBackGround;
+    border-radius: $br10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $p20;
+    gap: $g20;
+
+    .productInfo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .leftSection {
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            h4 {
+                font-size: $fs20;
+            }
+
+            .top {
+                color: $lightText
+            }
+        }
+        
+        .rightSection {
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+
+            .top {
+                font-size: $fs15;
+                color: $lightText;
+            }
+
+            .bottom {
+                font-size: $fs20;
+            }
+        }
+    }
+
+    .btnSection {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .heartBtn {
+
+        }
+
+        .buyBtn {
+            background-color: $heavyBlue;
+            color: white;
+            font-size: $fs20;
+            width: 85%;
+            padding: $p10_20;
+            border-radius: $br10;
+            border: none;
+        }
+
+        .buyBtn:hover {
+            background-color: $hoverHeavyColor;
+        }
+    }
+}
