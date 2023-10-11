@@ -151,6 +151,15 @@
   width: 135.5px;
   height: 0.5px;
 }
+.group-Child5 {
+  position: absolute;
+  top: 555.75px;
+  left: 634.75px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  width: 135.5px;
+  height: 0.5px;
+}
 .group-Child3 {
   position: absolute;
   top: 494.75px;
@@ -198,6 +207,15 @@
   position: absolute;
     top: 469px;
     left: 969px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: transparent;
+    color: #ffffff7d;
+}
+.role {
+    position: absolute;
+    top: 528px;
+    left: 646px;
     letter-spacing: 0.02em;
     background-color: transparent;
     border-color: transparent;

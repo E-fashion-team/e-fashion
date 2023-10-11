@@ -15,6 +15,7 @@ import {CreatorStudioPage} from './components/CreatorStudio'
 // import Market from "./components/market/market"
 import { Stats } from './components/Statistique';
 import Drops from './components/Drops';
+import { BrandStorePage } from './components/BranStore';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
     <Route path="/studio"   element={< CreatorStudioPage/>} />
     <Route path='/stats' element={<Stats />}/>
     <Route path='/drops' element={<Drops />}/>
+    <Route path='/brandStore' element={<BrandStorePage/>}          /> 
   </Routes> 
    {/* <Footer/> */}
  </div>
