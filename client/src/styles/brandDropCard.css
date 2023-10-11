@@ -1,6 +1,6 @@
 .card {
-    width: 280px;
-    height: 450px;
+    width: 389px;
+    height: 671px;
     background-color:inherit ;
     border-radius: 10px;
     transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -12,11 +12,62 @@
                 0.3em 0.3em 1em rgba(0,0,0,0.3);
    }
    .imgg{
-    width: 200px;
-    height: 250px;
+    width: 337px;
+    height: 380px;
     margin-left: 40px;
     margin-top: 10%;
     border-radius: 1rem;
    }
-   
+   .name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-name {
+    color: #ffffff80;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    top: 0;
+    white-space: nowrap;
+}
+
+    .image {
+        display: flex;
+       gap: 5px;
+       margin-top: 15px;
+    }
+    
+    .image .unsplash {
+        height: 49px;
+        width: 49px;
+        border-radius: 30px;
+        margin-left: 10px;
+    }
+    .text-herm{
+        padding: 10px;
+    }
+    
+.lor {
+    height: 26px;
+    width: 181px;
+}
+
+.text-lor {
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    margin-top: 10px;
+   margin-left: 20px;
+   font-size: 22px;
+font-weight: 400;
+}
+.parag{
+   margin:10px;
+}
+
+
+
+
    

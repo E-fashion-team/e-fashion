@@ -15,21 +15,19 @@ import {CreatorStudioPage} from './components/CreatorStudio'
 function App() {
   return (
 
-    <BrowserRouter   >
+    <BrowserRouter>
       <NavBar/>
-   
-   
   <Routes>
-    <Route path="/home"      element={<Home/>}/> 
+<Route path="/home"      element={<Home/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
-<Route path='/edit' element={< EditProfile/>}/>
+{/* <Route path='/edit' element={< EditProfile/>}/> */}
 <Route path='/about' element={< About/>}/>
 <Route path='/studio'   element={< CreatorStudioPage/>} />
-
+<Route path='/Drops'   element={<Drops/>} />
   </Routes> 
    <Footer/>
    </BrowserRouter>
-
+   
   );
 }
 
