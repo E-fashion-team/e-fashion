@@ -1,0 +1,898 @@
+.market {
+    background-color:inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.market .overlap-wrapper {
+    background-color: inherit;
+    height: 1665px;
+    width: 1440px;
+}
+
+.market .overlap {
+    background: inherit;
+    height: 1665px;
+    position: relative;
+}
+
+ 
+
+.market .overlap-group {
+    height: 202px;
+    position: relative;
+    width: 1197px;
+}
+
+
+.market .group {
+    height: 202px;
+    left: 419px;
+    position: absolute;
+    top: 0;
+    width: 143px;
+}
+
+.market .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+.market .text-wrapper-9 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 50px;
+}
+
+.market .text-wrapper-10 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 93px;
+}
+
+.market .text-wrapper-11 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 136px;
+}
+
+.market .text-wrapper-12 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 179px;
+}
+
+.market .group-2 {
+    height: 202px;
+    left: 683px;
+    position: absolute;
+    top: 0;
+    width: 129px;
+}
+
+.market .div-wrapper {
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 290px;
+}
+
+.market .p {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: 0;
+    width: 288px;
+}
+
+.market .group-3 {
+    height: 161px;
+    left: 933px;
+    position: absolute;
+    top: 0;
+    width: 270px;
+}
+
+.market .frame {
+    align-items: center;
+    display: inline-flex;
+    gap: 40px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 136px;
+}
+
+.market .icon-instance-node {
+    height: 25px !important;
+    position: relative !important;
+    width: 25px !important;
+}
+
+.market .text-wrapper-13 {
+    color: #6c5dd3;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+.market .overlap-2 {
+    height: 781px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px;
+}
+
+.market .text-wrapper-14 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Heavy", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 599px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 192px;
+    white-space: nowrap;
+}
+
+.market .overlap-group-wrapper {
+    height: 480px;
+    left: 184px;
+    position: absolute;
+    top: 301px;
+    width: 1079px;
+}
+
+.market .overlap-3 {
+    background-color: var(--white-10);
+    border-radius: 10px;
+    box-shadow: 0px 5px 4px #00000040;
+    height: 480px;
+    position: relative;
+    width: 1073px;
+}
+
+.market .text-wrapper-15 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 26px;
+    font-weight: 500;
+    left: 44px;
+    letter-spacing: 0.78px;
+    line-height: normal;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+}
+
+.market .text-wrapper-16 {
+    color: #cdcdcd;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 44px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 59px;
+}
+
+.market .text-wrapper-17 {
+    color: #cdcdcd;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 927px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 59px;
+}
+
+.market .group-4 {
+    height: 75px;
+    left: 43px;
+    position: absolute;
+    top: 100px;
+    width: 995px;
+}
+
+.market .overlap-4 {
+    border-radius: 5px;
+    height: 75px;
+    position: relative;
+}
+
+.market .group-5 {
+    height: 52px;
+    left: 25px;
+    position: absolute;
+    top: 11px;
+    width: 950px;
+}
+
+.market .group-6 {
+    height: 52px;
+    left: 813px;
+    position: absolute;
+    top: 0;
+    width: 135px;
+}
+
+.market .overlap-5 {
+    height: 53px;
+    left: -1px;
+    position: relative;
+    width: 136px;
+}
+
+.market .group-7 {
+    height: 25px;
+    left: 63px;
+    position: absolute;
+    top: 0;
+    width: 43px;
+}
+
+.market .group-8 {
+    height: 6px;
+    left: 17px;
+    position: absolute;
+    top: 19px;
+    width: 8px;
+}
+
+.market .group-9 {
+    height: 19px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+
+.market .overlap-group-2 {
+    background-color: #ffffff1a;
+    border-radius: 2.12px;
+    height: 19px;
+    position: relative;
+    width: 43px;
+}
+
+.market .text-wrapper-18 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 10.6px;
+    font-weight: 400;
+    left: 6px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    width: 30px;
+}
+
+.market .vector {
+    height: 41px;
+    left: 0;
+    position: absolute;
+    top: 12px;
+    width: 136px;
+}
+
+.market .vector-2 {
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 29px;
+    width: 85px;
+}
+
+.market .ellipse {
+    background-color: var(--secondary-color);
+    border-radius: 4.77px;
+    height: 10px;
+    left: 79px;
+    position: absolute;
+    top: 26px;
+    width: 10px;
+}
+
+.market .photo {
+    height: 35px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 35px;
+}
+
+.market .text-wrapper-19 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 46px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 18px;
+    white-space: nowrap;
+}
+
+.market .group-10 {
+    height: 15px;
+    left: 106px;
+    position: absolute;
+    top: 21px;
+    width: 16px;
+}
+
+.market .overlap-6 {
+    height: 15px;
+    position: relative;
+}
+
+.market .ellipse-2 {
+    background-color: #ffffff;
+    border-radius: 4.49px;
+    height: 9px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    width: 9px;
+}
+
+.market .vector-3 {
+    height: 15px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 16px;
+}
+
+.market .rectangle {
+    border: 0.5px solid;
+    border-color: #ffffff99;
+    border-radius: 5px;
+    height: 75px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 995px;
+}
+
+.market .overlap-7 {
+    height: 75px;
+    left: 43px;
+    position: absolute;
+    top: 190px;
+    width: 995px;
+}
+
+.market .group-11 {
+    height: 75px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 995px;
+}
+
+.market .group-12 {
+    height: 52px;
+    left: 72px;
+    position: absolute;
+    top: 11px;
+    width: 903px;
+}
+
+.market .group-13 {
+    height: 52px;
+    left: 766px;
+    position: absolute;
+    top: 0;
+    width: 135px;
+}
+
+.market .text-wrapper-20 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 18px;
+    white-space: nowrap;
+}
+
+.market .group-14 {
+    height: 15px;
+    left: 68px;
+    position: absolute;
+    top: 22px;
+    width: 16px;
+}
+
+.market .photo-2 {
+    height: 37px;
+    left: 24px;
+    position: absolute;
+    top: 20px;
+    width: 37px;
+}
+
+.market .overlap-8 {
+    height: 75px;
+    left: 43px;
+    position: absolute;
+    top: 280px;
+    width: 995px;
+}
+
+.market .group-15 {
+    height: 52px;
+    left: 71px;
+    position: absolute;
+    top: 11px;
+    width: 904px;
+}
+
+.market .group-16 {
+    height: 52px;
+    left: 767px;
+    position: absolute;
+    top: 0;
+    width: 135px;
+}
+
+.market .text-wrapper-21 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 17px;
+    white-space: nowrap;
+}
+
+.market .group-17 {
+    height: 15px;
+    left: 69px;
+    position: absolute;
+    top: 19px;
+    width: 16px;
+}
+
+.market .photo-3 {
+    height: 36px;
+    left: 24px;
+    position: absolute;
+    top: 20px;
+    width: 36px;
+}
+
+.market .overlap-9 {
+    height: 75px;
+    left: 43px;
+    position: absolute;
+    top: 370px;
+    width: 995px;
+}
+
+.market .group-18 {
+    height: 15px;
+    left: 52px;
+    position: absolute;
+    top: 19px;
+    width: 16px;
+}
+
+.market .header {
+    height: 101px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px;
+}
+
+.market .drop-down-open-instance {
+    left: 1021px !important;
+    position: absolute !important;
+    top: 74px !important;
+}
+
+.market .group-19 {
+    height: 432px;
+    left: 184px;
+    position: absolute;
+    top: 861px;
+    width: 1075px;
+}
+
+.market .overlap-10 {
+    background-color: var(--white-10);
+    border-radius: 10px;
+    box-shadow: 0px 5px 4px #00000040;
+    height: 432px;
+    position: relative;
+    width: 1073px;
+}
+
+.market .text-wrapper-22 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 26px;
+    font-weight: 500;
+    left: 44px;
+    letter-spacing: 0.78px;
+    line-height: normal;
+    position: absolute;
+    top: 30px;
+    white-space: nowrap;
+}
+
+.market .group-20 {
+    height: 266px;
+    left: 50px;
+    position: absolute;
+    top: 119px;
+    width: 973px;
+}
+
+.market .group-21 {
+    height: 266px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 806px;
+}
+
+.market .overlap-11 {
+    height: 230px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 822px;
+}
+
+.market .group-22 {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 808px;
+}
+
+.market .line-6 {
+    height: 1px;
+    left: 40px;
+    position: absolute;
+    top: 10px;
+    width: 766px;
+    width: 150px;
+    height: 50px;
+    
+    border-bottom: 1px  dashed  grey
+}
+
+.market .text-wrapper-23 {
+    color: #b9b9b9;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0.42px;
+    line-height: 22px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+}
+
+.market .group-23 {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 52px;
+    width: 808px;
+}
+
+.market .group-24 {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 104px;
+    width: 808px;
+}
+
+.market .group-25 {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 156px;
+    width: 808px;
+}
+
+.market .group-26 {
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 208px;
+    width: 808px;
+}
+
+.market .group-27 {
+    height: 203px;
+    left: 24px;
+    position: absolute;
+    top: 10px;
+    width: 798px;
+}
+
+.market .group-28 {
+    height: 87px;
+    left: 473px;
+    position: absolute;
+    top: 23px;
+    width: 140px;
+}
+
+.market .overlap-12 {
+    height: 87px;
+    position: relative;
+    width: 144px;
+}
+
+.market .group-29 {
+    height: 74px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 144px;
+}
+
+.market .overlap-group-3 {
+    background-color: #ffffff33;
+    border-radius: 4.5px;
+    height: 74px;
+    position: relative;
+    width: 140px;
+}
+
+.market .text-wrapper-24 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 22.5px;
+    font-weight: 400;
+    left: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 10px;
+    white-space: nowrap;
+}
+
+.market .text-wrapper-25 {
+    color: var(--secondary-color);
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    left: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 43px;
+    white-space: nowrap;
+}
+
+.market .group-30 {
+    height: 14px;
+    left: 61px;
+    position: absolute;
+    top: 74px;
+    width: 18px;
+}
+
+.market .ellipse-3 {
+    background-color: var(--secondary-color);
+    border: 7px solid;
+    border-color: #ffffff33;
+    border-radius: 13px;
+    height: 26px;
+    left: 530px;
+    position: absolute;
+    top: 103px;
+    width: 26px;
+}
+
+.market .frame-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 80.5px;
+    left: 47px;
+    position: absolute;
+    top: 244px;
+}
+
+.market .text-wrapper-26 {
+    color: #b9b9b9;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    line-height: 22px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.market .group-31 {
+    height: 235px;
+    left: 841px;
+    position: absolute;
+    top: 6px;
+    width: 132px;
+}
+
+.market .group-32 {
+    height: 90px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 136px;
+}
+
+.market .text-wrapper-27 {
+    color: #ffffff66;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0.54px;
+    line-height: 25px;
+    position: absolute;
+    top: 0;
+}
+
+.market .text-wrapper-28 {
+    color: #ffffff;
+    font-family: "Roboto-SemiBold", Helvetica;
+    font-size: 24px;
+    font-weight: 600;
+    left: 0;
+    letter-spacing: 0.72px;
+    line-height: 25px;
+    position: absolute;
+    top: 65px;
+    white-space: nowrap;
+}
+
+.market .group-33 {
+    height: 90px;
+    left: 0;
+    position: absolute;
+    top: 145px;
+    width: 136px;
+}
+
+.market .group-34 {
+    height: 17px;
+    left: 44px;
+    position: absolute;
+    top: 76px;
+    width: 619px;
+}
+
+.market .text-wrapper-29 {
+    color: #35c2ff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.market .text-wrapper-30 {
+    color: #e1e1e1;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 196px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.market .text-wrapper-31 {
+    color: #e1e1e1;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 313px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.market .text-wrapper-32 {
+    color: #e1e1e1;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 428px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.market .text-wrapper-33 {
+    color: #e1e1e1;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 558px;
+    letter-spacing: 0.42px;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}

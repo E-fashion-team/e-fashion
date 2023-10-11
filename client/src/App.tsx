@@ -5,6 +5,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import axios from 'axios'
 import ExplorePage from "./components/explorePqge/explore"
 import Home  from "./pages/Home"
@@ -13,17 +14,25 @@ import About from './components/About'
 import {CreatorStudioPage} from './components/CreatorStudio'
 import Market from "./components/market/market"
 
+
+import About from './components/About';
+
+import Home from './pages/Home';
+import { Stats } from './components/Statistique';
+
+
+
+import Drops from './components/Drops';
+
 function App() {
 
 
 
 
   return (
-
-    <BrowserRouter   >
+<div>
+  
       <NavBar/>
-   
-   
   <Routes>
    
 
@@ -33,10 +42,13 @@ function App() {
  <Route path="/edit" element={< EditProfile/>}/> 
 <Route path="/about" element={< About/>}/>
 <Route path="/studio"   element={< CreatorStudioPage/>} />
+<Route path='/stats' element={<Stats />}/>
+<Route path='/drops' element={<Drops />}/>
+
 
   </Routes> 
    <Footer/>
-   </BrowserRouter>
+ </div>
 
   );
 }
