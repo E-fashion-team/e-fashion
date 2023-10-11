@@ -14,8 +14,8 @@ const App: React.FC = () => {
 
     <div>
 
-   
-{/* <Routes>
+{/*    
+<Routes>
 <Route path="/signUp"      element={<SignUp/>}/> 
 <Route path="/signIn"      element={<SignIn/>}/> 
 </Routes>  */}
