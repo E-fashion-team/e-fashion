@@ -10,7 +10,10 @@ import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
 import { Market } from './components/Market';
-import Market from "./components/market/market"
+
+import ExplorePage from './components/explorePqge/explore';
+import EditProfile from './components/editProfile/editProfile';
+import Drops from './components/Drops';
 function App() {
 
 
@@ -29,10 +32,12 @@ function App() {
  <Route path="/edit" element={< EditProfile/>}/> 
 <Route path="/about" element={< About/>}/>
 <Route path="/studio"   element={< CreatorStudioPage/>} />
+<Route path='/stats' element={<Stats />}/>
+
 
   </Routes> 
    <Footer/>
-   </BrowserRouter>
+ </div>
 
   );
 }

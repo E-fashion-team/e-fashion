@@ -3,7 +3,7 @@
 
 
 .about-us-page .overlap {
-    background: linear-gradient(180deg, rgb(152.03, 76.93, 56.26) 0%, rgb(24, 30, 65) 63.29%);
+    background: inherit;
     height: 3780px;
     position: relative;
     width: 100%;
