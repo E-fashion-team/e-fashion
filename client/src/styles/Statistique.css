@@ -1,0 +1,914 @@
+.stats-page {
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.stats-page .overlap-wrapper {
+    background-color:inherit;
+    height: 2037px;
+    width: 1440px;
+}
+
+.stats-page .overlap {
+    background: inherit;
+    height: 2037px;
+    position: relative;
+}
+
+.stats-page .overlap-group {
+    height: 385px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px;
+}
+
+.stats-page .text-wrapper-8 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Heavy", Helvetica;
+    font-size: 60px;
+    font-weight: 400;
+    left: 408px;
+    letter-spacing: 1.2px;
+    line-height: 81px;
+    position: absolute;
+    text-align: center;
+    top: 304px;
+    white-space: nowrap;
+}
+
+.stats-page .header {
+    height: 101px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1440px;
+}
+
+.stats-page .drop-down-open-instance {
+    left: 1021px !important;
+    position: absolute !important;
+    top: 76px !important;
+}
+
+.stats-page .the-top-nfts-on {
+    color: var(--half-white);
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    left: 393px;
+    letter-spacing: 0;
+    line-height: 36px;
+    position: absolute;
+    text-align: center;
+    top: 400px;
+    white-space: nowrap;
+}
+
+.stats-page .overlap-2 {
+    height: 866px;
+    left: 84px;
+    position: absolute;
+    top: 674px;
+    width: 1278px;
+}
+
+.stats-page .statistics {
+    height: 866px;
+    left: 11px;
+    position: absolute;
+    top: 0;
+    width: 1267px;
+}
+
+.stats-page .text-wrapper-9 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    left: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+}
+
+.stats-page .frame {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 116px;
+    left: 346px;
+    position: absolute;
+    top: 0;
+}
+
+.stats-page .text-wrapper-10 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Semibold", Helvetica;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.stats-page .line-6 {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    border-bottom: 1.5px solid grey
+}
+
+.stats-page .group {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 96px;
+    width: 1211px;
+}
+
+.stats-page .group-2 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 144px;
+}
+
+.stats-page .photo {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+}
+
+.stats-page .text-wrapper-11 {
+    color: #ffffff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 18px;
+    font-weight: 500;
+    left: 60px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 11px;
+}
+
+.stats-page .overlap-group-wrapper {
+    height: 12px;
+    left: 130px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .overlap-group-2 {
+    height: 12px;
+    position: relative;
+}
+
+.stats-page .ellipse {
+    background-color: #ffffff;
+    border-radius: 3.61px;
+    height: 7px;
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: 7px;
+}
+
+.stats-page .vector {
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 13px;
+}
+
+.stats-page .group-3 {
+    height: 19px;
+    left: 301px;
+    position: absolute;
+    top: 15px;
+    width: 94px;
+}
+
+.stats-page .vector-2 {
+    height: 17px;
+    left: 0;
+    position: absolute;
+    top: 1px;
+    width: 11px;
+}
+
+.stats-page .text-wrapper-12 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 19px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+}
+
+.stats-page .group-4 {
+    height: 19px;
+    left: 795px;
+    position: absolute;
+    top: 15px;
+    width: 62px;
+}
+
+.stats-page .text-wrapper-13 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 996px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-14 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 1175px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-15 {
+    color: #0acf41;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 477px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-16 {
+    color: #ff2121;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 642px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+}
+
+.stats-page .group-5 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 216px;
+    width: 1211px;
+}
+
+.stats-page .group-6 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 124px;
+}
+
+.stats-page .div-wrapper {
+    height: 12px;
+    left: 110px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-7 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 336px;
+    width: 1211px;
+}
+
+.stats-page .group-8 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 156px;
+}
+
+.stats-page .group-9 {
+    height: 12px;
+    left: 140px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-10 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 456px;
+    width: 1211px;
+}
+
+.stats-page .group-11 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 160px;
+}
+
+.stats-page .group-12 {
+    height: 12px;
+    left: 146px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-13 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 576px;
+    width: 1211px;
+}
+
+.stats-page .group-14 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 128px;
+}
+
+.stats-page .group-15 {
+    height: 12px;
+    left: 112px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-16 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 696px;
+    width: 1211px;
+}
+
+.stats-page .group-17 {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 148px;
+}
+
+.stats-page .group-18 {
+    height: 12px;
+    left: 134px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-19 {
+    height: 50px;
+    left: 39px;
+    position: absolute;
+    top: 816px;
+    width: 1211px;
+}
+
+.stats-page .group-20 {
+    height: 12px;
+    left: 142px;
+    position: absolute;
+    top: 19px;
+    width: 13px;
+}
+
+.stats-page .group-21 {
+    height: 752px;
+    left: 0;
+    position: absolute;
+    top: 106px;
+    width: 31px;
+}
+
+.stats-page .text-wrapper-17 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-size: 26px;
+    font-weight: 700;
+    left: 2px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-18 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 121px;
+}
+
+.stats-page .text-wrapper-19 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-size: 26px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 239px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-20 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 366px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-21 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 486px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-22 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 606px;
+    white-space: nowrap;
+}
+
+.stats-page .text-wrapper-23 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 726px;
+    white-space: nowrap;
+}
+
+.stats-page .group-22 {
+    height: 600px;
+    left: 33px;
+    position: absolute;
+    top: 181px;
+    width: 1220px;
+}
+
+.stats-page .line-7 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1220px;
+}
+
+.stats-page .line-8 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 120px;
+    width: 1220px;
+}
+
+.stats-page .line-9 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 240px;
+    width: 1220px;
+}
+
+.stats-page .line-10 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 360px;
+    width: 1220px;
+}
+
+.stats-page .line-11 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 480px;
+    width: 1220px;
+}
+
+.stats-page .line-12 {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 600px;
+    width: 1220px;
+}
+
+.stats-page .group-23 {
+    height: 22px;
+    left: 3px;
+    position: absolute;
+    top: 130px;
+    width: 35px;
+}
+
+.stats-page .vector-3 {
+    height: 21px;
+    left: 0;
+    position: absolute;
+    top: 249px;
+    width: 21px;
+}
+
+.stats-page .vector-4 {
+    height: 21px;
+    left: 16px;
+    position: absolute;
+    top: 249px;
+    width: 21px;
+}
+
+.stats-page .vector-5 {
+    height: 21px;
+    left: 8px;
+    position: absolute;
+    top: 369px;
+    width: 21px;
+}
+
+.stats-page .frame-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 20px;
+    left: 998px;
+    position: absolute;
+    top: 527px;
+}
+
+.stats-page .group-24 {
+    height: 47px;
+    position: relative;
+    width: 173px;
+}
+
+.stats-page .overlap-group-3 {
+    border: 0.3px solid;
+    border-color: #ffffff;
+    border-radius: 5px;
+    height: 47px;
+    position: relative;
+    width: 171px;
+}
+
+.stats-page .text-wrapper-24 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 14px;
+    white-space: nowrap;
+}
+
+.stats-page .vector-6 {
+    height: 9px;
+    left: 137px;
+    position: absolute;
+    top: 19px;
+    width: 15px;
+}
+
+.stats-page .group-25 {
+    height: 47px;
+    margin-right: -2px;
+    position: relative;
+    width: 173px;
+}
+
+.stats-page .frame-3 {
+    align-items: flex-start;
+    display: inline-flex;
+    gap: 30px;
+    left: 589px;
+    position: absolute;
+    top: 1625px;
+}
+
+.stats-page .frame-4 {
+    align-items: center;
+    border: 0.5px solid;
+    border-color: #ffffff33;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    width: 100px;
+}
+
+.stats-page .vector-7 {
+    height: 13px;
+    position: relative;
+    width: 8px;
+}
+
+.stats-page .text-wrapper-25 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -0.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.stats-page .text-wrapper-26 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: -2px;
+    margin-top: -0.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.stats-page .vector-8 {
+    height: 13px;
+    margin-right: -2px;
+    position: relative;
+    width: 8px;
+}
+
+.stats-page .line-13 {
+    height: 1px;
+    left: 117px;
+    position: absolute;
+    top: 1574px;
+    width: 1220px;
+}
+
+.stats-page .group-26 {
+    height: 202px;
+    left: 122px;
+    position: absolute;
+    top: 1794px;
+    width: 1199px;
+}
+
+.stats-page .overlap-3 {
+    height: 202px;
+    position: relative;
+    width: 1197px;
+}
+
+.stats-page .footer {
+    background-color: transparent;
+    height: 202px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1197px;
+}
+
+.stats-page .group-27 {
+    height: 202px;
+    left: 419px;
+    position: absolute;
+    top: 0;
+    width: 143px;
+}
+
+.stats-page .text-wrapper-27 {
+    color: #ffffff;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+.stats-page .text-wrapper-28 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 50px;
+}
+
+.stats-page .text-wrapper-29 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 93px;
+}
+
+.stats-page .text-wrapper-30 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 136px;
+}
+
+.stats-page .text-wrapper-31 {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 179px;
+}
+
+.stats-page .group-28 {
+    height: 202px;
+    left: 683px;
+    position: absolute;
+    top: 0;
+    width: 129px;
+}
+
+.stats-page .group-29 {
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: 50px;
+    width: 290px;
+}
+
+.stats-page .p {
+    color: #ffffff80;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 15px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 25px;
+    position: absolute;
+    top: 0;
+    width: 288px;
+}
+
+.stats-page .group-30 {
+    height: 161px;
+    left: 933px;
+    position: absolute;
+    top: 0;
+    width: 270px;
+}
+
+.stats-page .frame-5 {
+    align-items: center;
+    display: inline-flex;
+    gap: 40px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 136px;
+}
+
+.stats-page .icon-instance-node {
+    height: 25px !important;
+    position: relative !important;
+    width: 25px !important;
+}
+
+.stats-page .text-wrapper-32 {
+    color: #6c5dd3;
+    font-family: "Poppins-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+.stats-page .frame-6 {
+    align-items: center;
+    background: linear-gradient(180deg, rgb(183, 92, 255) 0%, rgb(103, 26, 228) 100%);
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    height: 47px;
+    justify-content: center;
+    left: 118px;
+    padding: 10px;
+    position: absolute;
+    top: 527px;
+    width: 200px;
+}
+
+.stats-page .text-wrapper-33 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
