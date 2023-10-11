@@ -1,7 +1,5 @@
 // import Drops from './components/Drops';
 import React,{useState}  from 'react';
-
-import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { Routes, Route } from "react-router-dom";
@@ -23,7 +21,7 @@ function App() {
   return (
 <div>
   
-      {/* <NavBar/> */}
+      <NavBar/>
   <Routes>
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
