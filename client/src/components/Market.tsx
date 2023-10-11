@@ -8,9 +8,12 @@ import asset3 from '../images/market/Vector 18@2x.png'
 
 
 import "../styles/Market.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export const Market = () => {
-    return (
+    return (<div>
+    <div><NavBar/></div>
         <div className="market">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -236,6 +239,8 @@ export const Market = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };
