@@ -13,7 +13,7 @@ const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
 var cookieParser = require("cookie-parser");
 require("dotenv").config();
-const JWT_SECRET = process.env.jwt;
+
 app.use(express.json())
 
 app.use(bodyparser.urlencoded({ extended: true }));
