@@ -1,15 +1,11 @@
 module.exports=(sequelize, DataTypes,connection)=>{
 
     const User = connection.define('User', {
-    
-        id: {
-           type: DataTypes.INTEGER,
-        
-           primaryKey:true,
-           autoIncrement:true
-         },
-      
-       name:DataTypes.STRING,
+      name:{
+        type:DataTypes.STRING,
+        allowNull:false
+      },
+
        image:DataTypes.STRING,
        email:DataTypes.STRING,
        password:DataTypes.STRING,

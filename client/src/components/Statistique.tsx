@@ -4,9 +4,12 @@ import asset from '../images/VectorStats.svg'
 import asset1 from '../images/etoile.svg'
 import asset2 from '../images/Getoiles.svg'
 import asset3 from '../images/tick.svg'
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export const Stats = () => {
-    return (
+    return (<div>
+    <div><NavBar/></div>
         <div className="stats-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -269,6 +272,8 @@ export const Stats = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };

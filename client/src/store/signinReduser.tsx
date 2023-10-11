@@ -5,12 +5,14 @@ import axios from "axios";
 interface SignInState {
     loading: boolean;
     error: string | null;
-    user: object
+    user: object,
+    isAuthanticated: Boolean
   }
   const initialState: SignInState = {
     loading: false,
     error: null,
-    user: {}
+    user: {},
+    isAuthanticated: false
 };
 
 export const signinUser = createAsyncThunk("signin/signinUser", async (formData: object) => {

@@ -1,9 +1,12 @@
 import { FunctionComponent } from "react";
-import styles from "./ExplorePage.module.css";
+import styles from "../../styles/ExplorePage.module.css";
 import img1 from "../../images/albert-dera-ILip77SbmOE-unsplash 1 (1).png"
+import NavBar from "../NavBar";
+import Footer from "../Footer";
 
 const ExplorePage: FunctionComponent = () => {
-  return (
+  return (<div>
+<NavBar/>
     <div className={styles.explorePage}>
       <div className={styles.explorePageChild} />
       <div className={styles.exploreCollections}>Explore Collections</div>
@@ -213,6 +216,8 @@ const ExplorePage: FunctionComponent = () => {
       </div>
       
  
+    </div>
+<Footer/>
     </div>
   );
 };

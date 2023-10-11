@@ -13,7 +13,10 @@ module.exports=(sequelize, DataTypes,connection)=>{
        name:DataTypes.STRING,
        image:DataTypes.STRING,
        price:DataTypes.INTEGER,
-       category:DataTypes.STRING 
+       category:{
+        type:DataTypes.ENUM , 
+        values : ["men","women","kids","other"]
+       }
        }
      
        )
