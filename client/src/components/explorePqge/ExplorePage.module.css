@@ -2,7 +2,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(113.49deg, #984d38, #181e41 63.29%);
+    /* background: linear-gradient(113.49deg, #984d38, #181e41 63.29%); */
     width: 1440px;
     height: 2629px;
   }
@@ -404,9 +404,32 @@
     font-family: var(--font-poppins);
   }
   .trending {
-    position: relative;
-    font-weight: 500;
+    padding: 10px 70px;
+    background-color: #271228;
+    border-radius:5px;
+    cursor: pointer;
   }
+  .trending:hover{
+    background-color: #ac09ba
+  }
+  /* .categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+    h4 {
+        padding: 10px 70px;
+        background-color: $darkBackGround;
+        border-radius: $br10;
+        cursor: pointer;
+    }
+
+    h4:hover {
+        background-color: $hoverLightColor;
+    }
+} */
   .trendingWrapper {
     border-radius: var(--br-3xs);
     background: linear-gradient(214.02deg, #b75cff, #671ae4);
