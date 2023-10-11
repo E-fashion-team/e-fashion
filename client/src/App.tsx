@@ -1,4 +1,4 @@
-import Drops from './components/Drops';
+// import Drops from './components/Drops';
 import React,{useState}  from 'react';
 
 import './App.css';
@@ -10,8 +10,12 @@ import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
 import { Market } from './components/Market';
-
+import Market from "./components/market/market"
 function App() {
+
+
+
+
   return (
 <div>
   
@@ -19,15 +23,16 @@ function App() {
    
    
   <Routes>
-<Route path='/about' element={<About/>}/>
-<Route path='/creatorStudio' element={<CreatorStudioPage/>}/>
-<Route path='/' element={<Home/>}/>
-<Route path='/stats' element={<Stats/>}/>
-<Route path='/market' element={<Market/>}/>
-   </Routes>
- <Footer/>
- 
-  </div> 
+  <Route path="/market"      element={<Market/>}/> 
+  <Route path="/home"      element={<Home/>}/> 
+<Route  path="/explore"  element={<ExplorePage/>}  />
+ <Route path="/edit" element={< EditProfile/>}/> 
+<Route path="/about" element={< About/>}/>
+<Route path="/studio"   element={< CreatorStudioPage/>} />
+
+  </Routes> 
+   <Footer/>
+   </BrowserRouter>
 
   );
 }
