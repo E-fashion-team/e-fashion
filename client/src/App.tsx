@@ -17,13 +17,13 @@ import Drops from './components/Drops';
 import ClientCard from './components/ClientCard';
 function App() {
 
-/////////////////3////////
+
 
 
   return (
 <div>
   
-      <NavBar/>
+      {/* <NavBar/> */}
   <Routes>
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
