@@ -2,11 +2,24 @@
 import React,{useState}  from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import axios from 'axios'
+import Home  from "./pages/Home"
+import About from './components/About'
+import {CreatorStudioPage} from './components/CreatorStudio'
+import Market from "./components/market/market"
+
+import { Stats } from './components/Statistique';
+
 import { Routes, Route } from "react-router-dom";
 import About from './components/About';
 import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
+
 
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
@@ -28,7 +41,7 @@ function App() {
   return (
 <div>
   
-      {/* <NavBar/> */}
+      <NavBar/>
   <Routes>
 
 
@@ -48,7 +61,7 @@ function App() {
 <Route path='/drops' element={<Drops />}/>
 <Route path='/clientCard' element={<ClientCard />}/>
   </Routes> 
-   {/* <Footer/> */}
+   <Footer/>
  </div>
 
   );
