@@ -1,7 +1,7 @@
 import React,{ FunctionComponent, useCallback,useState, ChangeEvent, FormEvent  } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "../SignUp.css";
+import "../styles/SignUp.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../store/auth";
 import { RootState, AppDispatch } from '../store/index'
@@ -103,45 +103,45 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
       }
     }    
   return (
-    <div className="signUp"> 
-<div className="signUpChild" />
-<div className="rectangleParent">
-<div className="groupChild" />
-<b className="beginYourMeta1">Begin your meta fashion journey here</b>
-<div className="alreadyAMemberContainer" onClick={onAlreadyAMemberClick}>
+    <div className="sign-Up"> 
+<div className="sign-Up-Child" />
+<div className="rectangle-Parent">
+<div className="group-Child" />
+<b className="begin-Your-Meta1">Begin your meta fashion journey here</b>
+<div className="already-AMember-Container" onClick={onAlreadyAMemberClick}>
 <span>
 <span>Already a Member?</span>
-<span className="span">{` `}</span>
+<span className="-span">{` `}</span>
 </span>
-<span className="span">
-<span className="signIn1">Sign In</span>
+<span className="-span">
+<span className="sign-In1">Sign In</span>
 </span>
 </div>
-<div className="emailAddressParent">
-<input className="emailAddress" type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
-<div className="groupItem" />
+<div className="email-Address-Parent">
+<input className="email-Address" type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
+<div className="group-Item" />
 </div>
-<div className="vectorParent">
-<img className="vectorIcon2" alt="" src={icon} />
-<input className="emailAddress" type="password" name="password" placeholder="Password" onChange={handleChange}/>
-<div className="groupItem" />
+<div className="vector-Parent">
+<img className="vector-Icon2" alt="" src={icon} />
+<input className="email-Address" type="password" name="password" placeholder="Password" onChange={handleChange}/>
+<div className="group-Item" />
 </div>
-<div className="groupParent">
-<div className="fullNameParent">
-<input className="emailAddress" type="text" name="name" placeholder="Full Name" onChange={handleChange}/>
-<div className="lineDiv" />
+<div className="group-Parent">
+<div className="full-Name-Parent">
+<input className="email-Address" type="text" name="name" placeholder="Full Name" onChange={handleChange}/>
+<div className="line-Div" />
 </div>
-<div className="lastNameParent">
-<input className="emailAddress"type="text" placeholder="Last Name" />
-<div className="groupChild1" />
+<div className="last-Name-Parent">
+<input className="email-Address"type="text" placeholder="Last Name" />
+<div className="group-Child1" />
 </div>
 </div>
-<div className="dateOfBirthParent">
-<div className="dateOfBirth1">Date Of Birth</div>
-<div className="groupChild2" />
-<div className="groupChild3" />
-<div className="groupChild4" />
-<div className="dateInputs">
+<div className="date-OfBirth-Parent">
+<div className="dateOf-Birth1">Date Of Birth</div>
+<div className="group-Child2" />
+<div className="group-Child3" />
+<div className="group-Child4" />
+<div className="date-Inputs">
         <select className="month" name="month" value={formData.dateOfBirth.month} onChange={handleChange}>
           <option value="">Month</option>
           {renderOptions(months)}
@@ -157,14 +157,14 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
           {renderOptions(years.map(String))}
         </select>
       </div>
-<img className="vectorIcon3" alt="" src="Vector.svg" />
+
 </div>
-<div className="createAccountWrapper">
-<div className="createAccount" onClick={handleSubmit}>Create Account</div>
+<div className="create-Account-Wrapper">
+<div className="create-Account" onClick={handleSubmit}>Create Account</div>
 </div>
 </div>
 <img className="image8Icon" alt="" src={img} />
-<div className="signUp1">Sign Up</div>
+<div className="sign-Up1">Sign Up</div>
 </div>
   );
 
