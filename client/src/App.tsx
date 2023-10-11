@@ -12,7 +12,7 @@ import EditProfile from './components/editProfile/editProfile'
 import About from './components/About'
 import {CreatorStudioPage} from './components/CreatorStudio'
 import Market from "./components/market/market"
-import SignIn from "./store/data"
+
 function App() {
 
 
@@ -26,7 +26,7 @@ function App() {
    
   <Routes>
    
-      <Route path="/data"      element={<SignIn/>}/> 
+
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
