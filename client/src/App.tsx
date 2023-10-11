@@ -21,6 +21,7 @@ import { BrandStorePage } from "./components/BranStore";
 import { Messages } from "./components/messages";
 import CreateBrand from "./components/CreateBrand";
 import { Market } from "./components/Market";
+import FashionShow from "./components/fashion show/fashionShow";
 
 function App() {
   return (
@@ -42,7 +43,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/messages" element={<Messages />} />
-        <Route path="createBrand" element={<CreateBrand/>}/>
+        <Route path="/createBrand" element={<CreateBrand/>}/>
+        <Route path='/fashionshow'element={<FashionShow/>}/>
       </Routes>
    
     </div>
