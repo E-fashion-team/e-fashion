@@ -22,7 +22,7 @@ import { Stats } from './components/Statistique';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 
-
+import FashionShow from "./components/fashion show/fashionShow"
 
 import Drops from './components/Drops';
 
@@ -34,10 +34,10 @@ function App() {
   return (
 <div>
   
-      <NavBar/>
+      {/* <NavBar/> */}
   <Routes>
 
-
+  <Route path="/fashion" element={<FashionShow/>}/> 
 
    <Route path="/"      element={<Home/>}/> 
   <Route path="/signUp"      element={<SignUp/>}/> 
@@ -52,7 +52,7 @@ function App() {
 
 
   </Routes> 
-   <Footer/>
+   {/* <Footer/> */}
  </div>
 
 
