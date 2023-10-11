@@ -5,7 +5,8 @@ import "../SignUp.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../store/auth";
 import { RootState, AppDispatch } from '../store/index'
-import { log } from "console";
+import img from "../images/image boy.png"
+import icon from "../images/Vector.png"
 
 
 // enum UserRole {
@@ -117,21 +118,21 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 </span>
 </div>
 <div className="emailAddressParent">
-<input className="emailAddress" type="text" name="email" onChange={handleChange}/>Email Address
+<input className="emailAddress" type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
 <div className="groupItem" />
 </div>
 <div className="vectorParent">
-<img className="vectorIcon2" alt="" src="Vector.svg" />
-<input className="emailAddress" type="password" name="password" onChange={handleChange}/>Password
+<img className="vectorIcon2" alt="" src={icon} />
+<input className="emailAddress" type="password" name="password" placeholder="Password" onChange={handleChange}/>
 <div className="groupItem" />
 </div>
 <div className="groupParent">
 <div className="fullNameParent">
-<input className="emailAddress" type="text" name="name" onChange={handleChange}/>Full Name
+<input className="emailAddress" type="text" name="name" placeholder="Full Name" onChange={handleChange}/>
 <div className="lineDiv" />
 </div>
 <div className="lastNameParent">
-<input className="emailAddress"type="text" />Last Name
+<input className="emailAddress"type="text" placeholder="Last Name" />
 <div className="groupChild1" />
 </div>
 </div>
@@ -162,7 +163,7 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 <div className="createAccount" onClick={handleSubmit}>Create Account</div>
 </div>
 </div>
-<img className="image8Icon" alt="" src="image 8.png" />
+<img className="image8Icon" alt="" src={img} />
 <div className="signUp1">Sign Up</div>
 </div>
   );

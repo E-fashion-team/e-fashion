@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import SignIn from './components/SignIn';
 
+
 import './App.css';
 import SignUp from './components/SignUp';
+import { Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
-  const [view, setView] = useState("signup");
 
-  useEffect(() => {
-  
-  }, []);
 
-  const renderView = () => {
-    if (view === "signin") {
-      return <SignIn />;
-    }
-    if (view === "signup") {
-      return <SignUp />;
-    }
-  };
-
+ 
   return (
 
-    <div className="App">
-      {renderView()}
-    </div>
+    <div>
 
+   
+{/* <Routes>
+<Route path="/signUp"      element={<SignUp/>}/> 
+<Route path="/signIn"      element={<SignIn/>}/> 
+</Routes>  */}
+
+</div>
   );
 }
 

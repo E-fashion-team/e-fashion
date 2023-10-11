@@ -1,54 +1,120 @@
-import React,{ FunctionComponent, useCallback } from "react";
+import React,{ FunctionComponent, useCallback, useState , ChangeEvent} from "react";
 import "../SignIn.css";
+import img from "../images/image boy.png"
+import styles from "./SignIn.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../store";
+import {signinUser} from "../store/signinReduser"
+import { Link } from "react-router-dom";
+import SignUp from "./SignUp";
+
+
+interface FormData {
+  email: string;
+  password: string;
+}
+
+
 
 const SignIn: FunctionComponent = () => {
-  const onNewUserCreateClick = useCallback(() => {
-    // Please sync "Sign Up" to the project
-  }, []);
+
+  const onNewUserCreateClick = () => {
+    <Link to="/signup" >
+    Create an account
+  </Link>
+  };
+
+
+  
+  const [formData, setFormData] = useState<FormData>({
+    email: '',
+    password: '',
+  });
+  const user = useSelector((state: RootState) => state)
+  console.log(user)
+  const dispatch = useDispatch<AppDispatch>()
+  const [error, setError] = useState<string>('');
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const { email,password } = formData
+    if (!email || !password) {
+      setError('Please Fill all fields');
+      return;
+    }
+    
+    dispatch(signinUser({ ...formData}));
+  }
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+    console.log(formData);
+    ;
+  };
+   
 
   return (
-    <div className="sign-in">
-      <div className="sign-in-child" />
-      <div className="rectangle-parent">
-        <div className="group-child" />
-        <b className="explore-the-world">Explore the world of meta fashion</b>
-        <div
-          className="new-user-create-container"
-          onClick={onNewUserCreateClick}
-        >
-          <span>New user?</span>
-          <span className="create-an-account"> Create an account</span>
-        </div>
-        <div className="or">Or</div>
-        <div className="email-address-parent">
-          <div className="email-address">Email Address</div>
-          <div className="group-item" />
-        </div>
-        <div className="rectangle-group">
-          <div className="group-inner" />
-          <div className="group-parent">
-            <img className="group-icon" alt="" src="/group-48095561.svg" />
-            <div className="continue-with-google">Continue With Google</div>
+    
+    <div className={styles.signIn}>
+    <div className={styles.signInChild} />
+    <div className={styles.rectangleParent}>
+      <div className={styles.groupChild} />
+      <b className={styles.exploreTheWorld}>
+        Explore the world of meta fashion
+      </b>
+      <div
+        className={styles.newUserCreateContainer}
+        onClick={onNewUserCreateClick}
+      >
+        <span>New user?</span>
+        <span className={styles.createAnAccount} 
+        onClick={onNewUserCreateClick}> Create an account</span>
+      </div>
+      <div className={styles.or}>Or</div>
+      <div   className={styles.emailAddressParent1}>
+      <input className={styles.emailAddress} name="email" type="text" placeholder="Email Address" onChange={handleChange}/>
+      </div>
+      <div className={styles.emailAddressParent}>
+        <input className={styles.emailAddress} name="password" type="password" placeholder="Password"  onChange={handleChange}/>
+        <div className={styles.groupItem} /> </div>
+      
+      <div className={styles.rectangleGroup}>
+        <div className={styles.groupInner} />
+        <div className={styles.groupParent}>
+          <img
+            className={styles.groupIcon}
+            alt=""
+           
+          />
+          <div className={styles.continueWithGoogle}>
+            Continue With Google
           </div>
         </div>
-        <div className="rectangle-container">
-          <div className="rectangle-div" />
-          <img className="group-icon1" alt="" src="/group.svg" />
-          <div className="continue-with-facebook">Continue With Facebook</div>
-        </div>
-        <div className="group-div">
-          <div className="group-child1" />
-          <img className="vector-icon" alt="" src="/vector.svg" />
-          <div className="continue-with-facebook">Continue With Apple</div>
+      </div>
+      <div className={styles.rectangleContainer}>
+        <div className={styles.rectangleDiv} />
+        <img className={styles.groupIcon1} alt=""  />
+        <div className={styles.continueWithFacebook}>
+          Continue With Facebook
         </div>
       </div>
-      <img className="image-8-icon" alt="" src="/image-8@2x.png" />
-      <div className="sign-in1">Sign In</div>
-      <div className="continue-wrapper">
-        <div className="continue">Continue</div>
+      <div className={styles.groupDiv}>
+        <div className={styles.groupChild1} />
+        <img className={styles.vectorIcon} alt=""  />
+        <div className={styles.continueWithFacebook}>Continue With Apple</div>
       </div>
     </div>
-  );
+    <img className={styles.image8Icon} alt="" src={img}  />
+    <div className={styles.signIn1}>Sign In</div>
+    <div className={styles.continueWrapper}>
+      <div className={styles.continue} onClick={handleSubmit}>Continue</div>
+    </div>
+  </div>
+);
 };
 
 export default SignIn;

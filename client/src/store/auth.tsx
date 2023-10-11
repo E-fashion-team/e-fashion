@@ -14,6 +14,7 @@ const initialState: SignUpState = {
     user: {}
 };
 
+
 // Async Thunk for Signup
 export const signupUser = createAsyncThunk("signup/signupUser", async (formData: object) => {
     try {
@@ -45,5 +46,6 @@ export const signupUser = createAsyncThunk("signup/signupUser", async (formData:
         });
     },
   });
-
+ 
+  
 export default signUpSlice.reducer
