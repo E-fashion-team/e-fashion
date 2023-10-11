@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./ExplorePage.module.css";
+import img1 from "../../images/albert-dera-ILip77SbmOE-unsplash 1 (1).png"
 
 const ExplorePage: FunctionComponent = () => {
   return (
@@ -48,9 +49,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator1@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo1@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller1}>
@@ -58,9 +59,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator11@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo11@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller2}>
@@ -68,9 +69,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator12@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo12@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller3}>
@@ -78,9 +79,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator2@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo2@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1}/>
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller4}>
@@ -88,9 +89,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator21@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo21@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller5}>
@@ -98,9 +99,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator22@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo22@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller6}>
@@ -108,9 +109,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator3@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo3@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller7}>
@@ -118,9 +119,9 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator31@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo31@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
           <div className={styles.seller8}>
@@ -128,12 +129,12 @@ const ExplorePage: FunctionComponent = () => {
             <img
               className={styles.creator1Icon}
               alt=""
-              src="/creator32@2x.png"
+              src={img1}
             />
-            <img className={styles.photo1Icon} alt="" src="/photo32@2x.png" />
+            <img className={styles.photo1Icon} alt="" src={img1} />
             <b className={styles.johnWick}>John Wick</b>
           </div>
-          <img className={styles.groupChild} alt="" src="/group-48095470.svg" />
+         
           <div className={styles.loremIpsumDolor1}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac tempus
             nisi, mollis diam vulputate nec. Donec fringilla nunc cursus nulla
@@ -195,7 +196,7 @@ const ExplorePage: FunctionComponent = () => {
           <div className={styles.trending}>Trending</div>
         </div>
         <div className={styles.allFashionNftsWrapper}>
-          <div className={styles.trending}>All Fashion NFTs</div>
+          <div className={styles.trending}> NFTs</div>
         </div>
         <div className={styles.artWrapper}>
           <div className={styles.trending}>Art</div>
@@ -210,50 +211,8 @@ const ExplorePage: FunctionComponent = () => {
           <div className={styles.trending}>Brands</div>
         </div>
       </div>
-      <div className={styles.header}>
-        <b className={styles.logo1}>Logo</b>
-        <div className={styles.home}>Home</div>
-        <div className={styles.personalCollection}>Personal Collection</div>
-        <div className={styles.searchBar}>
-          <div className={styles.searchBarChild} />
-          <img className={styles.vectorIcon9} alt="" src="/vector9.svg" />
-          <div className={styles.searchItemsFashion}>
-            Search Items, Fashion, Collection and Users
-          </div>
-        </div>
-        <img className={styles.headerChild} alt="" src="/ellipse-258@2x.png" />
-        <img className={styles.vectorIcon10} alt="" src="/vector10.svg" />
-        <div className={styles.headerItem} />
-        <div className={styles.exploreParent}>
-          <div className={styles.explore}>Explore</div>
-          <img className={styles.vectorIcon11} alt="" src="/vector11.svg" />
-        </div>
-        <img className={styles.headerInner} alt="" src="/group-48095728.svg" />
-        <div className={styles.drops}>Drops</div>
-        <div className={styles.moreParent}>
-          <div className={styles.explore}>More</div>
-          <img className={styles.vectorIcon12} alt="" src="/vector12.svg" />
-        </div>
-        <div className={styles.walletWrapper}>
-          <div className={styles.wallet}>Wallet</div>
-        </div>
-      </div>
-      <div className={styles.dropDownopen}>
-        <div className={styles.stats}>Stats</div>
-        <div className={styles.shows}>Shows</div>
-        <div className={styles.aboutUs}>About Us</div>
-        <div className={styles.community}>Community</div>
-        <div className={styles.creatorStudio}>Creator Studio</div>
-        <div className={styles.editProfile}>Edit Profile</div>
-        <div className={styles.setting}>Setting</div>
-        <div className={styles.setting1}>Setting</div>
-        <div className={styles.dropDownopenChild} />
-        <div className={styles.dropDownopenItem} />
-        <div className={styles.dropDownopenInner} />
-        <div className={styles.lineDiv} />
-        <div className={styles.dropDownopenChild1} />
-        <div className={styles.dropDownopenChild2} />
-      </div>
+      
+ 
     </div>
   );
 };
