@@ -6,6 +6,10 @@ import rec3 from '../images/Rectangle 33.png'
 import rec4 from '../images/rect17.png'
 import rec5 from '../images/rect18.png'
 import rec6 from '../images/rect19.png'
+import rec7 from '../images/Rectang 31.png'
+import rec8 from '../images/Rectang 32.png'
+import rec9 from '../images/Rectang 33.png'
+
 
 export const CreatorStudioPage = () => {
     return (
@@ -253,9 +257,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-24">
                                     <div className="overlap-group-6">
-                                        <img className="rectangle-4" alt="Rectangle" src={rec3} />
-                                        <img className="rectangle-5" alt="Rectangle" src={rec2}/>
-                                        <img className="rectangle-6" alt="Rectangle" src={rec1} />
+                                        <img className="rectangle-4" alt="Rectangle" src={rec6} />
+                                        <img className="rectangle-5" alt="Rectangle" src={rec5}/>
+                                        <img className="rectangle-6" alt="Rectangle" src={rec4} />
                                     </div>
                                 </div>
                             </div>
@@ -273,9 +277,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-26">
                                     <div className="overlap-group-6">
-                                        <img className="rectangle-4" alt="Rectangle" src={rec3} />
-                                        <img className="rectangle-5" alt="Rectangle" src={rec2} />
-                                        <img className="rectangle-6" alt="Rectangle" src={rec1} />
+                                        <img className="rectangle-4" alt="Rectangle" src={rec9} />
+                                        <img className="rectangle-5" alt="Rectangle" src={rec8} />
+                                        <img className="rectangle-6" alt="Rectangle" src={rec7}/>
                                     </div>
                                 </div>
                             </div>
@@ -293,9 +297,9 @@ export const CreatorStudioPage = () => {
                                 </div>
                                 <div className="group-24">
                                     <div className="overlap-group-6">
-                                        <img className="rectangle-4" alt="Rectangle" src="rectangle-33-4.png" />
-                                        <img className="rectangle-5" alt="Rectangle" src="rectangle-32-4.png" />
-                                        <img className="rectangle-6" alt="Rectangle" src="rectangle-31-4.png" />
+                                        <img className="rectangle-4" alt="Rectangle" src={rec4} />
+                                        <img className="rectangle-5" alt="Rectangle" src={rec5} />
+                                        <img className="rectangle-6" alt="Rectangle" src={rec6} />
                                     </div>
                                 </div>
                             </div>
@@ -304,6 +308,7 @@ export const CreatorStudioPage = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 };

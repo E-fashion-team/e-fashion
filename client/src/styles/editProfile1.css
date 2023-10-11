@@ -1,25 +1,25 @@
 
-.about,
+/* .about,
 .backgroundImage {
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 .backgroundImage {
   /* background: linear-gradient(113.49deg, #984d38, #181e41 63.29%); */
   width: 1440px;
   height: 2468px;
 }
-.about {
+/* .about {
   font-size: var(--font-size-xl);
   color: var(--color-white);
   text-align: center;
-}
+} */
 .faq,
 .product,
 .resource,
 .termCondition {
-  position: absolute;
+  /* position: absolute; */
   top: 50px;
   left: 0;
   font-weight: 500;
@@ -38,7 +38,7 @@
 }
 .aboutParent,
 .companyParent {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 419px;
   width: 133px;
@@ -49,7 +49,7 @@
   width: 119px;
 }
 .loremIpsumDolor {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   line-height: 25px;
@@ -58,7 +58,7 @@
   width: 288px;
 }
 .loremIpsumDolorSitAmetCoWrapper {
-  position: absolute;
+  /* position: absolute; */
   top: 50px;
   left: 0;
   width: 288px;
@@ -72,7 +72,7 @@
   flex-shrink: 0;
 }
 .youtubeParent {
-  position: absolute;
+  /* position: absolute; */
   top: 136px;
   left: 0;
   display: flex;
@@ -88,12 +88,12 @@
   width: 264px;
   height: 161px;
 }
-.footer1 {
+/* .footer1 {
   top: 0;
   left: 0;
   width: 1197px;
   height: 202px;
-}
+} */
 .footer,
 .footer1,
 .logo {
@@ -106,7 +106,7 @@
   color: var(--color-slateblue);
   text-align: center;
 }
-.footer {
+/* .footer {
   top: 2226px;
   left: 122px;
   width: 1197px;
@@ -114,8 +114,8 @@
   font-size: var(--font-size-mini);
   color: var(--color-gray-300);
   font-family: var(--font-poppins);
-}
-.coverImageIcon {
+} */
+/* .coverImageIcon {
   position: absolute;
   top: 0;
   left: 0;
@@ -123,13 +123,13 @@
   width: 1040px;
   height: 355px;
   object-fit: cover;
-}
-.vectorIcon {
+} */
+/* .vectorIcon {
   position: relative;
   width: 14px;
   height: 14px;
 }
-.editCoverImage,
+.editCoverImage, */
 .editProfile {
   position: absolute;
   top: 287px;
@@ -871,7 +871,7 @@
   height: 320px;
   font-size: var(--font-size-xl);
 }
-.logo1 {
+/* .logo1 {
   position: absolute;
   top: 27.72%;
   left: 3.54%;
@@ -888,8 +888,8 @@
 }
 .personalCollection {
   left: 760.5px;
-}
-.searchBarChild {
+} */
+/* .searchBarChild {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -928,15 +928,15 @@
   bottom: 26.73%;
   left: 11.94%;
   font-size: var(--font-size-sm);
-}
-.headerChild,
+} */
+/* .headerChild,
 .vectorIcon16 {
   position: absolute;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
-}
-.headerChild {
+} */
+/* .headerChild {
   height: 43.56%;
   width: 3.06%;
   top: 28.71%;
@@ -966,14 +966,14 @@
   border-radius: var(--br-7xs);
   background: linear-gradient(214.02deg, #b75cff, #671ae4);
   display: none;
-}
-.explore {
+} */
+/* .explore {
   position: absolute;
   top: 0;
   left: 0;
   font-weight: 600;
-}
-.vectorIcon17 {
+} */
+/* .vectorIcon17 {
   position: absolute;
   height: 31.58%;
   width: 15.04%;
@@ -992,8 +992,8 @@
   left: 653.5px;
   width: 66.5px;
   height: 19px;
-}
-.headerInner {
+} */
+/* .headerInner {
   height: 20.79%;
   width: 3.96%;
   top: 39.6%;
@@ -1009,8 +1009,8 @@
   top: 41px;
   left: 938px;
   font-weight: 600;
-}
-.vectorIcon18 {
+} */
+/* .vectorIcon18 {
   position: absolute;
   height: 31.58%;
   width: 19.61%;
@@ -1021,20 +1021,20 @@
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
-}
-.moreParent {
+} */
+/* .moreParent {
   position: absolute;
   top: 41px;
   left: 1021px;
   width: 51px;
   height: 19px;
-}
-.wallet {
+} */
+/* .wallet {
   position: relative;
   letter-spacing: 0.02em;
   font-weight: 600;
-}
-.walletWrapper {
+} */
+/* .walletWrapper {
   position: absolute;
   top: 32px;
   left: 1217px;
@@ -1048,15 +1048,15 @@
   align-items: center;
   justify-content: center;
   padding: var(--padding-3xs);
-}
-.header {
+} */
+/* .header {
   position: absolute;
   top: 0;
   left: 0;
   width: 1440px;
   height: 101px;
-}
-.shows,
+} */
+/* .shows,
 .stats {
   position: absolute;
   top: 15px;
@@ -1114,8 +1114,8 @@
 .dropDownopenItem,
 .lineDiv {
   top: 78.75px;
-}
-.dropDownopenChild1,
+} */
+/* .dropDownopenChild1,
 .dropDownopenChild2,
 .dropDownopenInner,
 .lineDiv {
@@ -1132,8 +1132,8 @@
 }
 .dropDownopenChild2 {
   top: 228.75px;
-}
-.dropDownopen {
+} */
+/* .dropDownopen {
   position: absolute;
   top: 70px;
   left: 1014.5px;
@@ -1144,8 +1144,8 @@
   height: 269px;
   overflow: hidden;
   font-size: var(--font-size-sm);
-}
-.editProfilePage {
+} */
+/* .editProfilePage {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
@@ -1155,4 +1155,4 @@
   font-size: var(--font-size-base);
   color: var(--color-white);
   font-family: var(--font-sf-pro-display);
-}
+} */
