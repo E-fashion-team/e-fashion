@@ -1,6 +1,8 @@
 import React,{ FunctionComponent, useCallback, useState , ChangeEvent} from "react";
-import "../SignIn.css";
 import img from "../images/image boy.png"
+import facebook from "../images/facebook.png"
+import apple from "../images/apple.png"
+import google from "../images/google.png"
 import styles from "./SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
@@ -18,11 +20,11 @@ interface FormData {
 
 const SignIn: FunctionComponent = () => {
 
-  const onNewUserCreateClick = (e: React.MouseEvent) => {
-  //   <Link to="/signup" >
-  //   Create an account
-  // </Link>
-  };
+
+  const onNewUserCreateClick = () => {
+    <Link to="/signUp" > </Link>
+  }
+  
 
 
   
@@ -59,62 +61,64 @@ const SignIn: FunctionComponent = () => {
 
   return (
     
-    <div className={styles.signIn}>
-    <div className={styles.signInChild} />
-    <div className={styles.rectangleParent}>
-      <div className={styles.groupChild} />
-      <b className={styles.exploreTheWorld}>
+    <div className={styles.sign_In}>
+    <div className={styles.sign_InChild} />
+    <div className={styles.rectangle_Parent}>
+      <div className={styles.group_Child} />
+      <b className={styles.explore_TheWorld}>
         Explore the world of meta fashion
       </b>
       <div
-        className={styles.newUserCreateContainer}
+        className={styles.new_UserCreateContainer}
         onClick={onNewUserCreateClick}
       >
         <span>New user?</span>
-        <span className={styles.createAnAccount} 
+        <span className={styles.create_AnAccount} 
         onClick={onNewUserCreateClick}> Create an account</span>
       </div>
       <div className={styles.or}>Or</div>
-      <div   className={styles.emailAddressParent1}>
-      <input className={styles.emailAddress} name="email" type="text" placeholder="Email Address" onChange={handleChange}/>
-      </div>
-      <div className={styles.emailAddressParent}>
-        <input className={styles.emailAddress} name="password" type="password" placeholder="Password"  onChange={handleChange}/>
-        <div className={styles.groupItem} /> </div>
+      <div   className={styles.email_AddressParent1}>
+      <input className={styles.email_Address1} name="email" type="text" placeholder="Email Address" onChange={handleChange}/>
+      <div className={styles.group_Item2} />
       
-      <div className={styles.rectangleGroup}>
-        <div className={styles.groupInner} />
-        <div className={styles.groupParent}>
+      </div>
+      <div className={styles.email_AddressParent}>
+        <input className={styles.email_Address} name="password" type="password" placeholder="Password"  onChange={handleChange}/>
+        <div className={styles.group_Item} /> </div>
+      
+      <div className={styles.rectangle_Group}>
+        <div className={styles.group_Inner} />
+        <div className={styles.group_Parent}>
           <img
-            className={styles.groupIcon}
-            alt=""
+            className={styles.group_Icon}
+            alt="" src={google}
            
           />
-          <div className={styles.continueWithGoogle}>
+          <div className={styles.continue_WithGoogle}>
             Continue With Google
           </div>
         </div>
       </div>
-      <div className={styles.rectangleContainer}>
-        <div className={styles.rectangleDiv} />
-        <img className={styles.groupIcon1} alt=""  />
-        <div className={styles.continueWithFacebook}>
+      <div className={styles.rectangle_Container}>
+        <div className={styles.rectangle_Div} />
+        <img className={styles.group_Icon1} alt="" src={facebook}  />
+        <div className={styles.continue_WithFacebook}>
           Continue With Facebook
         </div>
       </div>
-      <div className={styles.groupDiv}>
-        <div className={styles.groupChild1} />
-        <img className={styles.vectorIcon} alt=""  />
-        <div className={styles.continueWithFacebook}>Continue With Apple</div>
+      <div className={styles.group_Div}>
+        <div className={styles.group_Child1} />
+        <img className={styles.vector_Icon} alt="" src={apple} />
+        <div className={styles.continue_WithFacebook}>Continue With Apple</div>
       </div>
     </div>
-    <img className={styles.image8Icon} alt="" src={img}  />
-    <div className={styles.signIn1}>Sign In</div>
-    <div className={styles.continueWrapper}>
-      <div className={styles.continue} onClick={handleSubmit}>Continue</div>
+    <img className={styles.image_8Icon} alt="" src={img}  />
+    <div className={styles.sign_In1}>Sign In</div>
+    <div className={styles.continue_Wrapper}>
+      <div className={styles._continue} onClick={handleSubmit}>Continue</div>
     </div>
   </div>
 );
 };
 
-export default SignIn;
+export default SignIn

@@ -9,10 +9,14 @@ import rec6 from '../images/rect19.png'
 import rec7 from '../images/Rectang 31.png'
 import rec8 from '../images/Rectang 32.png'
 import rec9 from '../images/Rectang 33.png'
+import NavBar from './NavBar'
+import Footer from './Footer'
 
 
 export const CreatorStudioPage = () => {
     return (
+        <div>
+            <NavBar/>
         <div className="creator-studio-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -213,12 +217,9 @@ export const CreatorStudioPage = () => {
                         </div>
                     </div>
                     <div className="group-15">
-                        <div className="overlap-3">
-                            
-                            <div className="text-wrapper-27">LOGO</div>
-                        </div>
+                       
                     </div>
-                    <img className="line-6" alt="Line" src="line-370.svg" />
+                    <div className="line-6" />
                     <div className="overlap-4">
                         <div className="frame-6">
                             <div className="group-20">
@@ -309,6 +310,8 @@ export const CreatorStudioPage = () => {
                 </div>
             </div>
             
+        </div>
+        <Footer/>
         </div>
     );
 };

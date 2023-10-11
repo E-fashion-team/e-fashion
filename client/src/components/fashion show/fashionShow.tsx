@@ -1,8 +1,12 @@
 import { FunctionComponent } from "react";
-import styles from "./FashionShow.module.css";
+import styles from "../../styles/FashionShow.module.css";
+import NavBar from "../NavBar";
+import Footer from "../Footer";
 
 const FashionShow: FunctionComponent = () => {
-  return (
+  return (<div>
+    <NavBar/>
+ 
     <div className={styles.fashionShow}>
       <div className={styles.fashionShowChild} />
       
@@ -95,6 +99,8 @@ const FashionShow: FunctionComponent = () => {
       
         </div>
     
+    </div>
+    <Footer/>
     </div>
   );
 };

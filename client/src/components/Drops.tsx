@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/drops.css'
 import BrandDropCard from './BrandDropCard'
+import NavBar from './NavBar'
+import Footer from './Footer'
 
 const Drops = () => {
     return (
+    <div>
+        
+  <div className='nav'><NavBar/>  </div>
         <div className='exclusive'>
             <div className="label">
                 <div className="text-wrapper">Exclusive Drops</div>
@@ -18,8 +23,11 @@ const Drops = () => {
                     <BrandDropCard/>
                     </div>
             </div> 
-            
+          
      </div>
+      <Footer/>  
+    </div>
+    
     )
 }
 

@@ -9,13 +9,15 @@ import rect6 from '../images/Rectangle 6.png'
 import rect7 from '../images/Rectangle 7.png'
 import rect8 from '../images/Rectangle 8.png'
 import rect9 from '../images/Rectangle 9.png'
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 
 
 export default function About (){
     return(
-    
-
+    <div>
+<NavBar/>
         <div className="about-us-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -142,8 +144,8 @@ export default function About (){
                 </div>
             </div>
         </div>
-
-
+<Footer/>
+        </div>
 
     )
 }
