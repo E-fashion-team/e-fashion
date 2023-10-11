@@ -2,19 +2,11 @@
 import React,{useState}  from 'react';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-
+import "./App.css"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import axios from 'axios'
-import Home  from "./pages/Home"
-import About from './components/About'
-import {CreatorStudioPage} from './components/CreatorStudio'
-import Market from "./components/market/market"
-
-import { Stats } from './components/Statistique';
-
-import { Routes, Route } from "react-router-dom";
 import About from './components/About';
 import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
@@ -27,7 +19,6 @@ import SignIn from './components/SignIn';
 import FashionShow from "./components/fashion show/fashionShow"
 
 import { Market } from './components/Market';
-
 
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
