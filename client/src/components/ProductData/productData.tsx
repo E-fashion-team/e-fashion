@@ -1,11 +1,22 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+
+
+enum Category{
+  Men="men",
+ Women= "women",
+  Kids="kids",
+ Other= "other"
+
+
+}
 interface Product {
  
   id: number;
   name: string;
-  price: number;
+  price: number;  
   image:string;
+category:Category.Other
 
 }
 
