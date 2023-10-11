@@ -23,8 +23,6 @@ function App() {
 <div>
   
       <NavBar/>
-   
-   
   <Routes>
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
@@ -33,6 +31,7 @@ function App() {
 <Route path="/about" element={< About/>}/>
 <Route path="/studio"   element={< CreatorStudioPage/>} />
 <Route path='/stats' element={<Stats />}/>
+<Route path='/drops' element={<Drops />}/>
 
 
   </Routes> 

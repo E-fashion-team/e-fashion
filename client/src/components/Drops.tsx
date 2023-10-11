@@ -14,8 +14,11 @@ const Drops = () => {
                         enim, libero. In dignissim tortor sit sit convallis morbi.
                     </p>
                 </div>
+                <div>
+                    <BrandDropCard/>
+                    </div>
             </div> 
-            <BrandDropCard/>
+            
      </div>
     )
 }

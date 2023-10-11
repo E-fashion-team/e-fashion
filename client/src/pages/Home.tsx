@@ -9,6 +9,7 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+import NavBar from '../components/NavBar'
 
 
 const Home: FunctionComponent = () => {
