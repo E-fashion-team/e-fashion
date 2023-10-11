@@ -19,9 +19,15 @@ import { Stats } from './components/Statistique';
 import FashionShow from "./components/fashion show/fashionShow"
 
 import { Market } from './components/Market';
-
+import './App.css'
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
+
+import Drops from './components/Drops';
+import ClientCard from './components/ClientCard';
+import FashionShows from './components/FashionShows';
+function App() {
+
 
 
 import Drops from './components/Drops';
@@ -30,22 +36,36 @@ function App() {
 
   return (
 <div>
-<Routes>
+
+  
+
+  <Routes>
+  <Route path="/market"      element={<Market/>}/> 
+
+<Route  path="/explore"  element={<ExplorePage/>}  />
+ <Route path="/edit" element={< EditProfile/>}/> 
+<Route path="/about" element={< About/>}/>
+<Route path="/studio"   element={< CreatorStudioPage/>} />
+<Route path='/stats' element={<Stats />}/>
+<Route path='/drops' element={<Drops />}/>
+<Route path='/clientCard' element={<ClientCard />}/>
+<Route path='/fashionShows' element={<FashionShows />}/>
+
+
+
     <Route path="/signUp"      element={<SignUp/>}/> 
     <Route path="/signIn"      element={<SignIn/>}/> 
 
       {/* <NavBar/> */}
  
     <Route path="/"      element={<Home/>}/> 
-    {/* <Route path="/market"      element={<Market/>}/>  */}
-    <Route path="/explore"  element={<ExplorePage/>}  />
-    <Route path="/edit" element={< EditProfile/>}/> 
-    <Route path="/about" element={< About/>}/>
-    <Route path="/studio"   element={< CreatorStudioPage/>} />
-    <Route path='/stats' element={<Stats />}/>
-    <Route path='/drops' element={<Drops />}/>
+   
+
+
+
   </Routes> 
    {/* <Footer/> */}
+
  </div>
 
 
