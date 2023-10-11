@@ -8,11 +8,12 @@ import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
 import { Market } from './components/Market';
-
+import './App.css'
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
 import Drops from './components/Drops';
 import ClientCard from './components/ClientCard';
+import FashionShows from './components/FashionShows';
 function App() {
 
 
@@ -21,7 +22,7 @@ function App() {
   return (
 <div>
   
-      <NavBar/>
+
   <Routes>
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
@@ -32,8 +33,8 @@ function App() {
 <Route path='/stats' element={<Stats />}/>
 <Route path='/drops' element={<Drops />}/>
 <Route path='/clientCard' element={<ClientCard />}/>
+<Route path='/fashionShows' element={<FashionShows />}/>
   </Routes> 
-   <Footer/>
  </div>
 
   );
