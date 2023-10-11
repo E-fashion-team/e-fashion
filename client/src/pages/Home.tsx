@@ -13,6 +13,7 @@ import { data } from '../torbagaDummyData' //this line will be deleted when we i
 import ProductCard from '../components/ProductCard'
 
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 
 
@@ -24,7 +25,7 @@ const Home: FunctionComponent = () => {
         setProducts(data)
     }, [])
 
-    return (
+    return (<div><NavBar />
         <div id='homePage'>
 
             <div className="topSectionBtns">
@@ -193,6 +194,8 @@ const Home: FunctionComponent = () => {
                     </div>
             </div>
 
+        </div>
+        <Footer/>
         </div>
     )
 }

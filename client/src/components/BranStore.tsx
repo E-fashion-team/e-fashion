@@ -5,9 +5,12 @@ import asset2 from '../images/BrandStorepage/image 13.png'
 import asset3 from '../images/BrandStorepage/image 15.png'
 import asset4 from "../images/BrandStorepage/Vector (1).svg"
 import "../styles/BrandStorePage.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export const BrandStorePage = () => {
-    return (
+    return (<div>
+        <NavBar/>
         <div className="brand-store-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -195,6 +198,8 @@ export const BrandStorePage = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };

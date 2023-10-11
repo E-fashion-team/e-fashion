@@ -15,9 +15,14 @@ import vec12 from "../images/messages/send.svg"
 
 
 import "../styles/messages.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export const Messages = () => {
-    return (
+    return (<div>
+    <div>
+        <NavBar/>
+    </div>
         <div className="messages">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -159,6 +164,8 @@ export const Messages = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React,{ FunctionComponent, useCallback, useState , ChangeEvent} from "react";
-import "../SignIn.css";
+import "../styles/SignIn.module.css";
 import img from "../images/image boy.png"
-import styles from "./SignIn.module.css";
+import styles from "../styles/SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import {signinUser} from "../store/signinReduser"

@@ -6,9 +6,12 @@ import vec from '../images/Brandpage/Vector.svg'
 import vec1 from '../images/Brandpage/Vector (1).svg'
 import grp from '../images/Brandpage/Group.svg'
 import "../styles/BrandPage.css";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export const BrandPage = () => {
-    return (
+    return (<div>
+        <NavBar/>
         <div className="brand-page">
             <div className="overlap-wrapper">
                 <div className="overlap">
@@ -415,6 +418,8 @@ export const BrandPage = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     );
 };
