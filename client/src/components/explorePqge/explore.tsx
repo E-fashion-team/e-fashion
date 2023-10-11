@@ -10,41 +10,8 @@ const ExplorePage: FunctionComponent = () => {
     <div className={styles.explorePage}>
       <div className={styles.explorePageChild} />
       <div className={styles.exploreCollections}>Explore Collections</div>
-      <div className={styles.footerParent}>
-        <div className={styles.footer}>
-          <div className={styles.aboutParent}>
-            <b className={styles.about}>About</b>
-            <div className={styles.product}>Product</div>
-            <div className={styles.resource}>Resource</div>
-            <div className={styles.termCondition}>{`Term & Condition`}</div>
-            <div className={styles.faq}>FAQ</div>
-          </div>
-          <div className={styles.companyParent}>
-            <b className={styles.about}>Company</b>
-            <div className={styles.product}>Our Team</div>
-            <div className={styles.resource}>Partner With Us</div>
-            <div className={styles.termCondition}>{`Privacy & Policy`}</div>
-            <div className={styles.faq}>Features</div>
-          </div>
-          <div className={styles.loremIpsumDolorSitAmetCoWrapper}>
-            <div className={styles.loremIpsumDolor}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Scelerisque donec non pellentesque ut.
-            </div>
-          </div>
-          <div className={styles.contactParent}>
-            <b className={styles.about}>Contact</b>
-            <div className={styles.product}>+012 3456789</div>
-            <div className={styles.resource}>adorableprogrammer@gmail.com</div>
-            <div className={styles.youtubeParent}>
-              <img className={styles.youtubeIcon} alt="" src="/youtube.svg" />
-              <img className={styles.youtubeIcon} alt="" src="/discord.svg" />
-              <img className={styles.youtubeIcon} alt="" src="/instagram.svg" />
-            </div>
-          </div>
-        </div>
-        <b className={styles.logo}>LOGO</b>
-      </div>
+      
+        
       <div className={styles.groupParent}>
         <div className={styles.sellerParent}>
           <div className={styles.seller}>
