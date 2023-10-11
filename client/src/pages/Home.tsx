@@ -137,7 +137,7 @@ const Home: FunctionComponent = () => {
                         </h2>
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
-                    <div>
+                    <div className='productSection'>
                         {
                         // data.map((product: object) => (<ProductCard key={product.id}>{product}</ProductCard>))
                         products.map((product) => <ProductCard/>)

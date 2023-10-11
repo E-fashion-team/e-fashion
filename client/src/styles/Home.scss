@@ -1,15 +1,17 @@
 $darkBackGround: #493E52;
 $lightText: rgba(255, 255, 255, 0.5);
+$hoverLightColor: rgba(255, 255, 255, 0.16);
 $lightBlue: #be96f5;
 $hoverLightBlue: #ac7af3;
 $heavyBlue: #6C5DD3;
-$hoverLightColor: rgba(255, 255, 255, 0.16);
 $hoverHeavyColor: #4e3cc0;
 $br6: 6px;
 $br10: 10px;
 $br184: 184px;
 $br206: 206.71px;
 $p13: 13px;
+$g10: 10px;
+$g20: 20px;
 $fs18: 18.78;
 $fs20: 20px;
 $fs28: 28px;
@@ -35,7 +37,7 @@ $fs60: 60px;
         width: 100%;
         justify-content: center;
         gap: 5%;
-        margin: 50px 0px;
+        margin: 100px 0px;
 
         button {
             border-radius: $br206;
@@ -306,6 +308,7 @@ $fs60: 60px;
                 padding: 10px 70px;
                 background-color: $darkBackGround;
                 border-radius: $br10;
+                font-size: $fs20;
                 cursor: pointer;
             }
 
@@ -313,6 +316,14 @@ $fs60: 60px;
                 background-color: $hoverLightColor;
             }
         }
+
+        .productSection {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: $g20;
+            padding: 100px;
+        }
+
         .supportQuest {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -359,5 +370,6 @@ $fs60: 60px;
                 background-color: $hoverLightBlue;
             }
         }
+
     }
 }
