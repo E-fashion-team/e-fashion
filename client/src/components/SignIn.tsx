@@ -20,9 +20,11 @@ interface FormData {
 
 const SignIn: FunctionComponent = () => {
 
+
   const onNewUserCreateClick = () => {
     <Link to="/signUp" > </Link>
-  };
+  }
+  
 
 
   
@@ -119,4 +121,4 @@ const SignIn: FunctionComponent = () => {
 );
 };
 
-export default SignIn;
+export default SignIn

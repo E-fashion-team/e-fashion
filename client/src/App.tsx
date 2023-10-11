@@ -12,7 +12,7 @@ import Home  from "./pages/Home"
 import EditProfile from './components/editProfile/editProfile'
 import About from './components/About'
 import {CreatorStudioPage} from './components/CreatorStudio'
-import Market from "./components/market/market"
+// import Market from "./components/market/market"
 import { Stats } from './components/Statistique';
 import Drops from './components/Drops';
 
@@ -23,11 +23,11 @@ function App() {
 <Routes>
     <Route path="/signUp"      element={<SignUp/>}/> 
     <Route path="/signIn"      element={<SignIn/>}/> 
-</Routes>
+
       {/* <NavBar/> */}
-  <Routes>
+ 
     <Route path="/"      element={<Home/>}/> 
-    <Route path="/market"      element={<Market/>}/> 
+    {/* <Route path="/market"      element={<Market/>}/>  */}
     <Route path="/explore"  element={<ExplorePage/>}  />
     <Route path="/edit" element={< EditProfile/>}/> 
     <Route path="/about" element={< About/>}/>
