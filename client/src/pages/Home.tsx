@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { FunctionComponent, useState, useEffect } from 'react'
 import '../styles/Home.scss'
-import { FunctionComponent } from 'react'
 import adidas from './imgs/adidas.png'
 import puma from './imgs/puma.png'
 import lacoste from './imgs/lacoste.png'
@@ -9,14 +8,25 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+
+import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
+import ProductCard from '../components/ProductCard'
+
 import NavBar from '../components/NavBar'
+
 
 
 const Home: FunctionComponent = () => {
 
+    const [products, setProducts] = useState<object[]>([])
+
+    useEffect(() => {
+        setProducts(data)
+    }, [])
+
     return (
         <div id='homePage'>
-          
+
             <div className="topSectionBtns">
                 <button className='mainColl'>Main Collection</button>
                 <button className='creatorsMarket'>Creators Market</button>
@@ -58,21 +68,6 @@ const Home: FunctionComponent = () => {
                         </div>
                     </span>
                     <span className='rightSection'>
-                        {/* <div className='allImgs'>
-                            <div>
-                                <img src={img1} id='img1'/>
-                                <img src={img2} id='img2'/>
-                            </div>
-                            <div>
-                                <img src={img3} id='img3'/>
-                                <img src={img4} id='img4'/>
-                            </div>
-                            <div>
-                                <img src={img5} id='img5'/>
-                                <img src={img6} id='img6'/>
-                            </div>
-                        </div>
-                        <img src={img7} id='img7'/> */}
                         <img src={allImgs} alt="" />
                     </span>
                 </span>
@@ -138,7 +133,7 @@ const Home: FunctionComponent = () => {
                         <h4>Live Shows</h4>
                     </span>
                     <span>
-                        {//? products will be mapped and rendered here
+                        {//?* products will be mapped and rendered here
                         }
                     </span>
                     <span>
@@ -147,10 +142,12 @@ const Home: FunctionComponent = () => {
                         </h2>
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
-                    <span>
-                        {//? only new products will be mapped and rendered here
+                    <div className='productSection'>
+                        {
+                        // data.map((product: object) => (<ProductCard key={product.id}>{product}</ProductCard>))
+                        products.map((product) => <ProductCard/>)
                         }
-                    </span>
+                    </div>
                     <span>
                         <h2>
                             Upcoming Creators
@@ -158,7 +155,7 @@ const Home: FunctionComponent = () => {
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
                     <span>
-                        {//? only Upcoming Creators will be mapped and rendered here
+                        {//* only Upcoming Creators will be mapped and rendered here
                         }
                     </span>
                     <span>
@@ -167,10 +164,10 @@ const Home: FunctionComponent = () => {
                         </h2>
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
-                    {//? only Upcoming Creators will be mapped and rendered here
+                    {//* only Upcoming Creators will be mapped and rendered here
                     }
                     <span>
-                        {//? only Upcoming Brands will be mapped and rendered here
+                        {//* only Upcoming Brands will be mapped and rendered here
                         }
                     </span>
                 </div>
@@ -195,7 +192,7 @@ const Home: FunctionComponent = () => {
                         <button>Get Started</button>
                     </div>
             </div>
-           
+
         </div>
     )
 }

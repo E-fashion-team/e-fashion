@@ -1,3 +1,4 @@
+
 import React from 'react'
 import '../styles/clientDard.css'
 import danCristan from '../images/danCristan.png'
@@ -22,6 +23,8 @@ const ClientCard = () => {
 </button>
     </div>
   </div>
+
+
   )
 }
 
