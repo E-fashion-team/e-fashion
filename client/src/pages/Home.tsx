@@ -8,8 +8,12 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import ProductCard from '../components/ProductCard'
+
+import NavBar from '../components/NavBar'
+
 
 
 const Home: FunctionComponent = () => {
@@ -22,6 +26,7 @@ const Home: FunctionComponent = () => {
 
     return (
         <div id='homePage'>
+
             <div className="topSectionBtns">
                 <button className='mainColl'>Main Collection</button>
                 <button className='creatorsMarket'>Creators Market</button>
@@ -187,6 +192,7 @@ const Home: FunctionComponent = () => {
                         <button>Get Started</button>
                     </div>
             </div>
+
         </div>
     )
 }
