@@ -7,7 +7,14 @@ import About from './components/About';
 import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
+
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+
+import FashionShow from "./components/fashion show/fashionShow"
+
 import { Market } from './components/Market';
+
 
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
@@ -21,8 +28,16 @@ function App() {
   return (
 <div>
   
-      <NavBar/>
+      {/* <NavBar/> */}
   <Routes>
+
+
+  <Route path="/fashion" element={<FashionShow/>}/> 
+
+   <Route path="/"      element={<Home/>}/> 
+  <Route path="/signUp"      element={<SignUp/>}/> 
+<Route path="/signIn"      element={<SignIn/>}/> 
+
   <Route path="/market"      element={<Market/>}/> 
   <Route path="/home"      element={<Home/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
@@ -33,7 +48,7 @@ function App() {
 <Route path='/drops' element={<Drops />}/>
 <Route path='/clientCard' element={<ClientCard />}/>
   </Routes> 
-   <Footer/>
+   {/* <Footer/> */}
  </div>
 
   );
