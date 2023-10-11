@@ -1,0 +1,67 @@
+$lightText: rgba(255, 255, 255, 0.5);
+$darkBackGround: rgba(255, 255, 255, 0.10);
+$br10: 10px;
+$g10: 10px;
+$g20: 20px;
+$g30: 30px;
+$p10: 10px;
+$p20: 20px;
+
+#allNftPage {
+    width: 100%;
+    min-height: 750px;
+    display: flex;
+    flex-direction: row;
+    gap: $g20;
+    padding: $p20;
+
+    .sideBar {
+        background-color: $darkBackGround;
+        min-height: 100%;
+        width: 20%;
+        border-radius: $br10;
+        padding-bottom: $p10;
+        display: flex;
+        flex-direction: column;
+        gap: $g30;
+
+
+        .topSection {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: $g20;
+            padding: $p20;
+        }
+
+        .sideOptions {
+            display: flex;
+            flex-direction: column;
+            gap: $g20;
+
+
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: solid 1px $lightText;
+                padding: 0px 10px;
+
+                h6 {
+                    padding: $p10;
+                }
+            }
+
+        }
+        .sideOptions:nth-child(6) {
+            border: none;
+        }
+    }
+
+    .content {
+        background-color: $darkBackGround;
+        border-radius: $br10;
+        width: 100%;
+    }
+}

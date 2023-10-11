@@ -25,6 +25,7 @@ import SignIn from './components/SignIn';
 
 
 import Drops from './components/Drops';
+import AllNFT from './pages/AllNFT';
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
 <Route path="/studio"   element={< CreatorStudioPage/>} />
 <Route path='/stats' element={<Stats />}/>
 <Route path='/drops' element={<Drops />}/>
+<Route path='/allNFT' element={<AllNFT />}/>
 
 
   </Routes> 
