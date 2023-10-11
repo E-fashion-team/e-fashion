@@ -4,7 +4,7 @@ const {db}=require("../models/model")
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
+const JWT_SECRET = process.env.jwt;
 const verifyUserLogin = async (email,password)=>{
     try {
         const client = await db.User.findOne({where:{email:email}})
@@ -86,14 +86,15 @@ module.exports={
      },  signUp :  async (req,res) =>{
         
         try {
-            const {name,email,image,password} = req.body 
+            const {name,email,image,password,role,dateOfBirth} = req.body 
             const pass = await bcrypt.hash(password,10)
             const response  = await db.User.create({
                 name,
                 email,
                 image,
                 password:pass,
-                role   
+                role ,
+                dateOfBirth 
             })
             res.status(200).send(response)
             // return res.redirect("/signin")

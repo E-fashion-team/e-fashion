@@ -8,7 +8,7 @@ import '../styles/footer.css'
 
 const Footer = () => {
     return (
-        <div className='about-us-page'>
+        <div className='footer'>
         <div className="group-18">
                         <div className="overlap-2">
                             <footer className="footer">

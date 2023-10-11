@@ -16,9 +16,7 @@ const Home: FunctionComponent = () => {
 
     return (
         <div id='homePage'>
-            <div>
-            </div>
-            {/*  */}
+          
             <div className="topSectionBtns">
                 <button className='mainColl'>Main Collection</button>
                 <button className='creatorsMarket'>Creators Market</button>
@@ -197,8 +195,7 @@ const Home: FunctionComponent = () => {
                         <button>Get Started</button>
                     </div>
             </div>
-            {/*  */}
-            <div>Footer</div>
+           
         </div>
     )
 }
