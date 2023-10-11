@@ -30,7 +30,7 @@ function App() {
   return (
 <div>
   
-      <NavBar/>
+      {/* <NavBar/> */}
   <Routes>
 
     <Route path="/"      element={<Home/>}/> 
@@ -42,7 +42,7 @@ function App() {
 <Route path="/studio"   element={< CreatorStudioPage/>} />
 <Route path='/stats' element={<Stats />}/>
 <Route path='/drops' element={<Drops />}/>
-<Route path='/allNFT' element={<AllNFT />}/>
+<Route path='/NFT' element={<AllNFT />}/>
 
 
   </Routes> 

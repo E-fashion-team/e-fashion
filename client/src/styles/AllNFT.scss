@@ -1,5 +1,6 @@
 $lightText: rgba(255, 255, 255, 0.5);
 $darkBackGround: rgba(255, 255, 255, 0.10);
+$br5: 5px;
 $br10: 10px;
 $g10: 10px;
 $g20: 20px;
@@ -60,8 +61,65 @@ $p20: 20px;
     }
 
     .content {
-        background-color: $darkBackGround;
         border-radius: $br10;
-        width: 100%;
+        width: 80%;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: $p20;
+
+            .results {
+                color: rgba(255, 255, 255, 0.80);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+
+            .sort {
+                display: flex;
+                gap: $g10;
+
+                .allBtn {
+                    background-color: inherit;
+                    display: flex;
+                    width: 178px;
+                    height: 42px;
+                    padding: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    border-radius: $br5;
+                    border: 0.5px solid #FFF;
+                    color: white;
+                }
+                
+                .allBtn:hover {
+                    background-color: $darkBackGround;
+                }
+
+                select {
+                    background-color: inherit;
+                    display: flex;
+                    width: 178px;
+                    height: 42px;
+                    padding: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                    border-radius: 5px;
+                    border: 0.5px solid #FFF;
+                }
+            }
+        }
+        .cards {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
