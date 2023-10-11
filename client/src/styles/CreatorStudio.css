@@ -1,5 +1,5 @@
 .creator-studio-page {
-    background-color: #ffffff;
+    background-color: inherit;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,13 +7,15 @@
 }
 
 .creator-studio-page .overlap-wrapper {
-    background-color: #ffffff;
-    height: 5660px;
-    width: 1440px;
+    background: linear-gradient(90deg, rgba(105,60,59,1) 0%, rgba(24,30,65,1) 99%);
+   
+
+    height: 100%;
+    width: 100%;
 }
 
 .creator-studio-page .overlap {
-    background: linear-gradient(180deg, rgb(152.03, 76.93, 56.26) 0%, rgb(24, 30, 65) 63.29%);
+ 
     height: 5660px;
     position: relative;
 }
@@ -433,7 +435,6 @@
     line-height: normal;
     margin-top: -1px;
     position: relative;
-    text-fill-color: transparent;
     width: fit-content;
 }
 
@@ -672,6 +673,7 @@
     position: absolute;
     top: 0;
     width: 1440px;
+    background-color: inherit;
 }
 
 .creator-studio-page .frame-6 {
