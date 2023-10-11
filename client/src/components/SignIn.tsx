@@ -18,10 +18,10 @@ interface FormData {
 
 const SignIn: FunctionComponent = () => {
 
-  const onNewUserCreateClick = () => {
-    <Link to="/signup" >
-    Create an account
-  </Link>
+  const onNewUserCreateClick = (e: React.MouseEvent) => {
+  //   <Link to="/signup" >
+  //   Create an account
+  // </Link>
   };
 
 

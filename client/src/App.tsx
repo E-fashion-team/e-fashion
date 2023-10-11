@@ -1,30 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
-import SignIn from './components/SignIn';
-
 
 import './App.css';
-import SignUp from './components/SignUp';
-import { Route, Routes } from 'react-router-dom';
-
-const App: React.FC = () => {
 
 
- 
-  return (
-
-    <div>
-
-   
-{/* <Routes>
-<Route path="/signUp"      element={<SignUp/>}/> 
-<Route path="/signIn"      element={<SignIn/>}/> 
-</Routes>  */}
-
-// import Drops from './components/Drops';
 import React,{useState}  from 'react';
 
-import './App.css';
+import './App.css'
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -37,8 +18,9 @@ import About from './components/About'
 import {CreatorStudioPage} from './components/CreatorStudio'
 import Market from "./components/market/market"
 
-
 import { Stats } from './components/Statistique';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 
 
 
@@ -55,8 +37,11 @@ function App() {
       <NavBar/>
   <Routes>
 
-    <Route path="/"      element={<Home/>}/> 
 
+
+   <Route path="/"      element={<Home/>}/> 
+  <Route path="/signUp"      element={<SignUp/>}/> 
+<Route path="/signIn"      element={<SignIn/>}/> 
   <Route path="/market"      element={<Market/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
  <Route path="/edit" element={< EditProfile/>}/> 
@@ -71,7 +56,7 @@ function App() {
  </div>
 
 
-</div>
+
   );
 }
 
