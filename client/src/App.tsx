@@ -15,9 +15,6 @@ import {CreatorStudioPage} from './components/CreatorStudio'
 import Market from "./components/market/market"
 
 
-import About from './components/About';
-
-import Home from './pages/Home';
 import { Stats } from './components/Statistique';
 
 
