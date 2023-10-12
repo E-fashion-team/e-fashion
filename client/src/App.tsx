@@ -2,50 +2,27 @@ import SignIn from './components/SignIn';
 import './App.css';
 import SignUp from './components/SignUp';
 import React,{useState}  from 'react';
-
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
-import ExplorePage from "./components/explorePqge/explore";
-import Home from "./pages/Home";
-import EditProfile from "./components/editProfile/editProfile";
-
 import { CreatorStudioPage } from "./components/CreatorStudio";
-
-
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
-import Drops from "./components/Drops";
-import ClientCard from "./components/ClientCard";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
 import { Messages } from "./components/messages";
 import CreateBrand from "./components/CreateBrand";
 import { Market } from "./components/Market";
-import FashionShow from "./components/fashion show/fashionShow";
 import { FasShow } from "./components/FasShow";
-=======
 import axios from 'axios'
 import About from './components/About';
-
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
 import FashionShow from "./components/fashion show/fashionShow"
-
-
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
-
-
 import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
 import Message from './components/messageTest';
-
-
-
 import Drops from './components/Drops';
 
 
@@ -79,7 +56,9 @@ function App() {
         <Route path="/createBrand" element={<CreateBrand/>}/>
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/selfash' element={<FasShow/>}/>
-
+        <Route  path='/clientCard' element={<ClientCard/>}/>
+        <Route  path='/fashionShows' element={<FashionShows/>}/>
+        <Route path="/message" element={<Message />} />
    
   
 
