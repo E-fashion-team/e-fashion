@@ -22,6 +22,7 @@ import { Messages } from "./components/messages";
 import CreateBrand from "./components/CreateBrand";
 import { Market } from "./components/Market";
 import FashionShow from "./components/fashion show/fashionShow";
+import { FasShow } from "./components/FasShow";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/messages" element={<Messages />} />
         <Route path="/createBrand" element={<CreateBrand/>}/>
         <Route path='/fashionshow'element={<FashionShow/>}/>
+        <Route  path='/selfash' element={<FasShow/>}/>
       </Routes>
    
     </div>
