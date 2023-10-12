@@ -278,11 +278,15 @@ input[type="text"] {
 input.email_Address1,
 input[type="text"] {
   color: #fffbfb;
+  outline: none;
+  width: 455px;
 }
 input.email_Address,
 input[type="password"]
  {
   color: #fffbfb;
+  outline: none;
+  width: 455px;
 }
 
 .email_Address::placeholder,
