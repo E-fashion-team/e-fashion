@@ -1,13 +1,12 @@
 const express=require('express')
 const app=express()
-
-
+const cors=require("cors")
 const http = require('http')
 const socketIo = require('socket.io')
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server,{cors:{origin:"http://localhost:3000"}});
 require("./models/model")
-const cors=require("cors")
+
 const port=5000
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
@@ -16,11 +15,12 @@ require("dotenv").config();
 
 app.use(express.json())
 
+
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors());
 
-
-app.use(cors())
+// app.use(cors())
 const routerMessages=require("./routers/messegeRouter.js")
 const routerUsers=require("./routers/userRouter.js")
 const routerProduct=require("./routers/productRouter.js")
@@ -29,28 +29,39 @@ const routerRoom=require("./routers/roomRouter.js")
 app.use("/api/message",routerMessages)
 app.use("/api/product",routerProduct)
 app.use("/api/user",routerUsers)
-app.use("/api/room",routerRoom)
+// app.use("/api/room",routerRoom)
 app.use("/api/brand",routerBrand)
 
+io.on('connection', (socket) => {
+  console.log('A user connected');
 
-
-
-
-app.get('/api', (req, res) => {
-    res.json({ message: 'This is your API!' });
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
   });
 
-  
-  io.on('connection', (socket) => {
-    console.log('A user connected');
-  
-    socket.on('disconnect', () => {
-      console.log('User disconnected');
-    });
-  })
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
 
 
-app.listen(port,()=>{
+
+
+// app.get('/api', (req, res) => {
+//     res.json({ message: 'This is your API!' });
+//   });
+
+  
+  // io.on('connection', (socket) => {
+  //   console.log('A user connected');
+  
+  //   socket.on('disconnect', () => {
+  //     console.log('User disconnected');
+  //   });
+  // })
+
+
+server.listen(port,()=>{
 
 console.log("backend running in port",port)
 

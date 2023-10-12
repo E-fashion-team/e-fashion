@@ -5,12 +5,12 @@ import axios from "axios";
 interface SignInState {
     loading: boolean;
     error: string | null;
-    user: object
+    user: object,
   }
   const initialState: SignInState = {
     loading: false,
     error: null,
-    user: {}
+    user: {},
 };
 
 export const signinUser = createAsyncThunk("signin/signinUser", async (formData: object) => {

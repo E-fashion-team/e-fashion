@@ -14,8 +14,11 @@ module.exports={
     },
     getOneProduct: async function (req,res){
        try {
-           const oneProduct= await db.Product.findOne({
-              where :{name:req.params.name }
+           const oneProduct= await db.User.findOne({
+            include:[
+                db.Product
+            ],
+              where :{id:req.params.UserId}
            })
            res.status(200).send(oneProduct)
        } catch (error) {
@@ -28,7 +31,8 @@ module.exports={
               name:req.body.name,
                price:req.body.price,
                image:req.body.image,
-               UserId:req.body.UserId
+               UserId:req.body.UserId,
+               cateogry:req.body.category
             
            })
            res.status(201).send(newProduct)
