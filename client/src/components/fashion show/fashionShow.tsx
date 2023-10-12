@@ -100,7 +100,7 @@ const FashionShow: FunctionComponent = () => {
         </div>
     
     </div>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 };
