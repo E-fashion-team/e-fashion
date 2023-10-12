@@ -22,7 +22,7 @@ import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
 import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
-import Message from './components/messageTest';
+import Chat from './components/message1';
 import Drops from './components/Drops';
 
 
@@ -32,7 +32,6 @@ import Drops from './components/Drops';
 
 
 function App() {
-
   return (
 
     <div>
@@ -58,7 +57,7 @@ function App() {
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
-        <Route path="/message" element={<Message />} />
+        <Route path="/message" element={<Chat />} />
    
   
 
