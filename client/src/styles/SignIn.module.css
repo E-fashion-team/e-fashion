@@ -275,16 +275,18 @@ input[type="text"] {
 color: #fffdfd; 
 }
 
+
+
 input.email_Address1,
 input[type="text"] {
-color: #fffbfb;
+  color: #fffbfb;
+  outline: none;
+  width: 455px;
 }
 input.email_Address,
 input[type="password"]
-{
-color: #fffbfb;
+ {
+  color: #fffbfb;
+  outline: none;
+  width: 455px;
 }
-
-.email_Address::placeholder,
-.email_Address1::placeholder {
-color: #ffffff;}
