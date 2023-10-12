@@ -32,7 +32,6 @@ import Drops from './components/Drops';
 
 
 function App() {
-
   return (
 
     <div>
