@@ -1,8 +1,8 @@
 import SignIn from './components/SignIn';
-import './App.css';
+// import './App.css';
 import SignUp from './components/SignUp';
 import React,{useState}  from 'react';
-import './App.css';
+
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
@@ -19,14 +19,14 @@ import { Stats } from './components/Statistique';
 import FashionShow from "./components/fashion show/fashionShow"
 
 import { Market } from './components/Market';
-import './App.css'
+
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
 
-import Drops from './components/Drops';
+
 import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
-function App() {
+import Message from './components/messageTest';
 
 
 
@@ -49,9 +49,10 @@ function App() {
 <Route path='/stats' element={<Stats />}/>
 <Route path='/drops' element={<Drops />}/>
 <Route path='/clientCard' element={<ClientCard />}/>
-<Route path='/fashionShows' element={<FashionShows />}/>
+{/* <Route path='/fashionShows' element={<FashionShows />}/> */}
 
 
+<Route path="/message"   element={<Message/>}/>
 
     <Route path="/signUp"      element={<SignUp/>}/> 
     <Route path="/signIn"      element={<SignIn/>}/> 
@@ -64,7 +65,7 @@ function App() {
 
 
   </Routes> 
-   {/* <Footer/> */}
+  
 
  </div>
 
