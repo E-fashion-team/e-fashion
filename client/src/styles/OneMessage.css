@@ -1,0 +1,68 @@
+.overlap-7 {
+    height: 56px;
+    width: 752px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.messageInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.messageContainer {
+    height: 50px;
+    left: 71px;
+    top: 4px;
+    width: 687px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.text-wrapper-25 {
+    color: #d7d7d7e6;
+    font-family: "SF Pro Display-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 24.3px;
+    top: 0;
+    white-space: nowrap;
+}
+
+.text-wrapper-26 {
+    color: #ffffff99;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 118px;
+    letter-spacing: 0;
+    line-height: 21.6px;
+    top: 1px;
+    white-space: nowrap;
+}
+
+.text-wrapper-27 {
+    color: #ffffff;
+    font-family: "SF Pro Display-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.32px;
+    line-height: 21.6px;
+    top: 28px;
+    white-space: nowrap;
+}
+
+.ellipse-8 {
+    height: 56px;
+    left: 0;
+    object-fit: cover;
+    top: 0;
+    width: 56px;
+}
