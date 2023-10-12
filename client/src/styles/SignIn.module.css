@@ -1,12 +1,12 @@
-.sign_InChild {
+.signInChild {
     position: absolute;
     top: 0;
     left: 0;
     background: linear-gradient(113.49deg, #984d38, #181e41 63.29%);
-    width: 2000px;
+    width: 1440px;
     height: 1024px;
   }
-  .group_Child {
+  .groupChild {
     position: absolute;
     top: 0;
     left: 606px;
@@ -15,7 +15,7 @@
     width: 527px;
     height: 699px;
   }
-  .explore_TheWorld {
+  .exploreTheWorld {
     position: absolute;
     top: 555px;
     left: 0;
@@ -24,39 +24,29 @@
     line-height: 39px;
     text-align: center;
   }
-  .create_AnAccount {
+  .createAnAccount {
     font-weight: 500;
     color: #6c5dd3;
   }
-  .new_UserCreateContainer {
+  .newUserCreateContainer {
     position: absolute;
     top: 115px;
     left: 641px;
     letter-spacing: 0.02em;
     cursor: pointer;
   }
-  .email_Address,
+  .emailAddress,
   .or {
     position: absolute;
     top: 323px;
     left: 860px;
     letter-spacing: 0.02em;
-    background-color: transparent;
-    border-color: transparent;
   }
-  .email_Address {
-    top: 45px;
+  .emailAddress {
+    top: 0;
     left: 1px;
-    
   }
-  .email_Address1 {
-    top: 45px;
-    left: 1px;
-    background-color: transparent;
-    border-color: transparent;
-    color: #fff;
-  }
-  .group_Item {
+  .groupItem {
     position: absolute;
     top: 30.75px;
     left: -0.25px;
@@ -65,16 +55,7 @@
     width: 459.5px;
     height: 0.5px;
   }
-  .group_Item2 {
-    position: absolute;
-    top: 95.75px;
-    left: -0.25px;
-    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
-    box-sizing: border-box;
-    width: 459.5px;
-    height: 0.5px;
-}
-  .email_AddressParent {
+  .emailAddressParent {
     position: absolute;
     top: 196px;
     left: 640px;
@@ -82,35 +63,26 @@
     height: 31px;
     
   }
-  
-   .email_AddressParent1 {
+   .emailAddressParent1 {
     position: absolute;
-    top: 186px;
+    top: 150px;
     left: 640px;
-    width: 459px}
+    width: 459px;}
     
-  .group_Icon,
-  .group_Inner {
+  .groupIcon,
+  .groupInner {
     position: absolute;
     top: 0;
     left: 0;
   }
-  .group_Inner {
-    border: 0.5px solid;
-    border-color: #fff;
+  .groupInner {
+    border-radius: var(--br-152xl);
+    border: 0.5px solid var(--color-white);
     box-sizing: border-box;
-    width: 458px;
+    width: 459px;
     height: 72px;
-    border-width: -7px;
-    border-radius: 54px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  .group_Inner:hover {
-    background-color:#bbb1b1
-}  
-
-  .group_Icon {
+  .groupIcon {
     height: 100%;
     width: 13.51%;
     right: 86.49%;
@@ -119,15 +91,14 @@
     overflow: hidden;
     max-height: 100%;
   }
-  .continue_WithGoogle {
+  .continueWithGoogle {
     position: absolute;
     top: 4.5px;
     left: 44px;
     letter-spacing: 0.02em;
     font-weight: 500;
-    cursor: pointer;
   }
-  .group_Parent {
+  .groupParent {
     position: absolute;
     height: 41.67%;
     width: 48.37%;
@@ -136,25 +107,22 @@
     bottom: 28.47%;
     left: 25.93%;
   }
-  .rectangle_Div,
-  .rectangle_Group {
+  .rectangleDiv,
+  .rectangleGroup {
     position: absolute;
     top: 391px;
     left: 640px;
     width: 459px;
     height: 72px;
   }
-  .rectangle_Div {
+  .rectangleDiv {
     top: 0;
     left: 0;
     border-radius: var(--br-152xl);
     background-color: #1877f2;
     height: 73px;
-    border-width: -7px;
-    border-radius: 54px;
-    cursor: pointer;
   }
-  .group_Icon1 {
+  .groupIcon1 {
     position: absolute;
     height: 41.1%;
     width: 6.54%;
@@ -166,32 +134,29 @@
     overflow: hidden;
     max-height: 100%;
   }
-  .continue_WithFacebook {
+  .continueWithFacebook {
     position: absolute;
     top: 26px;
     left: 163px;
     letter-spacing: 0.02em;
     font-weight: 500;
-    cursor: pointer;
   }
-  .group_Child1,
-  .rectangle_Container {
+  .groupChild1,
+  .rectangleContainer {
     position: absolute;
     top: 496px;
     left: 640px;
     width: 459px;
     height: 73px;
   }
-  .group_Child1 {
+  .groupChild1 {
     top: 0;
     left: 0;
-    border-width: -7px;
-    border-radius: 54px;
+    border-radius: var(--br-152xl);
     background-color: #1d1d1d;
     height: 72px;
-    cursor: pointer;
   }
-  .vector_Icon {
+  .vectorIcon {
     position: absolute;
     height: 41.67%;
     width: 5.51%;
@@ -203,29 +168,29 @@
     overflow: hidden;
     max-height: 100%;
   }
-  .group_Div {
+  .groupDiv {
     position: absolute;
     top: 602px;
     left: 640px;
     width: 459px;
     height: 72px;
   }
-  .image_8Icon,
-  .rectangle_Parent {
+  .image8Icon,
+  .rectangleParent {
     position: absolute;
     top: 162px;
     left: 187px;
     width: 1133px;
     height: 699px;
   }
-  .image_8Icon {
+  .image8Icon {
     top: 195px;
     left: 306px;
     width: 143.52px;
     height: 477px;
     object-fit: cover;
   }
-  .sign_In1 {
+  .signIn1 {
     position: absolute;
     top: 184px;
     left: 828px;
@@ -234,13 +199,12 @@
     font-weight: 800;
     text-align: center;
   }
-  ._continue {
+  .continue {
     position: relative;
-
   }
-  .continue_Wrapper {
+  .continueWrapper {
     position: absolute;
-    top: 457px;
+    top: 399px;
     left: 1172px;
     border-radius: 121px;
     background: linear-gradient(214.02deg, #b75cff, #671ae4);
@@ -253,9 +217,8 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: var(--font-poppins);
-    cursor: pointer;
   }
-  .sign_In {
+  .signIn {
     position: relative;
     width: 100%;
     height: 1024px;
@@ -269,22 +232,3 @@
     color: var(--color-white);
     font-family: var(--font-sf-pro-display);
   }
-  input.email_Address::placeholder,
-input[type="password"]::placeholder,
-input[type="text"] {
-  color: #fffdfd; 
-}
-
-input.email_Address1,
-input[type="text"] {
-  color: #fffbfb;
-}
-input.email_Address,
-input[type="password"]
- {
-  color: #fffbfb;
-}
-
-.email_Address::placeholder,
-.email_Address1::placeholder {
-  color: #ffffff;}

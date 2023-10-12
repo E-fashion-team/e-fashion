@@ -14,8 +14,11 @@ module.exports={
     },
     getOneProduct: async function (req,res){
        try {
-           const oneProduct= await db.Product.findOne({
-              where :{UserId:req.params.UserId}
+           const oneProduct= await db.User.findOne({
+            include:[
+                db.Product
+            ],
+              where :{id:req.params.UserId}
            })
            res.status(200).send(oneProduct)
        } catch (error) {
