@@ -143,7 +143,8 @@ setAllImage(allimage)
 // // const handleSubmit= async()=>{
 // // await profileUpload(img)
 // // }
-  return (<div>
+  return (
+  <div>
     <NavBar/>
 <div className="edit-profile-page">
 <div className="overlap-wrapper">
@@ -316,8 +317,10 @@ setAllImage(allimage)
        
     </div>
 </div>
+
 </div>
 <Footer/>
+
 </div>
 )
 

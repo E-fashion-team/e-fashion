@@ -6,8 +6,9 @@ import productReducer from "../components/ProductData/productData"
 export const store = configureStore({
   reducer: {
     signUp: signUpReducer,
-    signIn: signinReduser ,
-    products: productReducer
+   ...signinReduser,
+    products: productReducer,
+    
   },
 })
 

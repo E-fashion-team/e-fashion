@@ -3,15 +3,17 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 interface SignUpState {
-    loading: boolean;
-    error: string | null;
-    user: object
+  loading: boolean;
+  error: string | null;
+  user: object
+  role: string;
 }
 
 const initialState: SignUpState = {
     loading: false,
     error: null,
-    user: {}
+    user: {},
+    role: "",
 };
 
 
@@ -26,26 +28,27 @@ export const signupUser = createAsyncThunk("signup/signupUser", async (formData:
     }
   });
 
+ 
   const signUpSlice = createSlice({
     name: "signUp",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(signupUser.pending, (state) => {
-          state.loading = true;
-          state.error = null;
-        })
-        builder.addCase(signupUser.fulfilled, (state, action) => {
-          state.loading = false;
-          state.error = null;
-          state.user = action.payload
-        })
-        builder.addCase(signupUser.rejected, (state, action) => {
-          state.loading = false;
-        //   state.error = action.payload
-        });
+      builder.addCase(signupUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      });
+      builder.addCase(signupUser.fulfilled, (state, action: PayloadAction<{ userId: number; role: string }>) => {
+        state.loading = false;
+        state.error = null;
+        state.user = action.payload; // Fix the property name here
+        state.role = action.payload.role;
+      });
+      builder.addCase(signupUser.rejected, (state, action) => {
+        state.loading = false;
+      });
     },
   });
- 
+  
   
 export default signUpSlice.reducer

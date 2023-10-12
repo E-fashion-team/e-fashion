@@ -3,14 +3,14 @@ import '../styles/navBar.css'
 import vector1 from '../images/Vector (1).svg'
 import ellipse from '../images/Ellipse 258.svg'
 import group from '../images/Group 48095728.svg'
-
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <div className='footer'>
         <div className="header">
             <div className="text-wrapper">Logo</div>
-            <div className="div">Home</div>
+            <div className="div"> <Link to="/">Home</Link></div>
             <div className="text-wrapper-2">Personal Collection</div>
             <div className="search-bar">
                 <div className="inputBox_container">
