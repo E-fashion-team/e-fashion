@@ -342,10 +342,10 @@
 
 .messages .line-8 {
     height: 1px;
-    left: 337px;
+    left: 0;
     position: absolute;
     top: 227px;
-    width: 1103px;
+    width: 1440px;
     border-bottom: 1px solid grey
 
 }
@@ -501,15 +501,6 @@
     position: absolute;
     top: 4px;
     white-space: nowrap;
-}
-
-.messages .ellipse-8 {
-    height: 56px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 56px;
 }
 
 .messages .text-wrapper-21 {
@@ -691,67 +682,12 @@
     width: 10px;
 }
 
-.messages .overlap-7 {
-    height: 56px;
-    left: 367px;
-    position: absolute;
-    top: 731px;
-    width: 752px;
-}
-
 .messages .group-17 {
     height: 56px;
     left: 0;
     position: absolute;
     top: 0;
     width: 752px;
-}
-
-.messages .group-18 {
-    height: 50px;
-    left: 71px;
-    position: absolute;
-    top: 4px;
-    width: 687px;
-}
-
-.messages .text-wrapper-25 {
-    color: #d7d7d7e6;
-    font-family: "SF Pro Display-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-    left: 0;
-    letter-spacing: 0;
-    line-height: 24.3px;
-    position: absolute;
-    top: 0;
-    white-space: nowrap;
-}
-
-.messages .text-wrapper-26 {
-    color: #ffffff99;
-    font-family: "SF Pro Display-Regular", Helvetica;
-    font-size: 16px;
-    font-weight: 400;
-    left: 118px;
-    letter-spacing: 0;
-    line-height: 21.6px;
-    position: absolute;
-    top: 1px;
-    white-space: nowrap;
-}
-
-.messages .text-wrapper-27 {
-    color: #ffffff;
-    font-family: "SF Pro Display-Medium", Helvetica;
-    font-size: 16px;
-    font-weight: 500;
-    left: 0;
-    letter-spacing: 0.32px;
-    line-height: 21.6px;
-    position: absolute;
-    top: 28px;
-    white-space: nowrap;
 }
 
 .messages .ellipse-14 {
@@ -799,11 +735,19 @@
 }
 
 .messages .overlap-9 {
-    height: 76px;
-    left: 367px;
     position: absolute;
-    top: 605px;
-    width: 592px;
+    top: 250px;
+    width: 1430px;
+    height: 650px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+}
+
+.messages .overlap-9::-webkit-scrollbar {
+    display: none;
 }
 
 .messages .group-21 {
@@ -846,10 +790,10 @@
 
 .messages .group-23 {
     height: 56px;
-    left: 367px;
     position: absolute;
     top: 892px;
     width: 1061px;
+    width: 100%;
 }
 
 .messages .overlap-10 {
@@ -857,11 +801,11 @@
     border-radius: 150px;
     height: 56px;
     position: relative;
-    width: 1059px;
+    width: 100%;
 }
 
 .messages .text-wrapper-28 {
-    color: #ffffff99;
+    color: white;
     font-family: "SF Pro Display-Medium", Helvetica;
     font-size: 20px;
     font-weight: 500;
@@ -871,6 +815,7 @@
     position: absolute;
     top: 16px;
     white-space: nowrap;
+    width: 90%;
 }
 
 .messages .ellipse-17 {
@@ -884,8 +829,9 @@
 
 .messages .vector-3 {
     height: 25px;
-    left: 1019px;
+    left: 1390px;
     position: absolute;
     top: 15px;
     width: 25px;
+    cursor: pointer;
 }
