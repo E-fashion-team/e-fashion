@@ -24,10 +24,7 @@ const SignIn: FunctionComponent = () => {
   const onNewUserCreateClick = () => {
     <Link to="/signUp" > </Link>
   }
-  
 
-
-  
   const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
@@ -44,7 +41,6 @@ const SignIn: FunctionComponent = () => {
       setError('Please Fill all fields');
       return;
     }
-    
     dispatch(signinUser({ ...formData}));
   }
 

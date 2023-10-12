@@ -110,13 +110,17 @@ module.exports={
     login : async (req,res)=>{
         try {
             const{email,password } = req.body
-            const response = await verifyUserLogin(email,password)
-            if (response.status==="ok"){
+            
+            const resp = await verifyUserLogin(email,password)
+            const user = await db.User.findOne({
+            where :{ email:req.body.email }
+         })
+            if (resp.status==="ok"){
                 res.cookie('token',token, { maxAge: 2 * 60 * 60 * 1000, httpOnly: true }); 
               
-                res.json({message :"login succesfully",response})
+                res.json({message :"login succesfully",resp,user})
             }else{
-            res.json(response)
+            res.json(resp)
             }
         } catch (error) {
           
@@ -124,4 +128,8 @@ module.exports={
         }
     },
    
+    getUser : async (req,res)=>{
+        console.log(req.user);
+      res.send(req.user)
+    },
    }

@@ -7,9 +7,9 @@ import chatReducer from './chatSlice';
 export const store = configureStore({
   reducer: {
     signUp: signUpReducer,
-    signIn: signinReduser ,
+   ...signinReduser,
     products: productReducer,
-   chat:chatReducer
+    
   },
 })
 
