@@ -1,10 +1,10 @@
 .signInChild {
-  position: absolute;
+  position: flex;
   top: 0;
   left: 0;
-  background: linear-gradient(113.49deg, #984d38, #181e41 63.29%);
+  background: inherit;
   width: 1440px;
-  height: 1024px;
+  height: 100%;
 }
 .groupChild {
   position: absolute;
