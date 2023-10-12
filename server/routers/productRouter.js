@@ -4,7 +4,7 @@ const routerProduct = express.Router()
 
 
 routerProduct.get('/allProduct',getAllProduct)
-routerProduct.get('/:name',getOneProduct)
+routerProduct.get('/:UserId',getOneProduct)
 routerProduct.post('/newProduct',add)
 routerProduct.delete('/:name',deleted)
 routerProduct.put('/:name',updated)

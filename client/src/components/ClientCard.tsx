@@ -2,9 +2,13 @@ import React from "react";
 import "../styles/clientDard.css";
 import danCristan from "../images/danCristan.png";
 import aionyhaust from "../images/aiony-haust-.png";
+import NavBar from "./NavBar";
 
 const ClientCard = () => {
+
   return (
+    <div>
+    <NavBar/>
     <div className="clientCard ">
       <div className="clientCardSha shadow">
         <img className="immgg" src={danCristan} alt="" />
@@ -19,6 +23,7 @@ const ClientCard = () => {
           <div className="butt-wrapper">+ Follow</div>
         </button>
       </div>
+    </div>
     </div>
   );
 };

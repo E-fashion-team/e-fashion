@@ -33,7 +33,9 @@ const SignUp: FunctionComponent = () => {
     // Please sync "Sign In" to the project
   }, []);
 
- 
+  const [brandRole, setBrandRole] = useState(false);
+  const [followerRole, setFollowerRole] = useState(false);
+  const [fashionistaRole, setFashionistaRole] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -83,26 +85,35 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
       <option key={index} value={option.toLowerCase()}>{option}</option>
     ));
   };
-
-    // console.log(formattedDateOfBirth);
-  
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
-      const { name, value } = e.target;
-      if (name === "day" || name === "month" || name === "year") {
-        setFormData((prevData) => ({
-          ...prevData,
-          dateOfBirth: {
-            ...prevData.dateOfBirth,
-            [name]: value,
-          },
-        }));
-      } else {
-        setFormData((prevData) => ({
-          ...prevData,
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value } = e.target;
+    if (name === "day" || name === "month" || name === "year") {
+      setFormData((prevData) => ({
+        ...prevData,
+        dateOfBirth: {
+          ...prevData.dateOfBirth,
           [name]: value,
-        }));
-      }
-    }    
+        },
+      }));
+    } else if (name === "role") {
+      // Ensure value is of type UserRole
+      const selectedRole: UserRole = value as UserRole;
+      setBrandRole(selectedRole === UserRole.Brand);
+      setFollowerRole(selectedRole === UserRole.Follower);
+      setFashionistaRole(selectedRole === UserRole.Fashionista);
+      setFormData((prevData) => ({
+        ...prevData,
+        role: selectedRole,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
+  
+  
   return (
     <div className="sign-Up"> 
 <div className="sign-Up-Child" />

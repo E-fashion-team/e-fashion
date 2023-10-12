@@ -7,21 +7,43 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios'
-import ExplorePage from "./components/explorePqge/explore"
-import Home  from "./pages/Home"
-import EditProfile from './components/editProfile/editProfile'
-import About from './components/About'
-import {CreatorStudioPage} from './components/CreatorStudio'
-// import Market from "./components/market/market"
+import About from './components/About';
+import { CreatorStudioPage } from './components/CreatorStudio';
+import Home from './pages/Home';
 import { Stats } from './components/Statistique';
+import FashionShow from "./components/fashion show/fashionShow"
+import { Market } from './components/Market';
+import './App.css'
+import ExplorePage from './components/explorePqge/explore';
+import EditProfile from './components/editProfile/editProfile';
+import ClientCard from './components/ClientCard';
+import FashionShows from './components/FashionShows';
 import Drops from './components/Drops';
 import { BrandStorePage } from './components/BranStore';
+
+
+
 
 function App() {
 
   return (
 <div>
-<Routes>
+
+  
+
+  <Routes>
+<Route path="/market"      element={<Market/>}/> 
+<Route  path="/explore"  element={<ExplorePage/>}  />
+<Route path="/edit" element={< EditProfile/>}/> 
+<Route path="/about" element={< About/>}/>
+<Route path="/studio"   element={< CreatorStudioPage/>} />
+<Route path='/stats' element={<Stats />}/>
+<Route path='/drops' element={<Drops />}/>
+<Route path='/clientCard' element={<ClientCard />}/>
+<Route path='/fashionShows' element={<FashionShows />}/>
+
+
+
     <Route path="/signUp"      element={<SignUp/>}/> 
     <Route path="/signIn"      element={<SignIn/>}/> 
 
@@ -38,6 +60,7 @@ function App() {
     <Route path='/brandStore' element={<BrandStorePage/>}          /> 
   </Routes> 
    {/* <Footer/> */}
+
  </div>
 
 

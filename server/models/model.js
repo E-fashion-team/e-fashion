@@ -21,7 +21,7 @@ const connection= new Sequelize('fashion', 'root', 'root', {
  db.Message=require("./messageModel") (Sequelize,DataTypes,connection)
  db.RoomUser=require("./roomUserModel") (Sequelize,DataTypes,connection)
  db.RoomMessage=require("./roomMessageModel") (Sequelize,DataTypes,connection)
- db.UserProduct=require("./userProductModel.js")(Sequelize,DataTypes,connection)
+//  db.UserProduct=require("./userProductModel.js")(Sequelize,DataTypes,connection)
  db.UserBrand=require("./userBrandModel.js") (Sequelize,DataTypes,connection)
  db.User.belongsToMany(db.Room,{ through: db.RoomUser }) 
  db.Room.belongsToMany(db.User,{ through: db.RoomUser }) 
@@ -30,8 +30,8 @@ const connection= new Sequelize('fashion', 'root', 'root', {
  db.Brand.belongsToMany(db.User,{ through: db.UserBrand }) 
 
 
- db.User.belongsToMany(db.Product,{ through: db.UserProduct }) 
- db.Product.belongsToMany(db.User,{ through: db.UserProduct}) 
+ db.User.hasMany(db.Product) 
+ db.Product.belongsTo(db.User) 
 
 
  db.Message.belongsToMany(db.Room,{ through: db.RoomMessage }) 
@@ -39,7 +39,7 @@ const connection= new Sequelize('fashion', 'root', 'root', {
  
 db.User.hasMany(db.Message)
 db.Message.belongsTo(db.User)
-// connection.sync({ alter: true})
+// connection.sync({ force: true})
 
 
  module.exports.db=db
