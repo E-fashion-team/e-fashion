@@ -38,6 +38,7 @@ export const signinUser = createAsyncThunk("signin/signinUser", async (formData:
       console.log(formData,"form");
       console.log(response.data); 
    // Assuming your API returns user data upon successful login
+    const user = JSON.stringify(localStorage.getItem("user"))
       
       return response.data; 
       // Assuming your API returns user data upon successful signup
@@ -86,6 +87,7 @@ export const signinUser = createAsyncThunk("signin/signinUser", async (formData:
           //role can be "follower"/ "brand"/"fashionista"
           state.type=action.payload.user.role
           localStorage.setItem("token",action.payload.resp.data)
+          localStorage.setItem("user",JSON.stringify(action.payload.user))
         })
         builder.addCase(signinUser.rejected, (state, action) => {
           state.loading = false;
