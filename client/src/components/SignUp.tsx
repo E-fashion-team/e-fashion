@@ -9,11 +9,11 @@ import img from "../images/image boy.png"
 import icon from "../images/Vector.png"
 
 
-// enum UserRole {
-//   Brand = 'brand',
-//   Follower = 'follower',
-//   Fashionista  = 'fashionista',
-// }
+enum UserRole {
+  Brand = 'brand',
+  Follower = 'follower',
+  Fashionista  = 'fashionista',
+}
 
 interface FormData {
   name: string;
@@ -24,7 +24,7 @@ interface FormData {
     month: string;
     year: string;
   };
-  // role: UserRole.Follower,
+  role: UserRole
 }
 
 
@@ -33,16 +33,19 @@ const SignUp: FunctionComponent = () => {
     // Please sync "Sign In" to the project
   }, []);
 
- 
+  const [brandRole, setBrandRole] = useState(false);
+  const [followerRole, setFollowerRole] = useState(false);
+  const [fashionistaRole, setFashionistaRole] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     password: '',
     dateOfBirth: {
-      day: '1', // Set default day value here (1 for example)
-      month: '1', // Set default month value here (1 for January)
-      year: '2000', // Set default year value here (2000 for example)
+      day: '1', 
+      month: '1', 
+      year: '2000',
     },
+    role: UserRole.Follower,
   });
 
   const user = useSelector((state: RootState) => state)
@@ -77,31 +80,40 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
     dispatch(signupUser({ ...formData, dateOfBirth: formattedDateOfBirth }));
   };
   
-    const renderOptions = (options: string[]) => {
-      return options.map((option, index) => (
-        <option key={index} value={String(index + 1)}>{option}</option>
-      ));
-    };
-
-    // console.log(formattedDateOfBirth);
-  
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
-      const { name, value } = e.target;
-      if (name === "day" || name === "month" || name === "year") {
-        setFormData((prevData) => ({
-          ...prevData,
-          dateOfBirth: {
-            ...prevData.dateOfBirth,
-            [name]: value,
-          },
-        }));
-      } else {
-        setFormData((prevData) => ({
-          ...prevData,
+  const renderOptions = (options: string[]): JSX.Element[] => {
+    return options.map((option, index) => (
+      <option key={index} value={option.toLowerCase()}>{option}</option>
+    ));
+  };
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+    const { name, value } = e.target;
+    if (name === "day" || name === "month" || name === "year") {
+      setFormData((prevData) => ({
+        ...prevData,
+        dateOfBirth: {
+          ...prevData.dateOfBirth,
           [name]: value,
-        }));
-      }
-    }    
+        },
+      }));
+    } else if (name === "role") {
+      // Ensure value is of type UserRole
+      const selectedRole: UserRole = value as UserRole;
+      setBrandRole(selectedRole === UserRole.Brand);
+      setFollowerRole(selectedRole === UserRole.Follower);
+      setFashionistaRole(selectedRole === UserRole.Fashionista);
+      setFormData((prevData) => ({
+        ...prevData,
+        role: selectedRole,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
+  
+  
   return (
     <div className="sign-Up"> 
 <div className="sign-Up-Child" />
@@ -141,6 +153,7 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 <div className="group-Child2" />
 <div className="group-Child3" />
 <div className="group-Child4" />
+<div className="group-Child5" />
 <div className="date-Inputs">
         <select className="month" name="month" value={formData.dateOfBirth.month} onChange={handleChange}>
           <option value="">Month</option>
@@ -155,6 +168,10 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
         <select className="year" name="year" value={formData.dateOfBirth.year} onChange={handleChange}>
           <option value="">Year</option>
           {renderOptions(years.map(String))}
+        </select>
+        <select className="role" name="role" value={formData.role} onChange={handleChange}>
+          <option value="">Role</option>
+            {renderOptions(Object.values(UserRole))}
         </select>
       </div>
 

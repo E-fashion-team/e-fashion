@@ -3,7 +3,7 @@ import img from "../images/image boy.png"
 import facebook from "../images/facebook.png"
 import apple from "../images/apple.png"
 import google from "../images/google.png"
-import styles from "./SignIn.module.css";
+import styles from "../styles/SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import {signinUser} from "../store/signinReduser"
