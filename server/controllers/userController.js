@@ -41,7 +41,7 @@ module.exports={
     getOneUser: async function (req,res){
        try {
            const oneUser= await db.User.findOne({
-              where :{name:req.params.name }
+              where :{id:req.params.id }
            })
            res.status(200).send(oneUser)
        } catch (error) {
