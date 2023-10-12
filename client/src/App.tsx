@@ -1,16 +1,15 @@
 import SignIn from './components/SignIn';
 import './App.css';
 import SignUp from './components/SignUp';
-import React,{useState}  from 'react';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import React  from 'react';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
 import { Messages } from "./components/messages";
-import CreateBrand from "./components/CreateBrand";
+
 import { Market } from "./components/Market";
 import { FasShow } from "./components/FasShow";
 import axios from 'axios'
@@ -51,8 +50,6 @@ function App() {
         <Route path="/NFT" element={<AllNFT />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/createBrand" element={<CreateBrand/>}/>
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
