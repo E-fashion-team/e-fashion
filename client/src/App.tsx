@@ -5,19 +5,13 @@ import React,{useState}  from 'react';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios'
-
 import About from './components/About';
 import { CreatorStudioPage } from './components/CreatorStudio';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
-
-
 import FashionShow from "./components/fashion show/fashionShow"
-
 import { Market } from './components/Market';
 
 import ExplorePage from './components/explorePqge/explore';
@@ -31,6 +25,11 @@ import Message from './components/messageTest';
 
 
 import Drops from './components/Drops';
+import { BrandStorePage } from './components/BranStore';
+
+
+
+
 
 function App() {
 
@@ -40,10 +39,9 @@ function App() {
   
 
   <Routes>
-  <Route path="/market"      element={<Market/>}/> 
-
+<Route path="/market"      element={<Market/>}/> 
 <Route  path="/explore"  element={<ExplorePage/>}  />
- <Route path="/edit" element={< EditProfile/>}/> 
+<Route path="/edit" element={< EditProfile/>}/> 
 <Route path="/about" element={< About/>}/>
 <Route path="/studio"   element={< CreatorStudioPage/>} />
 <Route path='/stats' element={<Stats />}/>
@@ -60,10 +58,14 @@ function App() {
       {/* <NavBar/> */}
  
     <Route path="/"      element={<Home/>}/> 
-   
-
-
-
+    {/* <Route path="/market"      element={<Market/>}/>  */}
+    <Route path="/explore"  element={<ExplorePage/>}  />
+    <Route path="/edit" element={< EditProfile/>}/> 
+    <Route path="/about" element={< About/>}/>
+    <Route path="/studio"   element={< CreatorStudioPage/>} />
+    <Route path='/stats' element={<Stats />}/>
+    <Route path='/drops' element={<Drops />}/>
+    <Route path='/brandStore' element={<BrandStorePage/>}          /> 
   </Routes> 
   
 

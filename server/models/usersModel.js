@@ -12,7 +12,7 @@ module.exports=(sequelize, DataTypes,connection)=>{
        dateOfBirth:DataTypes.STRING,
        role:{
         type:DataTypes.ENUM , 
-        values : ["follower","brand","fashionesta"]
+        values : ["follower","brand","fashionista"]
        }
        }
      

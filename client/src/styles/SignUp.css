@@ -142,7 +142,7 @@
   width: 135.5px;
   height: 0.5px;
 }
-.groupChild3 {
+
   position: absolute;
   top: 80.75px;
   left: 161.75px;
@@ -187,14 +187,18 @@
 }
 .year {
   position: absolute;
-  top: 56px;
-  left: 324px;
+
+.role {
+  position: absolute;
+  top: 528px;
+  left: 640px;
   letter-spacing: 0.02em;
   background-color: transparent;
   border-color: transparent;
-  color: #ffffff7d
+  color: #ffffff7d;
 }
-.vectorIcon3 {
+.vector-Icon3 {
+
   position: absolute;
   height: 8.64%;
   width: 2.4%;
