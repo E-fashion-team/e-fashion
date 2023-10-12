@@ -328,8 +328,11 @@ input[type="password"]::placeholder {
   color: #fffdfd; 
 }
 
+
 input.email-Address,
 input[type="password"],
 input[type="text"] {
   color: #fffbfb;
+  outline: none;
+  width: 455px;
 }
