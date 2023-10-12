@@ -25,7 +25,11 @@ const Home: FunctionComponent = () => {
         setProducts(data)
     }, [])
 
-    return (<div><NavBar />
+    return (
+        <div>
+        
+            <NavBar />
+        <div>
         <div id='homePage'>
 
             <div className="topSectionBtns">
@@ -194,6 +198,7 @@ const Home: FunctionComponent = () => {
                     </div>
             </div>
 
+        </div>
         </div>
         <Footer/>
         </div>

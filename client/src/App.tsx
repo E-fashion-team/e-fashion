@@ -26,11 +26,9 @@ import EditProfile from './components/editProfile/editProfile';
 import Drops from './components/Drops';
 import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
-function App() {
 
 
 
-import Drops from './components/Drops';
 
 function App() {
 
@@ -41,7 +39,6 @@ function App() {
 
   <Routes>
   <Route path="/market"      element={<Market/>}/> 
-
 <Route  path="/explore"  element={<ExplorePage/>}  />
  <Route path="/edit" element={< EditProfile/>}/> 
 <Route path="/about" element={< About/>}/>
@@ -50,14 +47,9 @@ function App() {
 <Route path='/drops' element={<Drops />}/>
 <Route path='/clientCard' element={<ClientCard />}/>
 <Route path='/fashionShows' element={<FashionShows />}/>
-
-
-
     <Route path="/signUp"      element={<SignUp/>}/> 
     <Route path="/signIn"      element={<SignIn/>}/> 
-
-      {/* <NavBar/> */}
- 
+     
     <Route path="/"      element={<Home/>}/> 
    
 
