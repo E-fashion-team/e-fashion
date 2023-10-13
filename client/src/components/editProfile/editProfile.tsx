@@ -18,131 +18,96 @@ import comm from '../../images/edit profile/rrrrr.svg'
 import share from '../../images/edit profile/share.svg'
 import sss from '../../images/edit profile/sssss.svg'
 
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 import axios from "axios"
 
 import img4 from "../../images/Rectangle 1889.png"
 
-import React,{ useState,FunctionComponent,ChangeEvent  } from "react";
+import React,{ useState,FunctionComponent,ChangeEvent,useEffect  } from "react";
 import   "../../styles/editProfile1.css"
 import NavBar from "../NavBar"
 import Footer from "../Footer"
-
-
-const EditProfile: FunctionComponent = () => {
-
-  interface User {
-  
-    
-  }
-  
-  
-    const [users, setUsers] = useState<User | null>(null);
-  
-    const updateUser = (name: string, newUpdate: any) => {
-      axios
-        .put(`http://localhost:5000/api/user/${name}`, newUpdate)
-        .then((response) => {
-          setUser(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
+import UpdateAccount from "./update"
+import { Link } from "react-router-dom"
+import  getUser  from  "../../store/signinReduser";
 
 
 
-
-  interface UserClient {
+interface User {
+    id:number,
     email: string;
     name: string;
     password: string;
-}
+    image:string,
+    dateOfBirth:string,
+   
+    
+  }
+const EditProfile: FunctionComponent = () => {
+  const userJSON: string | null = localStorage.getItem("user"); 
+  const userParse:User = userJSON ? JSON.parse(userJSON) : null;
+
+  
+// const userParse = useSelector((state: {getUser: {user: User}}) => state.getUser.user)
+console.log(userParse.name,"zzz")
 const [allimage, setAllImage] = useState<string[]>([])
 const [image, setImage] = useState<string>('')
-    const [firstName, setFirstName] = useState<string>('');
-    const [lastName, setLastName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [currentPassword, setCurrentPassword] = useState<string>('');
-    const [newPassword, setNewPassword] = useState<string>('');
-    const [confirmPassword, setConfirmPassword] = useState<string>('');
-    const [address, setAddress] = useState<string>('');
-    const [userClient, setUser] = useState<UserClient>({
-        email: 'email',
-        name: 'name',
-        password: 'password',
-    });
-
-    const updateAccount = (): void => {
-        if (
-            firstName === '' ||
-            lastName === '' ||
-            email === '' ||
-            currentPassword === '' ||
-            newPassword === '' ||
-            confirmPassword === '' ||
-            address === ''
-        ) {
-            alert('Please Enter your data');
-            return;
-        }
-        if (userClient.password !== currentPassword) {
-            alert('Wrong Password');
-            return;
-        }
-        if (userClient.password === currentPassword && newPassword === confirmPassword) {
-
-            setUser({
-                ...userClient,
-                password: newPassword,
-                name: firstName + ' ' + lastName,
-                email: email,
-                
-            });
-            updateUser(userClient.name,userClient)
-          
-        }
-    };
-    const handleLastNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setLastName(e.target.value);
-    };
-    const handleFirstNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setFirstName(e.target.value);
-    };
-    const handleEmailChange= (e: ChangeEvent<HTMLInputElement>) => {
-      setEmail(e.target.value);
-    };
-    const handleNewPasswordChange= (e: ChangeEvent<HTMLInputElement>) => {
-      setNewPassword(e.target.value);
-    };
-    const handleCurrentPasswordChange= (e: ChangeEvent<HTMLInputElement>) => {
-      setCurrentPassword(e.target.value);
-    };
-    const handleConfirmPasswordChange= (e: ChangeEvent<HTMLInputElement>) => {
-      setConfirmPassword(e.target.value);
-    };
-    const handleAdressPasswordChange= (e: ChangeEvent<HTMLInputElement>) => {
-      setAddress(e.target.value);
-    };
-
+    const[userImage ,setImageUser] = useState<string>('');
+    const[user ,setUser] = useState<User>(userParse);
+    const[userId,setUserId]=useState<number>(userParse.id);
+    console.log(user,'user')
+    ////////////////////////////update//////////////////
+    const UpdateUser=(id:number,image1:string)=>{
+        axios.put(`http://localhost:5000/api/user/${id}`,{id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
+        .then((response) => {
+         setUser({id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
+       
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+    
+    
+    
+    
+    }
+//////////////////////////////////cloud///////////////////
   const profileUpload= async (e:any)=>{
 const formData=new FormData()
 formData.append("file",e.target.files[0])
 formData.append("upload_preset","oztadvnr")
-
 await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
-console.log(response.data["secure_url"])
 setImage(response.data["secure_url"])
 allimage.push(response.data["secure_url"])
 setAllImage(allimage)
+
 }).catch((error)=>{
   throw error
 })
 
   }
-// // const handleSubmit= async()=>{
-// // await profileUpload(img)
-// // }
+
+  const profileUpload1= async (e:any)=>{
+    const formData=new FormData()
+    formData.append("file",e.target.files[0])
+    formData.append("upload_preset","oztadvnr")
+    
+    await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
+  console.log(response.data["secure_url"])
+    setImageUser(response.data["secure_url"])
+    setUser({id:user.id,name:user.name,email:user.email,image:response.data["secure_url"],password:user.password,dateOfBirth:user.dateOfBirth})
+    // UpdateUser(user.id,response.data["secure_url"])
+    console.log(user,1111111111)
+    UpdateUser(user.id,response.data["secure_url"])
+
+
+    }).catch((error)=>{
+      throw error
+    })
+    
+      }
+      localStorage.setItem('user', JSON.stringify(user));
   return (
   <div>
     <NavBar/>
@@ -158,24 +123,22 @@ setAllImage(allimage)
                         <img className="edit-cover-image" alt="Edit cover image" src={asset}  />
                         <div className="profile-pic">
                             <div className="overlap-group-2">
-                                <img className="ellipse" alt="Ellipse" src={img1} />
+                                <img className="ellipse" alt="Ellipse"  defaultValue={img1} src={userImage} />
                                 <div className="ellipse-2" />
-                                <img className="vector" alt="Vector" src={asset1} />
+                                <input type="file" className="vector" alt="Vector" src={asset1} onChange={(e)=>{profileUpload1(e)}} />
                             </div>
                         </div>
                     </div>
                     <div className="edit-profile">
                         <img className="vector-2" alt="Vector" src={asset} />
-                        <div className="text-wrapper-14" >Edit Profile</div>
+                        <Link to="/update">  <div className="text-wrapper-14" >   Edit Profile</div></Link>
                     </div>
                 </div>
                 <div className="text">
-                    <div className="text-wrapper-15">Farhan Khan</div>
-                    <div className="text-wrapper-16">@farhan</div>
+                    <div className="text-wrapper-15">{userParse.name}</div>
+                    <div className="text-wrapper-16">{userParse.email}</div>
                     <p className="text-wrapper-17">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor, consectetur purus amet, accumsan
-                        nulla. Ut urna placerat morbi cursus pulvinar nunc adipiscing. Tortor, consectetur purus amet,
-                        accumsan nulla. Ut urna placerat morbi cursus pulvinar nunc adipiscing.
+                        
                     </p>
                 </div>
             </div>
@@ -199,13 +162,13 @@ setAllImage(allimage)
             <div className="comment-sec">
                 <div className="overlap-group-4">
                     <div className="text-wrapper-20">Write a comment</div>
-                    <img className="ellipse-3" alt="Ellipse" src={img1} />
+                    <img className="ellipse-3" alt="Ellipse" src={userImage} />
                     <img className="vector-3" alt="Vector" src={sss}/>
                 </div>
             </div>
-            <img className="ellipse-4" alt="Ellipse" src={img1} />
-            <div className="text-wrapper-21">Farhan Khan</div>
-            <div className="text-wrapper-22">@farhan</div>
+            <img className="ellipse-4" alt="Ellipse" src={userImage} />
+            <div className="text-wrapper-21">{userParse.name}</div>
+            <div className="text-wrapper-22">{userParse.email}</div>
             <div className="text-wrapper-23">4m</div>
             <p className="text-wrapper-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <img className="rectangle-9" alt="Rectangle" src={im9} />
@@ -238,13 +201,13 @@ setAllImage(allimage)
                 <div className="comment-sec">
                     <div className="overlap-group-4">
                         <div className="text-wrapper-20">Write a comment</div>
-                        <img className="ellipse-3" alt="Ellipse" src={img1} />
+                        <img className="ellipse-3" alt="Ellipse" src={userImage}/>
                         <img className="vector-3" alt="Vector" src={sss} />
                     </div>
                 </div>
                 <img className="ellipse-4" alt="Ellipse" src="ellipse-248-2.png" />
-                <div className="text-wrapper-21">Farhan Khan</div>
-                <div className="text-wrapper-22">@farhan</div>
+                <div className="text-wrapper-21">{userParse.name}</div>
+                <div className="text-wrapper-22">{userParse.email}</div>
                 <div className="text-wrapper-23">2d</div>
                 <p className="text-wrapper-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <img className="rectangle-9" alt="Rectangle" src={img3} />

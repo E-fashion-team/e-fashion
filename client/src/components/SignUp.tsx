@@ -116,73 +116,73 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
   
   
   return (
-    <div className="sign-Up"> 
-<div className="sign-Up-Child" />
-<div className="rectangle-Parent">
-<div className="group-Child" />
-<b className="begin-Your-Meta1">Begin your meta fashion journey here</b>
-<div className="already-AMember-Container" onClick={onAlreadyAMemberClick}>
+    <div className="sign--Up"> 
+<div className="sign--Up--Child" />
+<div className="rectangle--Parent">
+<div className="group--Child" />
+<b className="begin--Your--Meta1">Begin your meta fashion journey here</b>
+<div className="already--AMember--Container" onClick={onAlreadyAMemberClick}>
 <span>
 <span>Already a Member?</span>
-<span className="-span">{` `}</span>
+<span className="--span">{` `}</span>
 </span>
-<span className="-span">
-<span className="sign-In1">Sign In</span>
+<span className="--span">
+<span className="sign--In1">Sign In</span>
 </span>
 </div>
-<div className="email-Address-Parent">
-<input className="email-Address" type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
-<div className="group-Item" />
+<div className="email--Address--Parent">
+<input className="email--Address" type="text" name="email" placeholder="Email Address" onChange={handleChange}/>
+<div className="group--Item" />
 </div>
-<div className="vector-Parent">
-<img className="vector-Icon2" alt="" src={icon} />
-<input className="email-Address" type="password" name="password" placeholder="Password" onChange={handleChange}/>
-<div className="group-Item" />
+<div className="vector--Parent">
+<img className="vector--Icon2" alt="" src={icon} />
+<input className="email--Address" type="password" name="password" placeholder="Password" onChange={handleChange}/>
+<div className="group--Item" />
 </div>
-<div className="group-Parent">
-<div className="full-Name-Parent">
-<input className="email-Address" type="text" name="name" placeholder="Full Name" onChange={handleChange}/>
-<div className="line-Div" />
+<div className="group--Parent">
+<div className="full--Name--Parent">
+<input className="email--Address" type="text" name="name" placeholder="Full Name" onChange={handleChange}/>
+<div className="line--Div" />
 </div>
-<div className="last-Name-Parent">
-<input className="email-Address"type="text" placeholder="Last Name" />
-<div className="group-Child1" />
+<div className="last--Name--Parent">
+<input className="email--Address"type="text" placeholder="Last Name" />
+<div className="group--Child1" />
 </div>
 </div>
-<div className="date-OfBirth-Parent">
-<div className="dateOf-Birth1">Date Of Birth</div>
-<div className="group-Child2" />
-<div className="group-Child3" />
-<div className="group-Child4" />
-<div className="group-Child5" />
-<div className="date-Inputs">
-        <select className="month" name="month" value={formData.dateOfBirth.month} onChange={handleChange}>
+<div className="date--OfBirth--Parent">
+<div className="dateOf--Birth1">Date Of Birth</div>
+<div className="group--Child2" />
+<div className="group--Child3" />
+<div className="group--Child4" />
+<div className="group--Child5" />
+<div className="date--Inputs">
+        <select className="--month" name="month" value={formData.dateOfBirth.month} onChange={handleChange}>
           <option value="">Month</option>
           {renderOptions(months)}
         </select>
-        <select className="day" name="day" value={formData.dateOfBirth.day} onChange={handleChange}>
+        <select className="--day" name="day" value={formData.dateOfBirth.day} onChange={handleChange}>
           <option value="">Day</option>
           {Array.from({ length: 31 }, (_, index) => index + 1).map((day) => (
             <option key={day} value={String(day)}>{day}</option>
           ))}
         </select>
-        <select className="year" name="year" value={formData.dateOfBirth.year} onChange={handleChange}>
+        <select className="--year" name="year" value={formData.dateOfBirth.year} onChange={handleChange}>
           <option value="">Year</option>
           {renderOptions(years.map(String))}
         </select>
-        <select className="role" name="role" value={formData.role} onChange={handleChange}>
+        <select className="--role" name="role" value={formData.role} onChange={handleChange}>
           <option value="">Role</option>
             {renderOptions(Object.values(UserRole))}
         </select>
       </div>
 
 </div>
-<div className="create-Account-Wrapper">
-<div className="create-Account" onClick={handleSubmit}>Create Account</div>
+<div className="create--Account--Wrapper">
+<div className="create--Account" onClick={handleSubmit}>Create Account</div>
 </div>
 </div>
-<img className="image8Icon" alt="" src={img} />
-<div className="sign-Up1">Sign Up</div>
+<img className="image--8Icon" alt="" src={img} />
+<div className="sign--Up1">Sign Up</div>
 </div>
   );
 
