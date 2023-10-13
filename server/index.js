@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express=require('express')
 const app=express()
 const cors=require("cors")
@@ -11,7 +12,6 @@ const port=5000
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
 var cookieParser = require("cookie-parser");
-require("dotenv").config();
 
 app.use(express.json())
 
@@ -36,7 +36,8 @@ io.on('connection', (socket) => {
   console.log('A user connected');
 
   socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
+    console.log('hi')
+    io.emit('chat message', [msg]);
   });
 
   socket.on('disconnect', () => {

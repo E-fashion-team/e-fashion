@@ -222,7 +222,7 @@ export const BrandStorePage = (props:any) => {
                 </div>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     );
 };
