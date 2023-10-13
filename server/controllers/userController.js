@@ -73,13 +73,39 @@ module.exports={
            throw error
        }
     },
-    updated:async function (req,res){
+    checkpassword:async (req,res,next)=>{
         try {
+          const userInfo = await db.User.findOne({
+            where: {
+              email: req.body.email,
+            }})
+            if (bcrypt.compareSync(req.body.currentPassword, userInfo.password)) {
+                db.User.update({name:req.body.name,email:req.body.email,
+             password:bcrypt.hashSync(req.body.newPassword)},{where:{id:userInfo.id}})
+           
+            res.json({
+              status: "success",
+              message: "user found!!!",
+              data: { user: userInfo},
+            }); }
+        } catch (error) {
+          next(error);
+        }
+        
+          }
+        ,
+    updated:async function (req,res){
+      
+        try {
+   
             const userUpdate= await db.User.update(req.body,{
-          where:{  name:req.params.name }
+          where:{  id:req.params.id }
             })
             const updated=userUpdate.dataValues
+      
+            
             res.send(updated)
+        
         } catch (error) {
             throw error
         }
