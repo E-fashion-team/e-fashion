@@ -1,5 +1,5 @@
 import React from "react";
-// import '../styles/fashionShows.css'
+import '../styles/fashionShows.css'
 import NavBar from "./NavBar";
 import rect1 from '../images/Rectangle 1918.png'
 import vec3 from '../images/aiony-haust-3TLl_97HNJo-unsplash (1) 1.png'

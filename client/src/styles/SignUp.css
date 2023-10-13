@@ -50,11 +50,11 @@
 }
 .email--Address {
   position: absolute;
-  top: 0px;
+  top: -71px;
   left: 1px;
   letter-spacing: 0.02em;
   background-color: transparent;
-  border-color: transparent;
+  border-color: black;
 }
 .group--Item {
   position: absolute;
@@ -270,11 +270,21 @@
   width: 1132px;
   height: 650px;
 }
+
 .image--8Icon {
   position: absolute;
   top: 195px;
   left: 396px;
   width: 143.52px;
+  height: 477px;
+  object-fit: cover;
+}
+.image8Icon1 {
+
+  position: absolute;
+  top: 195px;
+  left: 396px;
+  width: 200.52px;
   height: 477px;
   object-fit: cover;
 }
@@ -334,5 +344,26 @@ input[type="password"],
 input[type="text"] {
   color: #fffbfb;
   outline: none;
-  width: 455px;
+  width: 225px;
 }
+.email-Address1{
+  position: absolute;
+  top: -15px;
+  left: 1px;
+  letter-spacing: 0.02em;
+  background-color: transparent;
+  border-color: black;
+
+}
+.email-Address2{
+  position: absolute;
+  top: 37px;
+  left: 1px;
+  letter-spacing: 0.02em;
+  background-color: transparent;
+  border-color: black;
+
+}
+
+
+
