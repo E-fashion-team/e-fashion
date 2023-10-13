@@ -1,36 +1,77 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import OneMessage from "./OneMessage";
-import vec from "../images/messages/Vector (2).svg"
-import vec1 from "../images/messages/Vector.svg"
-import vec2 from '../images/messages/Group.svg'
-import vec3 from "../images/messages/Group (1).svg"
-import vec4 from "../images/messages/Ellipse 269.svg"
-import vec5 from "../images/messages/Ellipse 270.svg"
-import vec6 from "../images/messages/Ellipse 271.svg"
-import vec7 from "../images/messages/Ellipse 272.svg"
-import vec9 from "../images/messages/Ellipse 274.svg"
-import vec10 from "../images/messages/Ellipse 275.svg"
-import vec11 from "../images/messages/Ellipse 251.png"
-import vec12 from "../images/messages/send.svg"
-
-
+// import vec11 from "../images/messages/Ellipse 251.png"
+// import vec12 from "../images/messages/send.svg"
 import "../styles/messages.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import io from 'socket.io-client';
+import { useDispatch, useSelector } from 'react-redux';
+import { setMessages } from '../store/messagesSlice';
+
+
 
 export const Messages = () => {
 
     const [userStatus, setUserStatus] = useState(false)
-    const [messages, setMessages] = useState([])
     const scrollPage = useRef<HTMLDivElement | null>(null)
     const scrollMessages = useRef<HTMLDivElement | null>(null)
+    const [message, setMessage] = useState('');
+    const [updated, setUpdated] = useState<boolean>(false)
+    const [msg,setMsg]=useState([])
+    const socket = io('http://localhost:5000')
+    const dispatch = useDispatch()
+    // const user = useSelector((state: {signIn: {user: userObj}}) => state.signIn.user)
+    const messages = useSelector((state: {messages: {data: any}}) => state.messages.data)
+    console.log("this is type",messages);
+    
+    interface userObj {
+        "id": number;
+        "name": string;
+        "image": string;
+        "email": string;
+        "password": string;
+        "dateOfBirth": string;
+        "role": string;
+    }
+    
+    const handleSendMessage = () => {
+      if (message.trim() !== '') {
+        socket.emit('chatRoomConnection', {id: 1, name: 'torbaga'}, message);
+        setMessage('');
+        setUpdated(!updated)
+      }
+    };
+
+    // interface Object {
+    //     user: string;
+    //     message: string;
+    //     createdAt: string;
+    // }
+
+    const fetchMessages = (): any => {
+      return socket.on('fetchChat', (data: any) => {
+        console.log(data);
+        setMsg(data)
+          return data
+        });
+    };
 
 
+        useEffect(()=>{
+            socket.emit('sendChat')
+            dispatch(setMessages(fetchMessages()));
+            console.log(messages)
+        }, [updated])
+
+
+        
 
     useEffect(() => {
         scrollPage.current?.scrollIntoView()
         scrollMessages.current?.scrollIntoView({ block: "end" })
-    }, [messages])
+    }, [])
+
 
     return (<div>
     <div>
@@ -57,17 +98,15 @@ export const Messages = () => {
                         </div>
                         <div className="overlap-9">
                         {
-                            messages.map((e) => <OneMessage jdidi={"jdidi"} key={e}/>)
+                            msg.map((message: any, i: number) => <OneMessage messageInfo={message} key={i}/>)
                         }
                         <div ref={scrollMessages}/>
                         </div>
                         <div className="group-23">
                             <div className="overlap-10">
-                                {/* this line is the message input */}
-                                <input className="text-wrapper-28" placeholder="Write a Message"/>
-                                <img className="ellipse-17" alt="Ellipse" src={vec11} />
-                                {/* this line is the send button */}
-                                <img className="vector-3" alt="Vector" src={vec12} />
+                                <input onChange={(e) => setMessage(e.target.value)} className="text-wrapper-28" placeholder="Write a Message"/>
+                                <img className="ellipse-17" alt="Ellipse"  />
+                                <img onClick={handleSendMessage} className="vector-3" alt="Vector" />
                             </div>
                             <div  ref={scrollPage} />
                         </div>

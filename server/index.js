@@ -6,6 +6,7 @@ const http = require('http')
 const socketIo = require('socket.io')
 const server = http.createServer(app);
 const io = socketIo(server,{cors:{origin:"http://localhost:3000"}});
+const axios = require('axios')
 require("./models/model")
 
 const port=5000
@@ -29,14 +30,13 @@ const routerRoom=require("./routers/roomRouter.js")
 app.use("/api/message",routerMessages)
 app.use("/api/product",routerProduct)
 app.use("/api/user",routerUsers)
-// app.use("/api/room",routerRoom)
+app.use("/api/room",routerRoom)
 app.use("/api/brand",routerBrand)
 
 io.on('connection', (socket) => {
   console.log('A user connected');
 
   socket.on('chat message', (msg) => {
-    console.log('hi')
     io.emit('chat message', [msg]);
   });
 
@@ -45,6 +45,47 @@ io.on('connection', (socket) => {
   });
 });
 
+// torbaga's start point
+
+var data = []
+
+const handleSend = async (user, message) => {
+  try {
+    const response = await axios.post('http://127.0.0.1:5000/api/message/message/1', {message: message, userId: user.id})
+    console.log("this is data: ", response.data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+const handleFetch = async () => {
+  try {
+    var response = await axios.get('http://127.0.0.1:5000/api/room/messageByRoom/1')
+    data = response.data[0].Messages
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+io.on('connection', (socket) => {
+  console.log('ToRBaGa connected');
+  
+  socket.on('chatRoomConnection', (user, message) => {
+    console.log('this is user: ', user)
+    handleSend(user, message)
+  });
+  
+  socket.on('sendChat', () => {
+    handleFetch()
+    io.emit('fetchChat', data)
+  });
+  
+  socket.on('disconnect', () => {
+    console.log('ToRBaGa disconnected');
+  });
+});
+
+// torbaga's end point
 
 
 
@@ -62,10 +103,8 @@ io.on('connection', (socket) => {
   // })
 
 
-server.listen(port,()=>{
-
-console.log("backend running in port",port)
-
+server.listen(port, () => {
+  console.log("backend running in port: ", port)
 })
 
 

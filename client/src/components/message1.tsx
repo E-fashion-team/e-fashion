@@ -13,8 +13,8 @@ import vec6 from "../images/messages/Ellipse 271.svg"
 import vec7 from "../images/messages/Ellipse 272.svg"
 import vec9 from "../images/messages/Ellipse 274.svg"
 import vec10 from "../images/messages/Ellipse 275.svg"
-import vec11 from "../images/messages/Ellipse 251.png"
-import vec12 from "../images/messages/send.svg"
+// import vec11 from "../../images/messages/Ellipse 251.png"
+// import vec12 from "../../images/messages/send.svg"
 
 
 import "../styles/messages.css";
@@ -47,7 +47,7 @@ useEffect(()=>{
 
 
   });
-})
+},[])
 
 
 return (<div>
@@ -105,9 +105,9 @@ return (<div>
                               {/* this line is the message input */}
                               <input className="text-wrapper-28" placeholder="Write a Message" type="text"  value={message}
      onChange={(e) => setMessage(e.target.value)}  />
-                              <img className="ellipse-17" alt="Ellipse" src={vec11} />
+                              <img className="ellipse-17" alt="Ellipse"  />
                               {/* this line is the send button */}
-                              <img className="vector-3" alt="Vector" src={vec12}    onClick={handleSendMessage} />
+                              <img className="vector-3" alt="Vector"     onClick={handleSendMessage} />
                           </div>
                           <div  ref={scrollPage} />
                       </div>
