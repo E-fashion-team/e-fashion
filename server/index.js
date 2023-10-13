@@ -14,7 +14,7 @@ const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
 require('./models/model');
 
 
-const axios = require('axios
+const axios = require('axios')
 
 
 const port=5000
@@ -44,7 +44,7 @@ const oi = socketIo(config.Server.settings.socket, {
   // Additional socket.io configuration here
 });
 
-oi.on('connection', (socket) => {
+
 
 // app.use(cors())
 const routerMessages=require("./routers/messegeRouter.js")
@@ -84,8 +84,6 @@ app.all('/*', function (req, res) {
 
 
 
-server.listen(port, () => {
-  console.log('Backend is running on port', port);
 
 // torbaga's start point
 
