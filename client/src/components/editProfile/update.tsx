@@ -38,8 +38,11 @@ const UpdateAccount:FunctionComponent=()=>{
         e.preventDefault();
         if (user.newPassword === user.confirmPassword) {
           axios
-            .post(`http://localhost:5000/user/modify`, user)
-            .then((res) => console.log(res))
+            .post(`http://localhost:5000/api/user/modify`, user)
+            .then((res) => {
+              console.log(user,"aa")
+              alert("succes");
+              })
             .catch((err) => console.log(err));
         }
       };
@@ -86,15 +89,15 @@ const UpdateAccount:FunctionComponent=()=>{
                   modifyProfile(
                     {
                       name: name ,
-                      email: email ,
+                      email:userUp.email,
                       currentPassword: currentPassword,
                       newPassword: newPassword,
                       confirmPassword: confirmPassword,
                     },
                     e
                   )
-                  alert("succes");
-                  console.log("succes")
+                
+            
                 }
               }}>Update Account</div>
         </div>
