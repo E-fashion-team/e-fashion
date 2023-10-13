@@ -36,7 +36,7 @@ module.exports={
             RoomId : req.params.RoomId
 
         })
-        io.emit('newMessage', newMessage);
+        // io.emit('newMessage', newMessage);
            res.status(201).send(newMessage)
        } catch (error) {
            throw error

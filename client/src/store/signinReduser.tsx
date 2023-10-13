@@ -47,7 +47,7 @@ export const signinUser = createAsyncThunk("signin/signinUser", async (formData:
       return "Signin failed";
     }
   });
-  const getUserSlice = createSlice({
+  export const getUserSlice = createSlice({
     name: "getUser",
     initialState:{    loading: false,
       error: null,
