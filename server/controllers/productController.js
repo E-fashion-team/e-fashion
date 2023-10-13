@@ -26,21 +26,22 @@ module.exports={
        }
     },
     add: async function (req,res){
-       try {
-           const newProduct= await db.Product.create({
-              name:req.body.name,
-               price:req.body.price,
-               image:req.body.image,
-               UserId:req.body.UserId,
-               cateogry:req.body.category
-            
-           })
-           console.log(newProduct);
-           res.status(201).send({message :"product added succesfully",newProduct})
-       } catch (error) {
-           throw error
-       }
-    },
+        try {
+            const newProduct= await db.Product.create({
+               name:req.body.name,
+                price:req.body.price,
+                image:req.body.image,
+                category:req.body.category,
+                typeProd:req.body.typeProd,
+                UserId:req.body.UserId
+            })
+
+            console.log(newProduct);
+            res.status(201).send({message :"product added succesfully",newProduct})
+        } catch (error) {
+            throw error
+        }
+     },
     deleted: async function (req,res){
        try {
            const productDeleted= await db.Product.destroy({
