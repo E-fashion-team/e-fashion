@@ -1,0 +1,360 @@
+.sign-Up-Child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(113.49deg, #984d38, #181e41 63.29%);
+    width: 100vw;
+    height: 107vh;
+  }
+  .sign-Up1 {
+    position: absolute;
+    top: 214px;
+    left: 887px;
+    font-size: 30px;
+    letter-spacing: 0.01em;
+    font-weight: 800;
+    text-align: center;
+  }
+  .group-Child {
+    position: absolute;
+    top: 0px;
+    left: 601px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 531px;
+    height: 650px;
+  }
+  .begin-Your-Meta1 {
+    position: absolute;
+    top: 534px;
+    left: 0px;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    width: 426px;
+  }
+  .-span {
+    color: #6c5dd3;
+  }
+  .sign-In1 {
+    font-weight: 500;
+  }
+  .already-AMember-Container {
+    position: absolute;
+    top: 90px;
+    left: 632px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .email-Address {
+    position: absolute;
+    top: -71px;
+    left: 1px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: black;
+  }
+  .group-Item {
+    position: absolute;
+    top: 32.75px;
+    left: -0.25px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 459.5px;
+    height: 0.5px;
+  }
+  .email-Address-Parent {
+    position: absolute;
+    top: 153px;
+    left: 631px;
+    width: 459px;
+    height: 33px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  .vector-Icon2 {
+    position: absolute;
+    height: 42.42%;
+    width: 3.7%;
+    top: 12.12%;
+    right: 0%;
+    bottom: 45.45%;
+    left: 96.3%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .vector-Parent {
+    position: absolute;
+    height: 5.08%;
+    width: 40.55%;
+    top: 52.15%;
+    right: 3.71%;
+    bottom: 42.77%;
+    left: 55.74%;
+  }
+  .line-Div {
+    position: absolute;
+    top: 32.75px;
+    left: -0.25px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 229.5px;
+    height: 0.5px;
+  }
+  .full-Name-Parent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 229px;
+    height: 33px;
+  }
+  .group-Child1 {
+    position: absolute;
+    top: 32.75px;
+    left: -0.25px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 204.5px;
+    height: 0.5px;
+  }
+  .last-Name-Parent {
+    position: absolute;
+    top: 0px;
+    left: 254px;
+    width: 204px;
+    height: 33px;
+  }
+  .group-Parent {
+    position: absolute;
+    top: 246px;
+    left: 632px;
+    width: 458px;
+    height: 33px;
+  }
+  .dateOf-Birth1 {
+    position: absolute;
+    top: 416px;
+    left: 639px;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+  .group-Child2 {
+    position: absolute;
+    top: 494.75px;
+    left: 634.75px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 135.5px;
+    height: 0.5px;
+  }
+  .group-Child5 {
+    position: absolute;
+    top: 555.75px;
+    left: 634.75px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 135.5px;
+    height: 0.5px;
+  }
+  .group-Child3 {
+    position: absolute;
+    top: 494.75px;
+    left: 802.75px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 135.5px;
+    height: 0.5px;
+  }
+  .group-Child4 {
+    position: absolute;
+    top: 494.75px;
+    left: 971.75px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    width: 135.5px;
+    height: 0.5px;
+  }
+  .date-Inputs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 55px;
+    gap: 135px
+  }
+  .month {
+    position: absolute;
+      top: 469px;
+      left: 640px;
+      letter-spacing: 0.02em;
+      background-color: transparent;
+      border-color: transparent;
+      color: #ffffff7d;
+    
+  }
+  .day {
+    position: absolute;
+    top: 469px;
+    left: 804px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: transparent;
+    color: #ffffff7d;
+  }
+  .year {
+    position: absolute;
+      top: 469px;
+      left: 969px;
+      letter-spacing: 0.02em;
+      background-color: transparent;
+      border-color: transparent;
+      color: #ffffff7d;
+  }
+  .role {
+    position: absolute;
+    top: 528px;
+    left: 640px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: transparent;
+    color: #ffffff7d;
+  }
+  .vector-Icon3 {
+    position: absolute;
+    height: 8.64%;
+    width: 2.4%;
+    top: 80.25%;
+    right: 70.59%;
+    bottom: 11.11%;
+    left: 27.02%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .dateOf-Birth-Parent {
+    position: absolute;
+    top: 432px;
+    left: 631px;
+    width: 459px;
+    height: 81px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .create-Account {
+    position: relative;
+    font-weight: 500;
+  }
+  .create-Account-Wrapper {
+    position: absolute;
+    top: 563px;
+    left: 915px;
+    border-radius: 121px;
+    background: linear-gradient(214.02deg, #b75cff, #671ae4);
+    height: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 17px;
+    font-family: Poppins;
+    cursor: pointer;
+  }
+  .rectangle-Parent {
+    position: absolute;
+    top: 187px;
+    left: 259px;
+    width: 1132px;
+    height: 650px;
+  }
+  .image8Icon1 {
+    position: absolute;
+    top: 195px;
+    left: 396px;
+    width: 200.52px;
+    height: 477px;
+    object-fit: cover;
+  }
+  .sign-In2 {
+    position: absolute;
+    top: 214px;
+    left: 887px;
+    font-size: 30px;
+    letter-spacing: 0.01em;
+    font-weight: 800;
+    text-align: center;
+  }
+  .sign-Up {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'SF Pro Display';
+  }
+  /* Styling for date drop-down lists */
+  select {
+    font-size: 16px;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: 100px;
+    background-color: transparent;
+    color: #9ca1a7;
+    cursor: pointer;
+  }
+  select option {
+    color: #333; 
+    cursor: pointer;
+  }
+  
+  select:hover {
+    border-color: #555353;
+  }
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  input.email-Address::placeholder,
+  input[type="password"]::placeholder {
+    color: #fffdfd; 
+  }
+  
+  
+  input.email-Address,
+  input[type="password"],
+  input[type="text"] {
+    color: #fffbfb;
+    outline: none;
+    width: 225px;
+  }
+  .email-Address1{
+    position: absolute;
+    top: -15px;
+    left: 1px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: black;
+  
+  }
+  .email-Address2{
+    position: absolute;
+    top: 37px;
+    left: 1px;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border-color: black;
+  
+  }
+  
+  
+  
+  

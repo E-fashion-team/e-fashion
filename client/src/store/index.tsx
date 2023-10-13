@@ -13,10 +13,10 @@ export const store = configureStore({
     products: productReducer,
 
     chat:chatReducer,
-    messages: messagesSlice
+    messages: messagesSlice,
 
    ...getUserSlice,
-    chat:chatReducer
+  
 
   },
 })

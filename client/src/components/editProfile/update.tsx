@@ -1,7 +1,7 @@
 import React,{ FunctionComponent, useCallback,useState, ChangeEvent, FormEvent  } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import "../../styles/SignUp.css";
+import "../../styles/update.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../../store/auth";
 import { RootState, AppDispatch } from '../../store/index'

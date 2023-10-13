@@ -1,5 +1,5 @@
 import React from 'react'
-import vec8 from "../images/messages/Ellipse 273.svg"
+// import vec8 from "../images/messages/Ellipse 273.svg"
 import '../styles/OneMessage.css'
 import moment from 'moment'
 
@@ -31,7 +31,7 @@ const OneMessage = (props: Prop) => {
         {/* <div className="ellipse-15" /> */}
         {props.messageInfo?.User?.image
         ? <img className="ellipse-8" alt="Ellipse" src={props.messageInfo?.User.image} />
-        : <img className="ellipse-8" alt="Ellipse" src={vec8} />}
+        : <img className="ellipse-8" alt="Ellipse" />}
         <div className="messageContainer">
           <div className='messageInfo'>
             <div className="text-wrapper-25">{props.messageInfo?.User?.name}</div>
