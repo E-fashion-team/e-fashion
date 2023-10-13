@@ -13,8 +13,8 @@ import vec6 from "../images/messages/Ellipse 271.svg"
 import vec7 from "../images/messages/Ellipse 272.svg"
 import vec9 from "../images/messages/Ellipse 274.svg"
 import vec10 from "../images/messages/Ellipse 275.svg"
-import vec11 from "../images/messages/Ellipse 251.png"
-import vec12 from "../images/messages/send.svg"
+import vec11 from "../../images/messages/Ellipse 251.png"
+import vec12 from "../../images/messages/send.svg"
 
 
 import "../styles/messages.css";
