@@ -1,15 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { io, Socket as SocketIOClient } from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 import NavBar from './NavBar';
-import './../styles/FasShow.css'
+import './../styles/FasShow.css';
+
 export const FasShow: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const socketRef = useRef<SocketIOClient | null>(null);
+  const socketRef = useRef<Socket | null>(null);
   const socket = io('ws://localhost:8001');
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
   const recordedChunks: BlobPart[] = [];
+
+  const logger = (msg: string) => {
+    const logElement = document.getElementById('log');
+    if (logElement) {
+      logElement.textContent = msg;
+    }
+  };
 
   const startRecording = () => {
     if (!mediaRecorder) {
@@ -21,12 +29,9 @@ export const FasShow: React.FC = () => {
         if (context && video) {
           const stream = canvas.captureStream() as MediaStream;
           const newMediaRecorder = new MediaRecorder(stream);
-          setMediaRecorder(newMediaRecorder);
 
           newMediaRecorder.ondataavailable = (event) => {
-            if (event.data.size > 0) {
-              recordedChunks.push(event.data);
-            }
+            recordedChunks.push(event.data);
           };
 
           context.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -45,38 +50,31 @@ export const FasShow: React.FC = () => {
       }
     }
   };
-
+  const sendVideoFrames = () => {
+    if (socketRef.current && isRecording) {
+      const canvas = canvasRef.current;
+  
+      if (canvas) {
+        const context = canvas.getContext('2d');
+  
+        if (context) {
+          const video = videoRef.current;
+          if (video) {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const frameDataUrl = canvas.toDataURL('image/webp');
+            socketRef.current.emit('videoFrame', frameDataUrl);
+          }
+        }
+      }
+    }
+  };
+  
   const stopRecording = () => {
     if (mediaRecorder) {
       setIsRecording(false);
       mediaRecorder.stop();
     }
   };
-
-  const saveRecording = () => {
-   
-    
-    if (recordedChunks.length > 0) {
-      const recordedBlob = new Blob(recordedChunks, { type: 'video/webm' });
-   console.log('hhhhh');
-      // Create an object URL for the Blob
-      const url = window.URL.createObjectURL(recordedBlob);
-  
-      // Create an anchor element to trigger the download
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = 'recorded-video.webm';
-      document.body.appendChild(a);
-      
-      // Simulate a click on the anchor element to trigger the download
-      a.click();
-      
-      // Clean up by revoking the object URL
-      window.URL.revokeObjectURL(url);
-    }
-  };
-  
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -86,23 +84,13 @@ export const FasShow: React.FC = () => {
       const video = videoRef.current;
       socketRef.current = io('ws://localhost:8001');
 
-      const logger = (msg: string) => {
-        const logElement = document.getElementById('log');
-        if (logElement) {
-          logElement.textContent = msg;
-        }
-      };
-
       const loadCamera = (stream: MediaStream) => {
-        try {
-          if (video) {
-            video.srcObject = stream;
-            video.addEventListener('play', () => {
-              logger('Camera is connected and streaming.');
-            });
-          }
-        } catch (error) {
-          console.error(error);
+        const video = videoRef.current;
+        if (video) {
+          video.srcObject = stream;
+          video.addEventListener('play', () => {
+            logger('Camera is connected and streaming.');
+          });
         }
       };
 
@@ -124,21 +112,23 @@ export const FasShow: React.FC = () => {
         }
 
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        socket.emit('stream', canvas.toDataURL('image/webp'));
+        socketRef.current?.emit('stream', canvas.toDataURL('image/webp'));
       };
 
       if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices
-          .getUserMedia({ video: true, audio: false })
+          .getUserMedia({ video: true, audio: true })
           .then((stream) => {
             loadCamera(stream);
           })
-          .catch(loadFail);
+          .catch((error) => {
+            loadFail(error);
+          });
       }
 
       const recordingInterval = setInterval(() => {
         if (isRecording) {
-          Draw(video, canvas);
+          Draw(videoRef.current, canvas);
         }
       }, 100); // Delay in milliseconds
 
@@ -146,8 +136,7 @@ export const FasShow: React.FC = () => {
         clearInterval(recordingInterval);
       };
     }
-  }, [isRecording]);
-
+  }, [isRecording])
   return (
   
       <div>
@@ -182,7 +171,7 @@ export const FasShow: React.FC = () => {
         <button onClick={isRecording ? stopRecording : startRecording}>
           {isRecording ? 'Stop Recording' : 'Start Recording'}
         </button>
-        <button onClick={saveRecording}>Save Recording</button>
+      
       </div>
                             <div className="frame-7">
                                 <div className="group-7">
