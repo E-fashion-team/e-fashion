@@ -6,6 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
+    
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,8 +19,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    
+    "types": ["socket.io-client"],
+    "jsx": "react-jsx"
+  
   },
   "resolve": {
     "extensions": [".ts", ".tsx", ".js", ".jsx"]

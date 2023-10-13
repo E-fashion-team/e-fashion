@@ -1,25 +1,50 @@
-require("dotenv").config();
-const express=require('express')
-const app=express()
-const cors=require("cors")
-const http = require('http')
-const socketIo = require('socket.io')
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const http = require('http');
+const socketIo = require('socket.io');
+const cookieParser = require('cookie-parser'); 
+const Proxy = require('http-proxy').createProxyServer();
+const path = require('path');
+const config = require(path.join(__dirname, '../config/global.json'));
 const server = http.createServer(app);
-const io = socketIo(server,{cors:{origin:"http://localhost:3000"}});
-const axios = require('axios')
-require("./models/model")
+
+const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
+
+require('./models/model');
+
+
+const axios = require('axios
+
 
 const port=5000
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
-var cookieParser = require("cookie-parser");
+
 
 app.use(express.json())
 
 
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(cookieParser());
+const ProxyServer = 'http://localhost:' + config.Proxy.settings.port;
+
+
+app.use(express.json());
 app.use(cors());
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+// Socket.IO configuration
+const oi = socketIo(config.Server.settings.socket, {
+  cors: {
+    origin: 'http://localhost:3000',
+  },
+  // Additional socket.io configuration here
+});
+
+oi.on('connection', (socket) => {
 
 // app.use(cors())
 const routerMessages=require("./routers/messegeRouter.js")
@@ -34,7 +59,12 @@ app.use("/api/room",routerRoom)
 app.use("/api/brand",routerBrand)
 
 io.on('connection', (socket) => {
+
   console.log('A user connected');
+
+  socket.on('stream', (data) => {
+    socket.broadcast.emit('stream', data);
+  });
 
   socket.on('chat message', (msg) => {
     io.emit('chat message', [msg]);
@@ -44,6 +74,18 @@ io.on('connection', (socket) => {
     console.log('A user disconnected');
   });
 });
+
+
+// Proxy HTTP requests
+app.all('/*', function (req, res) {
+  Proxy.web(req, res, { target: ProxyServer });
+});
+
+
+
+
+server.listen(port, () => {
+  console.log('Backend is running on port', port);
 
 // torbaga's start point
 
@@ -106,5 +148,6 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
   console.log("backend running in port: ", port)
 })
+
 
 
