@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import OneMessage from "./OneMessage";
-import vec11 from "../images/messages/Ellipse 251.png"
-import vec12 from "../images/messages/send.svg"
+// import vec11 from "../images/messages/Ellipse 251.png"
+// import vec12 from "../images/messages/send.svg"
 import "../styles/messages.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
@@ -105,8 +105,8 @@ export const Messages = () => {
                         <div className="group-23">
                             <div className="overlap-10">
                                 <input onChange={(e) => setMessage(e.target.value)} className="text-wrapper-28" placeholder="Write a Message"/>
-                                <img className="ellipse-17" alt="Ellipse" src={vec11} />
-                                <img onClick={handleSendMessage} className="vector-3" alt="Vector" src={vec12} />
+                                <img className="ellipse-17" alt="Ellipse"  />
+                                <img onClick={handleSendMessage} className="vector-3" alt="Vector" />
                             </div>
                             <div  ref={scrollPage} />
                         </div>

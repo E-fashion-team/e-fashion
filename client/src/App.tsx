@@ -4,7 +4,7 @@ import SignUp from './components/SignUp';
 
 import React,{useState}  from 'react';
 
-import React  from 'react';
+
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -27,7 +27,7 @@ import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';
-
+import {Messages} from "./components/messages"
 import CreateProduct from './components/CreateProduct';
 
 
@@ -55,12 +55,12 @@ function App() {
         <Route path="/drops" element={<Drops />} />
         <Route path="/brandpage" element={<BrandPage />} />
         <Route path="/brandstore" element={<BrandStorePage/>}/>
-        {/* <Route path="/messages" element={<Messages />} /> */}
+        <Route path="/messages" element={<Messages />} />
         <Route path="/NFT" element={<AllNFT />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
 
-        <Route path="/createBrand" element={<CreateBrand/>}/>
+        {/* <Route path="/createBrand" element={<CreateBrand/>}/> */}
 
 
         <Route path='/fashionshow'element={<FashionShow/>}/>
