@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 
 
@@ -18,13 +19,15 @@ interface Product {
   image:string;
 category:Category
 
+
 }
 
 export const fetchProducts = createAsyncThunk('products/fetch', async () => {
-  const response = await fetch('http://localhost:5000/api/product/allProduct');
-  const data = await response.json();
-  return data;
+  const response = await axios.get('http://localhost:5000/api/product/allProduct');
+
+  return response.data;
 });
+
 
 const productSlice = createSlice({
   name: 'products',

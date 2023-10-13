@@ -241,12 +241,13 @@
 }
 
 .edit-profile-page .ellipse {
-  height: 126px;
+  height: 100px;
   left: 0;
   object-fit: cover;
   position: absolute;
   top: 0;
-  width: 126px;
+  width: 100px;
+  border-radius: 50px;
 }
 
 .edit-profile-page .ellipse-2 {

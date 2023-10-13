@@ -7,9 +7,31 @@ import asset4 from "../images/BrandStorepage/Vector (1).svg"
 import "../styles/BrandStorePage.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
 
-export const BrandStorePage = () => {
-    return (<div>
+
+interface Product {
+ 
+    id: number;
+    name: string;
+    price: number;  
+    image:string;
+  category:string;
+  UserId:number;
+  
+  
+  }
+  interface propsState{
+    prod:Product
+  }
+  
+
+export const BrandStorePage = (props:any) => {
+    const location = useLocation();
+    const data  = location.state;
+
+    return (
+    <div>
         <NavBar/>
         <div className="brand-store-page">
             <div className="overlap-wrapper">
@@ -19,10 +41,10 @@ export const BrandStorePage = () => {
                         <div className="overlap-2">
                             <div className="item">
                                 <div className="overlap-group-2">
-                                    <div className="text-wrapper-14">@Johny</div>
+                                    <div className="text-wrapper-14">{data.name}</div>
                                     <div className="text-wrapper-15">Lorem Ipsum</div>
-                                    <div className="text-wrapper-16">0.005 ETH</div>
-                                    <img className="rectangle" alt="Rectangle" src="rectangle-23.png" />
+                                    <div className="text-wrapper-16">{data.price}</div>
+                                    <img className="rectangle" alt="Rectangle" src={data.image} />
                                     <div className="text-wrapper-17">Current Bid</div>
                                     <div className="group-4">
                                         <div className="frame-2">
@@ -37,7 +59,8 @@ export const BrandStorePage = () => {
                                     <div className="group-wrapper">
                                         <div className="group-6">
                                             <img className="vector-2" alt="Vector" src={asset1} />
-                                            <div className="text-wrapper-19">Digital</div>
+                                            <div className="text-wrapper-19" onClick={()=>{console.log('Work');
+                                            }}>Digital</div>
                                         </div>
                                     </div>
                                     <div className="frame-3">
@@ -199,7 +222,7 @@ export const BrandStorePage = () => {
                 </div>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     );
 };

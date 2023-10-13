@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import signUpReducer from "./auth";
 import signinReduser from './signinReduser';
+import getUserSlice from './signinReduser'
 import productReducer from "../components/ProductData/productData"
 import chatReducer from './chatSlice';
 import messagesSlice from './messagesSlice';
@@ -8,12 +9,22 @@ import messagesSlice from './messagesSlice';
 export const store = configureStore({
   reducer: {
     signUp: signUpReducer,
-    signIn: signinReduser ,
+   ...signinReduser,
     products: productReducer,
+
     chat:chatReducer,
     messages: messagesSlice
+
+   ...getUserSlice,
+    chat:chatReducer
+
   },
 })
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+
+
+
+
+
