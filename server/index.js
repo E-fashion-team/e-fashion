@@ -85,22 +85,7 @@ io.on('connection', (socket) => {
   });
 });
 
-// torbaga's end point
 
-
-
-// app.get('/api', (req, res) => {
-//     res.json({ message: 'This is your API!' });
-//   });
-
-  
-  // io.on('connection', (socket) => {
-  //   console.log('A user connected');
-  
-  //   socket.on('disconnect', () => {
-  //     console.log('User disconnected');
-  //   });
-  // })
 
 
 server.listen(port, () => {
