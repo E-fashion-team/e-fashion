@@ -11,3 +11,5 @@ routerRoom.post('/addRoom',add)
 routerRoom.delete('/:name',deleted)
 routerRoom.put('/:name',updateRoom)
 routerRoom.post('/brandadd/:RoomId',addRoomsUser)
+
+module.exports=routerRoom

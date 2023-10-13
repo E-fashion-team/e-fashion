@@ -1,7 +1,11 @@
 import SignIn from './components/SignIn';
 import './App.css';
 import SignUp from './components/SignUp';
+
+import React,{useState}  from 'react';
+
 import React  from 'react';
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CreatorStudioPage } from "./components/CreatorStudio";
@@ -55,6 +59,10 @@ function App() {
         <Route path="/NFT" element={<AllNFT />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+
+        <Route path="/createBrand" element={<CreateBrand/>}/>
+
+
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
