@@ -22,8 +22,18 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const socket = io('http://localhost:5000')
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+  image:string,
+}
 
 const Chat: React.FC = () => {
+
+  const userJSON: string | null = localStorage.getItem("user"); 
+  const userParse:FormData = userJSON ? JSON.parse(userJSON) : null;
+  const[userUp ,setUserUp] = useState<FormData>(userParse); 
   const scrollPage = useRef<HTMLDivElement | null>(null)
   const scrollMessages = useRef<HTMLDivElement | null>(null)
   const dispatch = useDispatch();
@@ -105,7 +115,7 @@ return (<div>
                               {/* this line is the message input */}
                               <input className="text-wrapper-28" placeholder="Write a Message" type="text"  value={message}
      onChange={(e) => setMessage(e.target.value)}  />
-                              <img className="ellipse-17" alt="Ellipse"  />
+                              <img className="ellipse-17" alt="Ellipse" src={userUp.image} />
                               {/* this line is the send button */}
                               <img className="vector-3" alt="Vector"     onClick={handleSendMessage} />
                           </div>
