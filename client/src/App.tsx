@@ -2,8 +2,6 @@ import SignIn from './components/SignIn';
 import './App.css';
 import SignUp from './components/SignUp';
 import React,{useState}  from 'react';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
@@ -51,7 +49,6 @@ function App() {
         <Route path="/NFT" element={<AllNFT />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/messages" element={<Messages />} />
         <Route path="/createBrand" element={<CreateBrand/>}/>
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/selfash' element={<FasShow/>}/>

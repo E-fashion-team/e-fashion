@@ -3,13 +3,15 @@ import signUpReducer from "./auth";
 import signinReduser from './signinReduser';
 import productReducer from "../components/ProductData/productData"
 import chatReducer from './chatSlice';
+import messagesSlice from './messagesSlice';
 
 export const store = configureStore({
   reducer: {
     signUp: signUpReducer,
     signIn: signinReduser ,
     products: productReducer,
-   chat:chatReducer
+    chat:chatReducer,
+    messages: messagesSlice
   },
 })
 
