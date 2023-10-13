@@ -35,7 +35,8 @@ module.exports={
                cateogry:req.body.category
             
            })
-           res.status(201).send(newProduct)
+           console.log(newProduct);
+           res.status(201).send({message :"product added succesfully",newProduct})
        } catch (error) {
            throw error
        }
