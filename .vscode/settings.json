@@ -2,5 +2,6 @@
     "editor.tokenColorCustomizations": {
         "comments": "",
         "textMateRules": []
-    }
+    },
+    "github.copilot.editor.enableCodeActions": true
 }

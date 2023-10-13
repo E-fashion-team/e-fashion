@@ -24,6 +24,7 @@ import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';
+import CreateProduct from './components/CreateProduct';
 
 
 
@@ -58,6 +59,7 @@ function App() {
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
         <Route path="/message" element={<Chat />} />
+        <Route path="/createProduct" element={<CreateProduct />} />
    
   
 
