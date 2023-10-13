@@ -270,7 +270,17 @@
   width: 1132px;
   height: 650px;
 }
+
 .image--8Icon {
+  position: absolute;
+  top: 195px;
+  left: 396px;
+  width: 143.52px;
+  height: 477px;
+  object-fit: cover;
+}
+.image8Icon1 {
+
   position: absolute;
   top: 195px;
   left: 396px;
