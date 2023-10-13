@@ -199,7 +199,7 @@ export const BrandStorePage = () => {
                 </div>
             </div>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     );
 };

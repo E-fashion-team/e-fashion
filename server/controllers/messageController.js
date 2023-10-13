@@ -1,5 +1,6 @@
 const sequalize =require('sequelize')
 const {db}=require("../models/model.js")
+const io = require('socket.io')
 
 module.exports={
     getAllMessages: async function (req,res){
@@ -35,7 +36,7 @@ module.exports={
             RoomId : req.params.RoomId
 
         })
-      
+        io.emit('newMessage', newMessage);
            res.status(201).send(newMessage)
        } catch (error) {
            throw error

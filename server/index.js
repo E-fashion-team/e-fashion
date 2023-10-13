@@ -7,18 +7,26 @@ const cookieParser = require('cookie-parser');
 const Proxy = require('http-proxy').createProxyServer();
 const path = require('path');
 const config = require(path.join(__dirname, '../config/global.json'));
-
 const server = http.createServer(app);
 const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
 
 require('./models/model');
 
+const port=5000
+const bodyparser = require("body-parser");
+const jwt = require("jsonwebtoken");
+
+
+app.use(express.json())
+
+
+app.use(bodyparser.urlencoded({ extended: true }));
 const ProxyServer = 'http://localhost:' + config.Proxy.settings.port;
-const port = 5000;
+
 
 app.use(express.json());
 app.use(cors());
-app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -38,7 +46,8 @@ oi.on('connection', (socket) => {
   });
 
   socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
+    console.log('hi')
+    io.emit('chat message', [msg]);
   });
 
   socket.on('disconnect', () => {
