@@ -23,7 +23,7 @@ import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';
-
+import UpdateAccount from "./components/editProfile/update"
 
 
 
@@ -55,6 +55,7 @@ function App() {
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
         <Route path="/message" element={<Chat />} />
+        <Route path="/update"    element={<UpdateAccount />}/>
    
   
 
