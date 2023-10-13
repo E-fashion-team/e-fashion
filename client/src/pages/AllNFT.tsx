@@ -80,7 +80,7 @@ const AllNFT = () => {
                 </div>
             </div>
             <div className="cards">{
-                products.map((product) => <ProductCard/>)
+                // products.map((product) => <ProductCard/>)
             }</div>
             <div></div>
         </div>
