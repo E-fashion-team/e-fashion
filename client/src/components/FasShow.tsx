@@ -1,17 +1,161 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from 'react';
+import { io, Socket as SocketIOClient } from 'socket.io-client';
+import NavBar from './NavBar';
+import './../styles/FasShow.css'
+export const FasShow: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const socketRef = useRef<SocketIOClient | null>(null);
+  const socket = io('ws://localhost:8001');
+  const [isRecording, setIsRecording] = useState(false);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const recordedChunks: BlobPart[] = [];
 
-import "../styles/FasShow.css";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+  const startRecording = () => {
+    if (!mediaRecorder) {
+      const canvas = canvasRef.current;
 
-export const FasShow = () => {
-    return (<div><NavBar/>
+      if (canvas) {
+        const context = canvas.getContext('2d');
+        const video = videoRef.current;
+        if (context && video) {
+          const stream = canvas.captureStream() as MediaStream;
+          const newMediaRecorder = new MediaRecorder(stream);
+          setMediaRecorder(newMediaRecorder);
+
+          newMediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+              recordedChunks.push(event.data);
+            }
+          };
+
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          newMediaRecorder.start();
+          setIsRecording(true);
+
+          const recordInterval = setInterval(() => {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            newMediaRecorder.requestData();
+            if (!isRecording) {
+              clearInterval(recordInterval);
+              newMediaRecorder.stop();
+            }
+          }, 100); // Delay in milliseconds
+        }
+      }
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorder) {
+      setIsRecording(false);
+      mediaRecorder.stop();
+    }
+  };
+
+  const saveRecording = () => {
+   
+    
+    if (recordedChunks.length > 0) {
+      const recordedBlob = new Blob(recordedChunks, { type: 'video/webm' });
+   console.log('hhhhh');
+      // Create an object URL for the Blob
+      const url = window.URL.createObjectURL(recordedBlob);
+  
+      // Create an anchor element to trigger the download
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'recorded-video.webm';
+      document.body.appendChild(a);
+      
+      // Simulate a click on the anchor element to trigger the download
+      a.click();
+      
+      // Clean up by revoking the object URL
+      window.URL.revokeObjectURL(url);
+    }
+  };
+  
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    if (canvas) {
+      const context = canvas.getContext('2d');
+      const video = videoRef.current;
+      socketRef.current = io('ws://localhost:8001');
+
+      const logger = (msg: string) => {
+        const logElement = document.getElementById('log');
+        if (logElement) {
+          logElement.textContent = msg;
+        }
+      };
+
+      const loadCamera = (stream: MediaStream) => {
+        try {
+          if (video) {
+            video.srcObject = stream;
+            video.addEventListener('play', () => {
+              logger('Camera is connected and streaming.');
+            });
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      const loadFail = (error: Error) => {
+        console.error('Camera not connected:', error);
+      };
+
+      const Draw = (video: HTMLVideoElement | null, canvas: HTMLCanvasElement) => {
+        if (!video) {
+          console.error('Video element is null.');
+          return;
+        }
+
+        const context = canvas.getContext('2d');
+
+        if (!context) {
+          console.error('Canvas context is not available.');
+          return;
+        }
+
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        socket.emit('stream', canvas.toDataURL('image/webp'));
+      };
+
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices
+          .getUserMedia({ video: true, audio: false })
+          .then((stream) => {
+            loadCamera(stream);
+          })
+          .catch(loadFail);
+      }
+
+      const recordingInterval = setInterval(() => {
+        if (isRecording) {
+          Draw(video, canvas);
+        }
+      }, 100); // Delay in milliseconds
+
+      return () => {
+        clearInterval(recordingInterval);
+      };
+    }
+  }, [isRecording]);
+
+  return (
+  
+      <div>
+        <NavBar/>
         <div className="fashion-show">
             <div className="overlap-wrapper">
                 <div className="overlap">
-                    <div className="group">
-                       
-                    </div>
+                   
                     <div className="frame-2">
                         <div className="text-wrapper-14">Mint Now</div>
                     </div>
@@ -23,7 +167,7 @@ export const FasShow = () => {
                                 <img className="vector" alt="Vector" src="vector.svg" />
                             </div>
                         </div>
-                        <img className="photo" alt="Photo" src="photo-1.png" />
+                  
                         <div className="frame-3">
                             <div className="text-wrapper-16">Follow</div>
                         </div>
@@ -31,25 +175,15 @@ export const FasShow = () => {
                     <div className="overlap-2">
                         <div className="group-5">
                             <div className="overlap-3">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/IcPPJqKsTR8?si=S03sp78OPs1El0gm" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>                                    <div className="text-wrapper-17">Live</div>
-                                    {/* <div className="ellipse-2" />
-                                </div>
-                                <div className="frame-5">
-                                    <img className="vector-2" alt="Vector" src="image.svg" />
-                                    <div className="text-wrapper-18">25</div>
-                                </div>
-                                <div className="vector-wrapper">
-                                    <img className="vector-3" alt="Vector" src="vector-2.svg" />
-                                </div>
-                                <div className="group-6">
-                                    <div className="overlap-group-3">
-                                        <div className="rectangle" />
-                                        <div className="ellipse-3" />
-                                    </div>
-                                </div>
-                                <div className="text-wrapper-19">-0:00</div> */} 
-                                {/* <img className="frame-6" alt="Frame" src="frame-87.svg" /> */}
-                            </div>
+                            <div>
+        <video ref={videoRef}  width="900" height="600" autoPlay></video>
+        <canvas ref={canvasRef} width={900} height={700}></canvas>
+        <div id="log"></div>
+        <button onClick={isRecording ? stopRecording : startRecording}>
+          {isRecording ? 'Stop Recording' : 'Start Recording'}
+        </button>
+        <button onClick={saveRecording}>Save Recording</button>
+      </div>
                             <div className="frame-7">
                                 <div className="group-7">
                                     <div className="group-8">
@@ -284,7 +418,11 @@ export const FasShow = () => {
                 </div>
             </div>
         </div>
-        <Footer/>
+        </div>
         </div>
     );
+
 };
+
+
+
