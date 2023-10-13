@@ -14,21 +14,60 @@ import ProductCard from '../components/ProductCard'
 
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
+import { useSelector,useDispatch } from 'react-redux'
+import { RootState , AppDispatch } from '../store'
+import { fetchProducts } from '../components/ProductData/productData'
+
+enum Category{
+    Men="men",
+   Women= "women",
+    Kids="kids",
+   Other= "other"
+  
+  
+  }
+
+interface Product {
+ 
+    id: number;
+    name: string;
+    price: number;  
+    image:string;
+  category:Category,
+  UserId:number
+  
+  
+  }
 
 
+const Home = () => {
+    
+    const dispatch:AppDispatch = useDispatch()
 
-const Home: FunctionComponent = () => {
+    const products = useSelector((state : RootState)=>state.products.products)
+    console.log(products , 'those are products');
 
-    const [products, setProducts] = useState<object[]>([])
+    useEffect(()=>{
+        dispatch(fetchProducts())
 
-    useEffect(() => {
-        setProducts(data)
-    }, [])
+    },[])
+    
+ 
+    
+    // const [products, setProducts] = useState<object[]>([])
+
+    // useEffect(() => {
+    //     setProducts(data)
+    // }, [])
 
     return (
         <div>
-        
             <NavBar />
+    {/* {products.map((product:Product) => (
+  <div key={product.id}>
+    <ProductCard prod={product} />
+  </div>
+))} */}
         <div>
         <div id='homePage'>
 
@@ -138,6 +177,9 @@ const Home: FunctionComponent = () => {
                         <h4>Live Shows</h4>
                     </span>
                     <span>
+                        <div>
+
+                        </div>
                         {//?* products will be mapped and rendered here
                         }
                     </span>
@@ -149,8 +191,7 @@ const Home: FunctionComponent = () => {
                     </span>
                     <div className='productSection'>
                         {
-                        // data.map((product: object) => (<ProductCard key={product.id}>{product}</ProductCard>))
-                        products.map((product) => <ProductCard/>)
+                        products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
                         }
                     </div>
                     <span>

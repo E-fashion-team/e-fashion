@@ -19,6 +19,14 @@ $fs20: 20px;
     padding: $p20;
     gap: $g20;
 
+    .imgContainer {
+        img {
+            width: 337px;
+            height: 380px;
+            border-radius: $br10;
+        }
+    }
+
     .productInfo {
         width: 100%;
         display: flex;

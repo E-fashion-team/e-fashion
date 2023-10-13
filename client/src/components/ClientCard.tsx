@@ -3,6 +3,7 @@ import "../styles/clientDard.css";
 import danCristan from "../images/danCristan.png";
 import aionyhaust from "../images/aiony-haust-.png";
 import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
 const ClientCard = () => {
 

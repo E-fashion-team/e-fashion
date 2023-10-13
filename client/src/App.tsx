@@ -9,7 +9,7 @@ import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
-import { Messages } from "./components/messages";
+// import { Messages } from "./components/messages";
 import CreateBrand from "./components/CreateBrand";
 import { Market } from "./components/Market";
 import { FasShow } from "./components/FasShow";
@@ -32,10 +32,10 @@ import Drops from './components/Drops';
 
 
 function App() {
+  
   return (
 
     <div>
-     
       <Routes>
         <Route path="/market" element={<Market />} />
         <Route path="/" element={<Home />} />
@@ -46,12 +46,12 @@ function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/drops" element={<Drops />} />
         <Route path="/brandpage" element={<BrandPage />} />
-        <Route path="/brandstore" element={<BrandStorePage />} />
-        <Route path="/messages" element={<Messages />} />
+        <Route path="/brandstore" element={<BrandStorePage/>}/>
+        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route path="/NFT" element={<AllNFT />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/messages" element={<Messages />} />
+        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route path="/createBrand" element={<CreateBrand/>}/>
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/selfash' element={<FasShow/>}/>
