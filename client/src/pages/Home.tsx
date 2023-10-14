@@ -8,40 +8,55 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+
+import ClientCard from '../components/BrandCard'
+
 import { Link } from 'react-router-dom'
 
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import ProductCard from '../components/ProductCard'
-
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
 import { RootState , AppDispatch } from '../store'
 import { fetchProducts } from '../components/ProductData/productData'
+import UpcomingBrands from '../components/UpcomingBrands'
+import axios from 'axios'
+import FashionCard from '../components/FashionistaCard'
+import FashionistaCard from '../components/UpcomigCreators'
+
+interface UpcomingBrandsProps {
+    users: User[];
+  }
 
 enum Category{
     Men="men",
    Women= "women",
     Kids="kids",
    Other= "other"
-  
-  
   }
 
 interface Product {
- 
     id: number;
     name: string;
     price: number;  
     image:string;
   category:Category,
-  UserId:number
-  
-  
+  UserId:number,
+  }
+  interface User {
+    id: number;
+    name: string;
+    role: string;
+    image: string;
+    followers: number;
+    following: boolean;
   }
 
 
+
 const Home = () => {
+
 
     
     const dispatch:AppDispatch = useDispatch()
@@ -57,6 +72,18 @@ const Home = () => {
 
     
     
+
+    const [brands, setBrands] = useState<User[]>([]);
+    useEffect(() => {
+        axios.get<User[]>("http://localhost:5000/api/user/getUserByRole/brand").then((response) => {
+          const users = response.data.map((user) => ({
+            ...user,
+            following: false,
+          }));
+          setBrands(users);
+        });
+      }, []);
+
     
     // const [products, setProducts] = useState<object[]>([])
 
@@ -205,8 +232,7 @@ const Home = () => {
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
                     <span>
-                        {//* only Upcoming Creators will be mapped and rendered here
-                        }
+                        <FashionistaCard/>
                     </span>
                     <span>
                         <h2>
@@ -214,8 +240,7 @@ const Home = () => {
                         </h2>
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
-                    {//* only Upcoming Creators will be mapped and rendered here
-                    }
+                    <UpcomingBrands />
                     <span>
                         {//* only Upcoming Brands will be mapped and rendered here
                         }
@@ -251,229 +276,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                   
