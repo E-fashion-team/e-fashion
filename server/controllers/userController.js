@@ -75,26 +75,54 @@ module.exports={
     },
     checkpassword:async (req,res,next)=>{
         try {
-          const userInfo = await db.User.findOne({
-            where: {
-              email: req.body.email,
-            }})
-            if (bcrypt.compareSync(req.body.currentPassword, userInfo.password)) {
-                db.User.update({name:req.body.name,email:req.body.email,
-             password:bcrypt.hashSync(req.body.newPassword)},{where:{id:userInfo.id}})
-           
-            res.json({
-              status: "success",
-              message: "user found!!!",
-              data: { user: userInfo},
-            }); }
-        } catch (error) {
-          next(error);
-        }
+            const userInfo = await db.User.findOne({
+              where: {
+                email: req.body.email,
+              }
+            });
         
+            if (!userInfo) {
+              return res.status(404).json({
+                status: 'error',
+                message: 'User not found',
+              });
+            }
+        
+            const isPasswordValid = await bcrypt.compare(req.body.currentPassword, userInfo.password);
+        
+            if (!isPasswordValid) {
+              return res.status(401).json({
+                status: 'error',
+                message: 'Incorrect current password',
+              });
+            }
+        
+            const hashedNewPassword = await bcrypt.hash(req.body.newPassword, 10);
+        
+            await db.User.update({
+              name: req.body.name,
+              email: req.body.email,
+              password: hashedNewPassword,
+            }, {
+              where: { id: userInfo.id }
+            });
+        
+            res.json({
+              status: 'success',
+              message: 'Password updated successfully',
+              data: {
+                user: userInfo,
+              },
+            });
+          } catch (error) {
+            console.error(error);
+            res.status(500).json({
+              status: 'error',
+              message: 'Internal server error',
+            });
           }
-        ,
-    updated:async function (req,res){
+        
+      }  ,updated:async function (req,res){
       
         try {
    

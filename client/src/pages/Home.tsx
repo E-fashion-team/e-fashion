@@ -8,6 +8,7 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+import { Link } from 'react-router-dom'
 
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import ProductCard from '../components/ProductCard'
@@ -41,6 +42,7 @@ interface Product {
 
 
 const Home = () => {
+
     
     const dispatch:AppDispatch = useDispatch()
 
@@ -51,8 +53,10 @@ const Home = () => {
         dispatch(fetchProducts())
 
     },[])
+
+
     
- 
+    
     
     // const [products, setProducts] = useState<object[]>([])
 
@@ -117,13 +121,13 @@ const Home = () => {
                 </span>
                 <div className='logos'>
                     <span>
-                        <img src={adidas} alt="adidas" />
+                        <Link to='https://www.adidas.fr/'><img src={adidas} alt="adidas" /></Link>
                     </span>
                     <span>
-                        <img src={puma} alt="puma" />
+                       <Link to='https://eu.puma.com/fr/fr/home'><img src={puma} alt="puma" /></Link> 
                     </span>
                     <span>
-                        <img src={lacoste} alt="lacoste" />
+                        <Link to='https://www.lacoste.com/fr/'><img src={lacoste} alt="lacoste" /></Link>
                     </span>
                 </div>
                 <div className='aboutUs'>

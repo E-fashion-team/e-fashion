@@ -9,6 +9,7 @@ interface ProductState {
   image: string;
   userId: number;
   category: string;
+  typeProd: string;
 }
 
 const initialState: ProductState = {
@@ -17,6 +18,7 @@ const initialState: ProductState = {
   image: '',
   userId: 0,
   category: '',
+  typeProd: '',
 };
 
 export const addProduct = createAsyncThunk("addProduct/productAdd", async (formData: object) => {
@@ -36,12 +38,13 @@ const createProductSlice = createSlice({
   initialState,
   reducers: {
     createProduct: (state, action: PayloadAction<ProductState>) => {
-      const { name, price, image, userId ,category } = action.payload;
+      const { name, price, image, userId ,category , typeProd} = action.payload;
       state.name = name;
       state.price = price;
       state.image = image;
       state.userId = userId;
       state.category = category;
+      state.typeProd = typeProd;
     },
   },
 });

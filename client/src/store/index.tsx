@@ -7,6 +7,7 @@ import productReducer from "../components/ProductData/productData"
 import chatReducer from './chatSlice';
 import messagesSlice from './messagesSlice';
 
+
 export const store = configureStore({
   reducer: {
     signUp: signUpReducer,

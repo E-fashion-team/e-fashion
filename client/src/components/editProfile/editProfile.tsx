@@ -61,7 +61,7 @@ const [image, setImage] = useState<string>('')
     const UpdateUser=(id:number,image1:string)=>{
         axios.put(`http://localhost:5000/api/user/${id}`,{id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
         .then((response) => {
-         setUser({id:user.id,name:"zeineb",email:user.email,image:image,password:user.password,dateOfBirth:user.dateOfBirth})
+         setUser({id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
        
           })
           .catch((error) => {
@@ -77,19 +77,17 @@ const [image, setImage] = useState<string>('')
 const formData=new FormData()
 formData.append("file",e.target.files[0])
 formData.append("upload_preset","oztadvnr")
-
 await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
-
 setImage(response.data["secure_url"])
 allimage.push(response.data["secure_url"])
 setAllImage(allimage)
-
 
 }).catch((error)=>{
   throw error
 })
 
   }
+
   const profileUpload1= async (e:any)=>{
     const formData=new FormData()
     formData.append("file",e.target.files[0])
