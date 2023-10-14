@@ -67,7 +67,10 @@ function App() {
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
-        <Route path="/message" element={<Chat />} />
+
+        <Route path="/message" element={<Chat />} /> 
+
+  
 
         <Route path="/createProduct" element={<CreateProduct />} />
 
