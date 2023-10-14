@@ -7,7 +7,7 @@ import styles from "../styles/SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import {signinUser} from "../store/signinReduser"
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import SignUp from "./SignUp";
 
 
@@ -19,10 +19,10 @@ interface FormData {
 
 
 const SignIn: FunctionComponent = () => {
-
+  let navigate = useNavigate()
 
   const onNewUserCreateClick = () => {
-    <Link to="/signUp" > </Link>
+    navigate("/signUp" )
   }
 
   const [formData, setFormData] = useState<FormData>({
@@ -42,6 +42,7 @@ const SignIn: FunctionComponent = () => {
       return;
     }
     dispatch(signinUser({ ...formData}));
+    navigate("/" )
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -70,7 +71,7 @@ const SignIn: FunctionComponent = () => {
       >
         <span>New user?</span>
         <span className={styles.create_AnAccount} 
-        onClick={onNewUserCreateClick}> Create an account</span>
+        onClick={onNewUserCreateClick}   > Create an account</span>
       </div>
       <div className={styles.or}>Or</div>
       <div   className={styles.email_AddressParent1}>

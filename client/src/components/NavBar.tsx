@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
+        <div className='fofo'>
         <div className='footer'>
         <div className="header">
             <div className="text-wrapper">Logo</div>
@@ -35,12 +36,12 @@ const NavBar = () => {
                 <div>
                     <details className="text-wrapper-3">
                         <ul>
-                            <li><a href="#" className="Dtext-wrapper">Stats</a></li>
+                            <Link to='/stats'><li><a href="#" className="Dtext-wrapper">Stats</a></li></Link>
                             <li><a href="#" className="Ddiv">Shows</a></li>
-                            <li><a href="#" className="Dtext-wrapper-2">About Us</a></li>
+                            <Link to='/about'><li><a href="#" className="Dtext-wrapper-2">About Us</a></li></Link>
                             <li><a href="#" className="Dtext-wrapper-3">Community</a></li>
-                            <li><a href="#" className="Dtext-wrapper-4">Creator Studio</a></li>
-                            <li><a href="#" className="Dtext-wrapper-5">Edit Profile</a></li>
+                            <Link to='/studio'><li><a href="#" className="Dtext-wrapper-4">Creator Studio</a></li></Link>
+                            <Link to='/edit'><li><a href="#" className="Dtext-wrapper-5">Edit Profile</a></li></Link>
                             <li><a href="#" className="Dtext-wrapper-6">Setting</a></li>
                         </ul>
                     </details>
@@ -51,6 +52,7 @@ const NavBar = () => {
             </div>
         </div>
     </div>
+    </div>   
     )
 }
 

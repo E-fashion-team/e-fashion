@@ -5,13 +5,48 @@ import ProductCard from "../components/ProductCard";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
+import { useSelector,useDispatch } from 'react-redux'
+import { RootState , AppDispatch } from '../store'
+import { fetchProducts } from '../components/NftDAta/NftData'
+
+enum Category{
+    Men="men",
+   Women= "women",
+    Kids="kids",
+   Other= "other"
+  
+  
+  }
+
+interface Product {
+ 
+    id: number;
+    name: string;
+    price: number;  
+    image:string;
+  category:Category,
+  UserId:number
+  
+  
+  }
+
 const AllNFT = () => {
 
-    const [products, setProducts] = useState<object[]>([])
+    const dispatch:AppDispatch = useDispatch()
 
-    useEffect(() => {
-        setProducts(data)
-    }, [])
+    const products = useSelector((state : RootState)=>state.products.products)
+    console.log(products , 'those are products');
+
+    useEffect(()=>{
+        dispatch(fetchProducts())
+
+    },[])
+
+    // const [products, setProducts] = useState<object[]>([])
+
+    // useEffect(() => {
+    //     setProducts(data)
+    // }, [])
 
 
   return (
@@ -80,6 +115,7 @@ const AllNFT = () => {
                 </div>
             </div>
             <div className="cards">{
+                 products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
                 // products.map((product) => <ProductCard/>)
             }</div>
             <div></div>
