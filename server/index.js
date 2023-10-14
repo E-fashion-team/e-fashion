@@ -5,8 +5,10 @@ const cors=require("cors")
 const http = require('http')
 const socketIo = require('socket.io')
 const server = http.createServer(app);
-const io = socketIo(server,{cors:{origin:"http://localhost:3000"}});
-const axios = require('axios')
+const io = socketIo(server,{
+  cors:true,
+  origins:["http://127.0.0.1:3000"],
+ });
 require("./models/model")
 
 const port=5000
@@ -47,38 +49,15 @@ io.on('connection', (socket) => {
 
 // torbaga's start point
 
-var data = []
-
-const handleSend = async (user, message) => {
-  try {
-    const response = await axios.post('http://127.0.0.1:5000/api/message/message/1', {message: message, userId: user.id})
-    console.log("this is data: ", response.data)
-  } catch (err) {
-    console.log(err)
-  }
-}
-
-const handleFetch = async () => {
-  try {
-    var response = await axios.get('http://127.0.0.1:5000/api/room/messageByRoom/1')
-    data = response.data[0].Messages
-  } catch (err) {
-    console.log(err)
-  }
-}
-
 io.on('connection', (socket) => {
   console.log('ToRBaGa connected');
   
-  socket.on('chatRoomConnection', (user, message) => {
-    console.log('this is user: ', user)
-    handleSend(user, message)
+  socket.on('send', (user, message) => {
+    console.log('sent from front: ', user, message)
+    socket.emit('sendBack', user, message)
+    console.log('sent back')
   });
   
-  socket.on('sendChat', () => {
-    handleFetch()
-    io.emit('fetchChat', data)
-  });
   
   socket.on('disconnect', () => {
     console.log('ToRBaGa disconnected');

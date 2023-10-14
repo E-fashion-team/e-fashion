@@ -51,7 +51,8 @@ export const signinUser = createAsyncThunk("signin/signinUser", async (formData:
     name: "getUser",
     initialState:{    loading: false,
       error: null,
-      user: {},},
+      user: {},
+    },
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getUser.pending, (state) => {
@@ -82,7 +83,8 @@ export const signinUser = createAsyncThunk("signin/signinUser", async (formData:
         builder.addCase(signinUser.fulfilled, (state, action) => {
           state.loading = false;
           state.error = null;
-          state.user = action.payload
+          state.user = action.payload.user
+          console.log('this is action.payload ', action.payload)
           state.isAuthenticated=true
           //role can be "follower"/ "brand"/"fashionista"
           state.type=action.payload.user.role

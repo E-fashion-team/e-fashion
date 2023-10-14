@@ -741,9 +741,10 @@
     height: 650px;
     padding: 25px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
     overflow-y: scroll;
+    scroll-behavior: reversed;
 }
 
 .messages .overlap-9::-webkit-scrollbar {
@@ -804,7 +805,7 @@
     width: 100%;
 }
 
-.messages .text-wrapper-28 {
+.messages .messagesInput {
     color: white;
     font-family: "SF Pro Display-Medium", Helvetica;
     font-size: 20px;
@@ -816,6 +817,10 @@
     top: 16px;
     white-space: nowrap;
     width: 90%;
+    background-color: inherit;
+    border: none;
+    border-bottom: solid white 1px;
+    outline: none;
 }
 
 .messages .ellipse-17 {
