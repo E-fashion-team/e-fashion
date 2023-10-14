@@ -12,15 +12,12 @@ module.exports={
        
        }
     },
-    getOneProduct: async function (req,res){
+    getAllByTypeProd: async function (req,res){
        try {
-           const oneProduct= await db.User.findOne({
-            include:[
-                db.Product
-            ],
-              where :{id:req.params.UserId}
+           const response = await db.Product.findAll({
+              where :{typeProd: req.params.typeProd}
            })
-           res.status(200).send(oneProduct)
+           res.status(200).send(response)
        } catch (error) {
            throw error
        }
@@ -35,7 +32,6 @@ module.exports={
                 typeProd:req.body.typeProd,
                 UserId:req.body.UserId
             })
-
             console.log(newProduct);
             res.status(201).send({message :"product added succesfully",newProduct})
         } catch (error) {

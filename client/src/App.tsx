@@ -45,25 +45,27 @@ function App() {
 
     <div>
       <Routes>
-        <Route path="/market" element={<Market />} />
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<ExplorePage />} />
+        <Route path='/fashionshow'element={<FashionShow/>}/>
+        <Route  path='/fashionShows' element={<FashionShows/>}/>
+        <Route path="/NFT" element={<AllNFT />} />
         <Route path="/edit" element={<EditProfile />} />
         <Route path="/about" element={<About />} />
-        <Route path="/studio" element={<CreatorStudioPage />} />
         <Route path="/stats" element={<Stats />} />
+        <Route path="/messages" element={<Messages />} />
         <Route path="/drops" element={<Drops />} />
         <Route path="/brandpage" element={<BrandPage />} />
         <Route path="/brandstore" element={<BrandStorePage/>}/>
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/NFT" element={<AllNFT />} />
+        <Route path="/studio" element={<CreatorStudioPage />} />
+        <Route path="/market" element={<Market />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
 
         {/* <Route path="/createBrand" element={<CreateBrand/>}/> */}
 
 
-        <Route path='/fashionshow'element={<FashionShow/>}/>
+        
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
