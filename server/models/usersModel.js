@@ -13,7 +13,8 @@ module.exports=(sequelize, DataTypes,connection)=>{
        role:{
         type:DataTypes.ENUM , 
         values : ["follower","brand","fashionista"]
-       }
+       },
+       followers:DataTypes.INTEGER,
        }
      
        )

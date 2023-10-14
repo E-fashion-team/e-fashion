@@ -48,6 +48,17 @@ module.exports={
            throw error
        }
     },
+    getUserByRole: async (req, res) => {
+      try {
+        const brands = await db.User.findAll({
+          where: { role: req.params.role},
+        });
+        res.json(brands);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal server error");
+      }
+    },
     add: async function (req,res){
        try {
            const newUser= await db.User.create({
