@@ -167,7 +167,7 @@ const ExplorePage: FunctionComponent = () => {
        <Link to='/stats'><div className={styles.trending}>Trending</div></Link>
         </div>
         <div className={styles.allFashionNftsWrapper}>
-          <div className={styles.trending}> NFTs</div>
+          <Link to='/NFT'><div className={styles.trending}> NFTs</div></Link>
         </div>
         <div className={styles.artWrapper}>
           <div className={styles.trending}>Art</div>
@@ -179,7 +179,7 @@ const ExplorePage: FunctionComponent = () => {
           <div className={styles.trending}>Creators</div>
         </div>
         <div className={styles.allFashionNftsWrapper}>
-          <div className={styles.trending}>Brands</div>
+          <Link to='/brandpage'><div className={styles.trending}>Brands</div></Link>
         </div>
       </div>
       

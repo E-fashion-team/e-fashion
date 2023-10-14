@@ -86,7 +86,7 @@ const Home = () => {
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className='buttons'>
                             <button className='explore'>Explore Now</button>
-                            <button className='create'>Create</button>
+                            <Link to='/createProduct'><button className='create'>Create</button></Link>
                         </div>
                         <div id="statistics">
                             <span>
