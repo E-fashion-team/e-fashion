@@ -1,4 +1,3 @@
-
 module.exports=(sequelize, DataTypes,connection)=>{
 
     const Product = connection.define('Product', {

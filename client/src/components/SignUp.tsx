@@ -1,5 +1,5 @@
 import React,{ FunctionComponent, useCallback,useState, ChangeEvent, FormEvent  } from "react";
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
 import "../styles/SignUp.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,7 +7,7 @@ import { signupUser } from "../store/auth";
 import { RootState, AppDispatch } from '../store/index'
 import img from "../images/image boy.png"
 import icon from "../images/Vector.png"
-
+import { Link ,useNavigate} from "react-router-dom";
 
 enum UserRole {
   Brand = 'brand',
@@ -32,7 +32,7 @@ const SignUp: FunctionComponent = () => {
   const onAlreadyAMemberClick = useCallback(() => {
     // Please sync "Sign In" to the project
   }, []);
-
+  let navigate = useNavigate()
   const [brandRole, setBrandRole] = useState(false);
   const [followerRole, setFollowerRole] = useState(false);
   const [fashionistaRole, setFashionistaRole] = useState(false);
@@ -68,6 +68,7 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
     const { day, month, year } = formData.dateOfBirth;
     if (!day || !month || !year) {
       setError('Invalid date of birth.');
+     
       return;
     }
 
@@ -78,6 +79,7 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
 
     // Dispatch signupUser action with the updated formData
     dispatch(signupUser({ ...formData, dateOfBirth: formattedDateOfBirth }));
+    navigate("/signin")
   };
   
   const renderOptions = (options: string[]): JSX.Element[] => {
