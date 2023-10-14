@@ -23,7 +23,7 @@ import { Stats } from './components/Statistique';
 import FashionShow from "./components/fashion show/fashionShow"
 import ExplorePage from './components/explorePqge/explore';
 import EditProfile from './components/editProfile/editProfile';
-import ClientCard from './components/ClientCard';
+import ClientCard from './components/BrandCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';

@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/clientDard.css";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
+import Home from "../pages/Home";
 
 interface User {
   id: number;
@@ -10,11 +11,15 @@ interface User {
   role: string;
   image: string;
   followers: number;
+  following: boolean;
 }
 
-const ClientCard = ({ users }: { users: User[] }) => {
-  const [followers, setFollowers] = useState(0);
-  const [following, setFollowing] = useState(false);
+const FashionistaCard = ({ users }: { users: User[] }) => {
+  const [fashionistaUsers, setfashionistaUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    setfashionistaUsers(users);
+  }, [users]);
 
   const handleFollow = (user: User) => {
     axios
@@ -22,8 +27,13 @@ const ClientCard = ({ users }: { users: User[] }) => {
         followers: user.followers + 1,
       })
       .then((response) => {
-        setFollowers((prevFollowers) => prevFollowers + 1);
-        setFollowing(true);
+        const updatedUsers = fashionistaUsers.map((u) => {
+          if (u.id === user.id) {
+            return { ...u, following: true };
+          }
+          return u;
+        });
+        setfashionistaUsers(updatedUsers);
       })
       .catch((error) => {
         console.error(error);
@@ -33,22 +43,26 @@ const ClientCard = ({ users }: { users: User[] }) => {
   const handleUnfollow = (user: User) => {
     axios
       .put(`http://localhost:5000/api/user/${user.id}`, {
-        followers: user.followers - 1
+        followers: user.followers - 1,
       })
       .then((response) => {
-        setFollowers((prevFollowers) => prevFollowers - 1)
-        setFollowing(false);
+        const updatedUsers = fashionistaUsers.map((u) => {
+          if (u.id === user.id) {
+            return { ...u, following: false };
+          }
+          return u;
+        });
+        setfashionistaUsers(updatedUsers);
       })
       .catch((error) => {
-        console.error(error)
+        console.error(error);
       });
   };
 
-  const brandUsers = users.filter((user) => user.role === "brand");
 
   return (
     <div className="clientCard-container">
-      {brandUsers.map((user) => (
+      {fashionistaUsers.map((user) => (
         <div key={user.id} className="clientCard ">
           <div className="clientCardSha shadow">
             <img className="immgg" src={user.image} alt="" />
@@ -58,7 +72,7 @@ const ClientCard = ({ users }: { users: User[] }) => {
             <div className="parag">
               <p className="brand-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            {following ? (
+            {user.following ? (
               <button className="butt" onClick={() => handleUnfollow(user)}>
                 <div className="butt-wrapper">Unfollow</div>
               </button>
@@ -66,6 +80,7 @@ const ClientCard = ({ users }: { users: User[] }) => {
               <button className="butt" onClick={() => handleFollow(user)}>
                 <div className="butt-wrapper">+ Follow </div>
               </button>
+              
             )}
           </div>
         </div>
@@ -74,20 +89,24 @@ const ClientCard = ({ users }: { users: User[] }) => {
   );
 };
 
-const BrandCard = () => {
-  const [brands, setBrands] = useState<User[]>([]);
+const FashionCard = () => {
+  const [fashionista, setFashionista] = useState<User[]>([]);
 
   useEffect(() => {
-    axios.get<User[]>("http://localhost:5000/api/user/getUserByRole/brand").then((response) => {
-      setBrands(response.data);
+    axios.get<User[]>("http://localhost:5000/api/user/getUserByRole/fashionista").then((response) => {
+      const users = response.data.map((user) => ({
+        ...user,
+        following: false,
+      }));
+      setFashionista(users);
     });
   }, []);
 
   return (
     <div>
-      <ClientCard users={brands} />
+      <FashionistaCard users={fashionista} />
     </div>
   );
 };
 
-export default BrandCard;
+export default FashionCard;
