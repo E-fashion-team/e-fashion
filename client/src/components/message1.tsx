@@ -1,7 +1,8 @@
 import React, { useState,useEffect,useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMessage } from '../store/chatSlice';
-import io from 'socket.io-client';
+import {io} from 'socket.io-client';
+
 import OneMessage from "./OneMessage";
 import vec from "../images/messages/Vector (2).svg"
 import vec1 from "../images/messages/Vector.svg"

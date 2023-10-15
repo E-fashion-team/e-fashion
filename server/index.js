@@ -1,92 +1,65 @@
+// server.js
 const express = require('express');
-const app = express();
-const cors = require('cors');
 const http = require('http');
 const socketIo = require('socket.io');
-const cookieParser = require('cookie-parser'); 
-const Proxy = require('http-proxy').createProxyServer();
-const path = require('path');
-const config = require(path.join(__dirname, '../config/global.json'));
-const server = http.createServer(app);
-
-const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
-
-require('./models/model');
-
-
-const axios = require('axios
-
-
+const { ExpressPeerServer } = require('peer');
+const cors = require('cors');
+const app = express();
 const port=5000
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
 
+const axios = require('axios')
+app.use(cors()); // Add cors middleware early
 
-app.use(express.json())
-
-
-app.use(bodyparser.urlencoded({ extended: true }));
-const ProxyServer = 'http://localhost:' + config.Proxy.settings.port;
-
-
-app.use(express.json());
-app.use(cors());
+const server = http.createServer(app);
+const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-
-// Socket.IO configuration
-const oi = socketIo(config.Server.settings.socket, {
-  cors: {
-    origin: 'http://localhost:3000',
-  },
-  // Additional socket.io configuration here
+const peerServer = ExpressPeerServer(server, {
+  path: '/ws://localhost:5000', // Your peerjs path
+  allow_discovery: true,
 });
+require('./models/model');
+app.use('/ws://localhost:5000', peerServer);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-oi.on('connection', (socket) => {
 
-// app.use(cors())
-const routerMessages=require("./routers/messegeRouter.js")
-const routerUsers=require("./routers/userRouter.js")
-const routerProduct=require("./routers/productRouter.js")
-const routerBrand=require("./routers/brandRouter.js")
-const routerRoom=require("./routers/roomRouter.js")
-app.use("/api/message",routerMessages)
-app.use("/api/product",routerProduct)
-app.use("/api/user",routerUsers)
-app.use("/api/room",routerRoom)
-app.use("/api/brand",routerBrand)
-
+// server.js
 io.on('connection', (socket) => {
+  console.log('A selim connected.');
 
-  console.log('A user connected');
-
+  
+  
+  // Signaling for WebRTC
+  socket.on('signal', (data) => {
+    console.log('Sign');
+    // Broadcast the signal to the appropriate target
+    socket.to(data.target).emit('signal',data);
+  });
+  
+  socket.on('disconnect', () => {
+    // Inform other connected clients about the disconnectio
+    console.log(`User with role  disconnected.`);
+  });
+});
+io.on('connection', (socket) => {
+  
+  console.log('A user zeineb');
+  
   socket.on('stream', (data) => {
     socket.broadcast.emit('stream', data);
   });
-
+  
   socket.on('chat message', (msg) => {
     io.emit('chat message', [msg]);
   });
-
+  
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
 });
-
-
-// Proxy HTTP requests
-app.all('/*', function (req, res) {
-  Proxy.web(req, res, { target: ProxyServer });
-});
-
-
-
-
-server.listen(port, () => {
-  console.log('Backend is running on port', port);
-
 // torbaga's start point
 
 var data = []
@@ -129,25 +102,33 @@ io.on('connection', (socket) => {
 
 // torbaga's end point
 
+const routerMessages=require("./routers/messegeRouter.js")
+const routerUsers=require("./routers/userRouter.js")
+const routerProduct=require("./routers/productRouter.js")
+const routerBrand=require("./routers/brandRouter.js")
+const routerRoom=require("./routers/roomRouter.js")
+app.use("/api/message",routerMessages)
+app.use("/api/product",routerProduct)
+app.use("/api/user",routerUsers)
+app.use("/api/room",routerRoom)
+app.use("/api/brand",routerBrand)
+
+server.listen(5000, () => {
+  console.log('Server is running on port 5000');
+});
 
 
-// app.get('/api', (req, res) => {
-//     res.json({ message: 'This is your API!' });
-//   });
-
-  
-  // io.on('connection', (socket) => {
-  //   console.log('A user connected');
-  
-  //   socket.on('disconnect', () => {
-  //     console.log('User disconnected');
-  //   });
-  // })
 
 
-server.listen(port, () => {
-  console.log("backend running in port: ", port)
-})
+
+
+
+
+
+
+
+
+
 
 
 

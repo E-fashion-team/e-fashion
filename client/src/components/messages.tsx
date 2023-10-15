@@ -5,7 +5,7 @@ import OneMessage from "./OneMessage";
 import "../styles/messages.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import io from 'socket.io-client';
+import {io} from 'socket.io-client';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessages } from '../store/messagesSlice';
 

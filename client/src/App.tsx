@@ -15,8 +15,8 @@ import { BrandStorePage } from "./components/BranStore";
 // import { Messages } from "./components/messages";
 
 import { Market } from "./components/Market";
-import { FasShow } from "./components/FasShow";
-import axios from 'axios'
+import  FasShow  from "./components/FasShow";
+
 import About from './components/About';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
@@ -29,7 +29,7 @@ import Chat from './components/message1';
 import Drops from './components/Drops';
 import {Messages} from "./components/messages"
 import CreateProduct from './components/CreateProduct';
-
+import Viewer from './components/Viewer';
 
 import UpdateAccount from "./components/editProfile/update"
 
@@ -72,7 +72,7 @@ function App() {
         <Route path="/createProduct" element={<CreateProduct />} />
 
         <Route path="/update"    element={<UpdateAccount />}/>
-
+<Route path='/xxx'element={<Viewer/>}/>
    
   
 
