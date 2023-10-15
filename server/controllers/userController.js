@@ -13,7 +13,7 @@ const verifyUserLogin = async (email,password)=>{
         }
         if(await bcrypt.compare(password,client.password)){
             // creating a JWT token
-            token = jwt.sign({id:client.id,name:client.name,image:client.image,email:client.email,role:client.role},process.env.jwt,{expiresIn:'2h'})
+            token = jwt.sign({id:client.id,name:client.name,image:client.image,email:client.email,role:client.role,dateOfBirth:client.dateOfBirth},process.env.jwt,{expiresIn:'2h'})
             return {status:'ok',data:token}
         }
         return {status:'error',error:'invalid password'}
@@ -41,12 +41,23 @@ module.exports={
     getOneUser: async function (req,res){
        try {
            const oneUser= await db.User.findOne({
-              where :{id:req.params.id }
+              where :{id: req.params.id }
            })
            res.status(200).send(oneUser)
        } catch (error) {
            throw error
        }
+    },
+    getUserByRole: async (req, res) => {
+      try {
+        const brands = await db.User.findAll({
+          where: { role: req.params.role},
+        });
+        res.json(brands);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send("Internal server error");
+      }
     },
     add: async function (req,res){
        try {
@@ -75,26 +86,54 @@ module.exports={
     },
     checkpassword:async (req,res,next)=>{
         try {
-          const userInfo = await db.User.findOne({
-            where: {
-              email: req.body.email,
-            }})
-            if (bcrypt.compareSync(req.body.currentPassword, userInfo.password)) {
-                db.User.update({name:req.body.name,email:req.body.email,
-             password:bcrypt.hashSync(req.body.newPassword)},{where:{id:userInfo.id}})
-           
-            res.json({
-              status: "success",
-              message: "user found!!!",
-              data: { user: userInfo},
-            }); }
-        } catch (error) {
-          next(error);
-        }
+            const userInfo = await db.User.findOne({
+              where: {
+                email: req.body.email,
+              }
+            });
         
+            if (!userInfo) {
+              return res.status(404).json({
+                status: 'error',
+                message: 'User not found',
+              });
+            }
+        
+            const isPasswordValid = await bcrypt.compare(req.body.currentPassword, userInfo.password);
+        
+            if (!isPasswordValid) {
+              return res.status(401).json({
+                status: 'error',
+                message: 'Incorrect current password',
+              });
+            }
+        
+            const hashedNewPassword = await bcrypt.hash(req.body.newPassword, 10);
+        
+            await db.User.update({
+              name: req.body.name,
+              email: req.body.email,
+              password: hashedNewPassword,
+            }, {
+              where: { id: userInfo.id }
+            });
+        
+            res.json({
+              status: 'success',
+              message: 'Password updated successfully',
+              data: {
+                user: userInfo,
+              },
+            });
+          } catch (error) {
+            console.error(error);
+            res.status(500).json({
+              status: 'error',
+              message: 'Internal server error',
+            });
           }
-        ,
-    updated:async function (req,res){
+        
+      }  ,updated:async function (req,res){
       
         try {
    

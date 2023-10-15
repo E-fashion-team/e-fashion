@@ -16,39 +16,77 @@ import vec9 from "../images/messages/Ellipse 274.svg"
 import vec10 from "../images/messages/Ellipse 275.svg"
 // import vec11 from "../../images/messages/Ellipse 251.png"
 // import vec12 from "../../images/messages/send.svg"
-
-
+import moment from 'moment'
+import axios from 'axios';
 import "../styles/messages.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const socket = io('http://localhost:5000')
 
+interface FormData {
+  id:number,
+  name: string;
+  email: string;
+  password: string;
+  image:string,
+}
+interface correctUser {
+  name: string;
+  image:string,
+  message:string
+}
+
 const Chat: React.FC = () => {
   const scrollPage = useRef<HTMLDivElement | null>(null)
   const scrollMessages = useRef<HTMLDivElement | null>(null)
   const dispatch = useDispatch();
-  const messages = useSelector((state: { chat: { messages: string[] } }) => state.chat.messages);
-  const [message, setMessage] = useState('');
-  const [receiveMeesage,setReceiveMeesage] =useState([])
-console.log(messages,"message")
+//////////////////////Date///////////////////////////
+const now = moment();
+const formattedTime = now.format('HH:mm')
+  //////////////////getUser///////////////////////////
+  const userJSON: string | null = localStorage.getItem("user"); 
+  const userParse:FormData = userJSON ? JSON.parse(userJSON) : null;
+
+  const[user ,setUser] = useState<FormData>(userParse); 
+  const[message ,setMessage] = useState<string>(""); 
+  const[userMessage ,setUserMessage] = useState< correctUser | null>(); 
+  const[arrayofuserMessages,setArrayofuserMessages]=useState< correctUser[]>([])
+
+
+  // const messages = useSelector((state: { chat: { messages: string[] } }) => state.chat.messages);
+
+ 
+
+ 
+  
   const handleSendMessage = () => {
     if (message.trim() !== '') {
       dispatch(addMessage(message));
-
-      socket.emit('chat message', message);
+      const userMessage:correctUser = { name: user.name, image: user.image, message: message };
+      socket.emit('chat message', userMessage);
       setMessage('');
-      console.log(message)
+     
+
     }
   };
-useEffect(()=>{
-  socket.on('chat message', (msg:[]) => {
-    console.log(msg)
-    setReceiveMeesage([...msg,...receiveMeesage])
+  
+  useEffect(() => {
+    socket.on('chat message', (msg:correctUser[] ) => {
+      setArrayofuserMessages((prevMessages) => [...prevMessages,...msg]);
+      console.log(arrayofuserMessages,"aaa")
+    });
+  }, []);
+const getUserById=(id:number)=>{
+  axios.get(`http://localhost:5000/api/user/getById/${id}`).then((response)=>{
+    setUser(response.data)
+    
+  }).catch((error)=>{
+    console.log(error)
+  })
 
 
-  });
-},[])
+}
 
 
 return (<div>
@@ -76,20 +114,21 @@ return (<div>
                       </div>
                       <div className="overlap-9">
                       {
-                          receiveMeesage.map((e) => {
-                            console.log(e)
+                          arrayofuserMessages.map((e,index:number) => {
+                         console.log(e,"e")
+                          
                             return(
                            
-                            <div className="overlap-7">
+                            <div className="overlap-7"   key={index}>
                             {/* <div className="ellipse-14" /> */}
                             {/* <div className="ellipse-15" /> */}
-                            <img className="ellipse-8" alt="Ellipse" />
+                            <img className="ellipse-8" alt="Ellipse"  src={e.image}/>
                             <div className="messageContainer">
                               <div className='messageInfo'>
                                 <div className="text-wrapper-25"></div>
-                                <div className="text-wrapper-26">11:01 AM</div>
+                                <div className="text-wrapper-26">{formattedTime}{e.name} </div>
                               </div>
-                                <p className="text-wrapper-27">{e} </p>
+                                <p className="text-wrapper-27">{e.message} </p>
                             </div>
                         </div>
                           )} )
@@ -106,7 +145,7 @@ return (<div>
                               {/* this line is the message input */}
                               <input className="text-wrapper-28" placeholder="Write a Message" type="text"  value={message}
      onChange={(e) => setMessage(e.target.value)}  />
-                              <img className="ellipse-17" alt="Ellipse"  />
+                              <img className="ellipse-17" alt="Ellipse" src={user.image} />
                               {/* this line is the send button */}
                               <img className="vector-3" alt="Vector"     onClick={handleSendMessage} />
                           </div>

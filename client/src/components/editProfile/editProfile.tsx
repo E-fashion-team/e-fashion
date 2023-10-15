@@ -56,12 +56,12 @@ const [image, setImage] = useState<string>('')
     const[userImage ,setImageUser] = useState<string>('');
     const[user ,setUser] = useState<User>(userParse);
     const[userId,setUserId]=useState<number>(userParse.id);
-    console.log(user,'user')
+  
     ////////////////////////////update//////////////////
     const UpdateUser=(id:number,image1:string)=>{
         axios.put(`http://localhost:5000/api/user/${id}`,{id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
         .then((response) => {
-         setUser({id:user.id,name:"zeineb",email:user.email,image:image,password:user.password,dateOfBirth:user.dateOfBirth})
+         setUser({id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
        
           })
           .catch((error) => {
@@ -77,19 +77,17 @@ const [image, setImage] = useState<string>('')
 const formData=new FormData()
 formData.append("file",e.target.files[0])
 formData.append("upload_preset","oztadvnr")
-
 await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
-
 setImage(response.data["secure_url"])
 allimage.push(response.data["secure_url"])
 setAllImage(allimage)
-
 
 }).catch((error)=>{
   throw error
 })
 
   }
+
   const profileUpload1= async (e:any)=>{
     const formData=new FormData()
     formData.append("file",e.target.files[0])
@@ -99,8 +97,7 @@ setAllImage(allimage)
   console.log(response.data["secure_url"])
     setImageUser(response.data["secure_url"])
     setUser({id:user.id,name:user.name,email:user.email,image:response.data["secure_url"],password:user.password,dateOfBirth:user.dateOfBirth})
-    // UpdateUser(user.id,response.data["secure_url"])
-    console.log(user,1111111111)
+  
     UpdateUser(user.id,response.data["secure_url"])
 
 
@@ -125,7 +122,7 @@ setAllImage(allimage)
                         <img className="edit-cover-image" alt="Edit cover image" src={asset}  />
                         <div className="profile-pic">
                             <div className="overlap-group-2">
-                                <img className="ellipse" alt="Ellipse"  defaultValue={img1} src={userImage} />
+                                <img className="ellipse"   defaultValue={img1} src={userImage} />
                                 <div className="ellipse-2" />
                                 <input type="file" className="vector" alt="Vector" src={asset1} onChange={(e)=>{profileUpload1(e)}} />
                             </div>

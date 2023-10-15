@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice,PayloadAction  } from '@reduxjs/toolkit';
 
 
 interface MessagesState {
@@ -13,8 +13,9 @@ const messagesSlice = createSlice({
   name: 'messages',
   initialState,
   reducers: {
-    setMessages: (state, action: any) => {
+    setMessages: (state, action:PayloadAction<any>) => {
         state.data = action.payload
+      
     },
   },
 });

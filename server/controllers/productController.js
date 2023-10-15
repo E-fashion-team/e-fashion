@@ -12,35 +12,32 @@ module.exports={
        
        }
     },
-    getOneProduct: async function (req,res){
+    getAllByTypeProd: async function (req,res){
        try {
-           const oneProduct= await db.User.findOne({
-            include:[
-                db.Product
-            ],
-              where :{id:req.params.UserId}
+           const response = await db.Product.findAll({
+              where :{typeProd: req.params.typeProd}
            })
-           res.status(200).send(oneProduct)
+           res.status(200).send(response)
        } catch (error) {
            throw error
        }
     },
     add: async function (req,res){
-       try {
-           const newProduct= await db.Product.create({
-              name:req.body.name,
-               price:req.body.price,
-               image:req.body.image,
-               UserId:req.body.UserId,
-               cateogry:req.body.category
-            
-           })
-           console.log(newProduct);
-           res.status(201).send({message :"product added succesfully",newProduct})
-       } catch (error) {
-           throw error
-       }
-    },
+        try {
+            const newProduct= await db.Product.create({
+               name:req.body.name,
+                price:req.body.price,
+                image:req.body.image,
+                category:req.body.category,
+                typeProd:req.body.typeProd,
+                UserId:req.body.UserId
+            })
+            console.log(newProduct);
+            res.status(201).send({message :"product added succesfully",newProduct})
+        } catch (error) {
+            throw error
+        }
+     },
     deleted: async function (req,res){
        try {
            const productDeleted= await db.Product.destroy({

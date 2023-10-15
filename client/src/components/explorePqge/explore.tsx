@@ -3,6 +3,7 @@ import styles from "../../styles/ExplorePage.module.css";
 import img1 from "../../images/albert-dera-ILip77SbmOE-unsplash 1 (1).png"
 import NavBar from "../NavBar";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 const ExplorePage: FunctionComponent = () => {
   return (<div>
@@ -163,10 +164,10 @@ const ExplorePage: FunctionComponent = () => {
       </div>
       <div className={styles.frameParent}>
         <div className={styles.trendingWrapper}>
-          <div className={styles.trending}>Trending</div>
+       <Link to='/stats'><div className={styles.trending}>Trending</div></Link>
         </div>
         <div className={styles.allFashionNftsWrapper}>
-          <div className={styles.trending}> NFTs</div>
+          <Link to='/NFT'><div className={styles.trending}> NFTs</div></Link>
         </div>
         <div className={styles.artWrapper}>
           <div className={styles.trending}>Art</div>
@@ -178,7 +179,7 @@ const ExplorePage: FunctionComponent = () => {
           <div className={styles.trending}>Creators</div>
         </div>
         <div className={styles.allFashionNftsWrapper}>
-          <div className={styles.trending}>Brands</div>
+          <Link to='/brandpage'><div className={styles.trending}>Brands</div></Link>
         </div>
       </div>
       
