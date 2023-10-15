@@ -18,6 +18,8 @@ import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
 import { RootState , AppDispatch } from '../store'
 import { fetchProducts } from '../components/ProductData/productData'
+import { fetchUsers } from '../components/UsersData/UsersData'
+
 
 enum Category{
     Men="men",
@@ -39,6 +41,26 @@ interface Product {
   
   
   }
+  ////////////////////////////////////////////////////////////////
+  enum Role{
+    follower="follower",
+    brand= "brand",
+    fashionista="fashionista"
+     
+    
+    
+    }
+    interface User {
+     
+      id: number;
+      name: string;
+      image:string;
+      email: number;  
+      password:string
+      role:Role
+    
+    
+    }
 
 
 const Home = () => {
@@ -51,12 +73,12 @@ const Home = () => {
 
     useEffect(()=>{
         dispatch(fetchProducts())
-
+        dispatch(fetchUsers())
     },[])
 
 
     
-    
+    // const users =  useSelector((state : RootState)=>state.User.products)
     
     // const [products, setProducts] = useState<object[]>([])
 

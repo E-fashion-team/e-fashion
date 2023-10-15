@@ -32,6 +32,7 @@ import CreateProduct from './components/CreateProduct';
 
 
 import UpdateAccount from "./components/editProfile/update"
+import Error404 from './components/Erroe';
 
 
 
@@ -61,6 +62,7 @@ function App() {
         <Route path="/market" element={<Market />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/error" element={<Error404/>} />
 
         {/* <Route path="/createBrand" element={<CreateBrand/>}/> */}
 
