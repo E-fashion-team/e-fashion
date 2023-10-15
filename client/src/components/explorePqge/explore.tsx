@@ -8,7 +8,7 @@ import FashionistaCard from "../UpcomigCreators";
 import FullProductCard from "../ProductCard";
 
 const ExplorePage: FunctionComponent = () => {
-  const [selectedCard, setSelectedCard] = useState("");
+  const [selectedCard, setSelectedCard] = useState("creator");
 
   const handleBrandClick = () => {
     setSelectedCard("brand");
