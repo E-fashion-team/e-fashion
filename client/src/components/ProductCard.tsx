@@ -13,7 +13,7 @@ interface Product {
   UserId:number;
 }
 
-const ProductCard = ({ products }: { products: Product[] }) => {
+const NewTrending = ({ products }: { products: Product[] }) => {
 
   const [liked, setLiked] = useState(false);
   const [productList, setProductList] = useState<Product[]>([]);
@@ -80,5 +80,25 @@ const ProductCard = ({ products }: { products: Product[] }) => {
     </div>
   );
 };
+const ProductCard= () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    axios
+      .get<Product[]>('http://localhost:5000/api/product/allProduct')
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  return (
+    <div className='productCard-container'>
+      <NewTrending products={products} />
+    </div>
+  );
+}
 
 export default ProductCard;
