@@ -208,9 +208,7 @@ interface Product {
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
                     <div className='productSection'>
-                        {
-                        products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
-                        }
+                       <ProductCard />
                     </div>
                     <span>
                         <h2>

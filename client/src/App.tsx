@@ -32,6 +32,7 @@ import CreateProduct from './components/CreateProduct';
 
 
 import UpdateAccount from "./components/editProfile/update"
+import ProductCard from './components/ProductCard';
 
 
 
@@ -68,9 +69,7 @@ function App() {
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
         <Route path="/message" element={<Chat />} />
-
         <Route path="/createProduct" element={<CreateProduct />} />
-
         <Route path="/update"    element={<UpdateAccount />}/>
 
    
