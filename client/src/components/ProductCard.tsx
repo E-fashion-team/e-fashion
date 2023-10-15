@@ -24,7 +24,7 @@ const ProductCard = ({ products }: { products: Product[] }) => {
   }, [products]);
 
   return (
-    <div className='productCard-container'>
+    <div className='productCard-container' >
       {productList.map((product) => (
         <div className='productCard' key={product.id}>
           <span className='imgContainer'>
