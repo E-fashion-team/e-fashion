@@ -10,7 +10,7 @@ import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
 import ClientCard from '../components/BrandCard'
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../components/NewTrending'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
@@ -20,6 +20,7 @@ import UpcomingBrands from '../components/UpcomingBrands'
 import axios from 'axios'
 import FashionCard from '../components/FashionistaCard'
 import FashionistaCard from '../components/UpcomigCreators'
+import ProductCardContainer from '../components/NewTrending'
 
 interface UpcomingBrandsProps {
     users: User[];
@@ -208,7 +209,7 @@ interface Product {
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
                     <div className='productSection'>
-                       <ProductCard />
+                       <ProductCardContainer />
                     </div>
                     <span>
                         <h2>

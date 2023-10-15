@@ -13,7 +13,6 @@ import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
 // import { Messages } from "./components/messages";
-
 import { Market } from "./components/Market";
 import { FasShow } from "./components/FasShow";
 import axios from 'axios'
@@ -32,7 +31,7 @@ import CreateProduct from './components/CreateProduct';
 
 
 import UpdateAccount from "./components/editProfile/update"
-import ProductCard from './components/ProductCard';
+import ProductCardContainer from './components/NewTrending';
 
 
 
@@ -68,6 +67,7 @@ function App() {
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
+        <Route  path='/productCard' element={<ProductCardContainer/>}/>
         <Route path="/message" element={<Chat />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/update"    element={<UpdateAccount />}/>

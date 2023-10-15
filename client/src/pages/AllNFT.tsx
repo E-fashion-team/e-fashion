@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useEffect } from "react";
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import "../styles/AllNFT.scss";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/NewTrending";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 

@@ -13,14 +13,14 @@ interface Product {
   UserId:number;
 }
 
-const ProductCard = ({ products }: { products: Product[] }) => {
+const NewTrending = ({ products }: { products: Product[] }) => {
 
   const [liked, setLiked] = useState(false);
   const [productList, setProductList] = useState<Product[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setProductList(products);
+    setProductList(products.slice(0, 3));
   }, [products]);
 
   return (
@@ -80,7 +80,7 @@ const ProductCard = ({ products }: { products: Product[] }) => {
     </div>
   );
 };
-const FullProductCard= () => {
+const ProductCardContainer= () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -96,9 +96,9 @@ const FullProductCard= () => {
 
   return (
     <div className='productCard-container'>
-      <ProductCard products={products} />
+      <NewTrending products={products} />
     </div>
   );
 }
 
-export default FullProductCard;
+export default ProductCardContainer;
