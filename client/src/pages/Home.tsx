@@ -73,7 +73,7 @@ interface Product {
       image:string;
       email: number;  
       password:string
-      role:Role
+      Role:Role
     
     
     }
