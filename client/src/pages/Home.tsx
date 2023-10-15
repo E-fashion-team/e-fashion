@@ -20,6 +20,10 @@ import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
 import { RootState , AppDispatch } from '../store'
 import { fetchProducts } from '../components/ProductData/productData'
+
+import { fetchUsers } from '../components/UsersData/UsersData'
+
+
 import UpcomingBrands from '../components/UpcomingBrands'
 import axios from 'axios'
 import FashionCard from '../components/FashionistaCard'
@@ -28,6 +32,7 @@ import FashionistaCard from '../components/UpcomigCreators'
 interface UpcomingBrandsProps {
     users: User[];
   }
+
 
 enum Category{
     Men="men",
@@ -52,6 +57,26 @@ interface Product {
     followers: number;
     following: boolean;
   }
+  ////////////////////////////////////////////////////////////////
+  enum Role{
+    follower="follower",
+    brand= "brand",
+    fashionista="fashionista"
+     
+    
+    
+    }
+    interface User {
+     
+      id: number;
+      name: string;
+      image:string;
+      email: number;  
+      password:string
+      role:Role
+    
+    
+    }
 
 
 
@@ -66,11 +91,14 @@ const Home = () => {
 
     useEffect(()=>{
         dispatch(fetchProducts())
-
+        dispatch(fetchUsers())
     },[])
 
 
     
+
+    // const users =  useSelector((state : RootState)=>state.User.products)
+
     
 
     const [brands, setBrands] = useState<User[]>([]);
@@ -83,6 +111,7 @@ const Home = () => {
           setBrands(users);
         });
       }, []);
+
 
     
     // const [products, setProducts] = useState<object[]>([])

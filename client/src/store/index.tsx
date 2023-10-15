@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import signUpReducer from "./auth";
 import signinReduser from './signinReduser';
+import UserSlice from '../components/ProductData/productData';
 import getUserSlice from './signinReduser'
 import getUser from './userSlice'
 import productReducer from "../components/ProductData/productData"
@@ -20,6 +21,8 @@ export const store = configureStore({
    ...getUserSlice,
   
    activeUser: getUser,
+
+    
   },
 })
 
