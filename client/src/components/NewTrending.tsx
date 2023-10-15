@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState, useEffect } from 'react'
 import axios from 'axios';
-import '../styles/ProductCard.scss'
+import '../styles/ProductCard.css'
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const NewTrending = ({ products }: { products: Product[] }) => {
   }, [products]);
 
   return (
-    <div>
+    <div className='productCard-container'>
       {productList.map((product) => (
         <div className='productCard' key={product.id}>
           <span className='imgContainer'>

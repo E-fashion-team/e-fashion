@@ -32,7 +32,7 @@ import CreateProduct from './components/CreateProduct';
 
 import UpdateAccount from "./components/editProfile/update"
 import ProductCardContainer from './components/NewTrending';
-
+import FullProductCard from './components/ProductCard';
 
 
 
@@ -67,10 +67,10 @@ function App() {
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
-        <Route  path='/productCard' element={<ProductCardContainer/>}/>
         <Route path="/message" element={<Chat />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/update"    element={<UpdateAccount />}/>
+        <Route path="/productCards"    element={<FullProductCard />}/>
 
    
   
