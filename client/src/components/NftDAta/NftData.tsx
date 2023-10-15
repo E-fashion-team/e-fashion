@@ -23,7 +23,7 @@ category:Category
 }
 
 export const fetchProducts = createAsyncThunk('products/fetch', async () => {
-  const response = await axios.get('http://localhost:5000/api/product/product');
+  const response = await axios.get('http://localhost:5000/api/product/NFT');
 
   return response.data;
 });

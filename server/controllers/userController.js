@@ -13,7 +13,7 @@ const verifyUserLogin = async (email,password)=>{
         }
         if(await bcrypt.compare(password,client.password)){
             // creating a JWT token
-            token = jwt.sign({id:client.id,name:client.name,image:client.image,email:client.email,role:client.role},process.env.jwt,{expiresIn:'2h'})
+            token = jwt.sign({id:client.id,name:client.name,image:client.image,email:client.email,role:client.role,dateOfBirth:client.dateOfBirth},process.env.jwt,{expiresIn:'2h'})
             return {status:'ok',data:token}
         }
         return {status:'error',error:'invalid password'}
@@ -41,7 +41,7 @@ module.exports={
     getOneUser: async function (req,res){
        try {
            const oneUser= await db.User.findOne({
-              where :{id:req.params.id }
+              where :{id: req.params.id }
            })
            res.status(200).send(oneUser)
        } catch (error) {

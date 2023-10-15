@@ -8,7 +8,11 @@ import noGasFees from './imgs/noGasFees.png'
 import carbonNeturalNFTs from './imgs/carbonNeturalNFTs.png'
 import fastNEasyTrans from './imgs/fastNEasyTrans.png'
 import allImgs from './imgs/allImgs.png'
+
 import ClientCard from '../components/BrandCard'
+
+import { Link } from 'react-router-dom'
+
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import ProductCard from '../components/NewTrending'
 import NavBar from '../components/NavBar'
@@ -16,6 +20,10 @@ import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
 import { RootState , AppDispatch } from '../store'
 import { fetchProducts } from '../components/ProductData/productData'
+
+import { fetchUsers } from '../components/UsersData/UsersData'
+
+
 import UpcomingBrands from '../components/UpcomingBrands'
 import axios from 'axios'
 import FashionCard from '../components/FashionistaCard'
@@ -25,6 +33,7 @@ import ProductCardContainer from '../components/NewTrending'
 interface UpcomingBrandsProps {
     users: User[];
   }
+
 
 enum Category{
     Men="men",
@@ -49,8 +58,26 @@ interface Product {
     followers: number;
     following: boolean;
   }
+  ////////////////////////////////////////////////////////////////
+  enum Role{
+    follower="follower",
+    brand= "brand",
+    fashionista="fashionista"
+    }
+    interface User {
+      id: number;
+      name: string;
+      image:string;
+      email: number;  
+      password:string
+      role:string
+    }
 
-  const Home = () => {
+
+
+const Home = () => {
+
+
     
     const dispatch:AppDispatch = useDispatch()
 
@@ -59,9 +86,16 @@ interface Product {
 
     useEffect(()=>{
         dispatch(fetchProducts())
-
+        dispatch(fetchUsers())
     },[])
+
+
     
+
+    // const users =  useSelector((state : RootState)=>state.User.products)
+
+    
+
     const [brands, setBrands] = useState<User[]>([]);
     useEffect(() => {
         axios.get<User[]>("http://localhost:5000/api/user/getUserByRole/brand").then((response) => {
@@ -72,6 +106,8 @@ interface Product {
           setBrands(users);
         });
       }, []);
+
+
     
     // const [products, setProducts] = useState<object[]>([])
 
@@ -101,7 +137,7 @@ interface Product {
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className='buttons'>
                             <button className='explore'>Explore Now</button>
-                            <button className='create'>Create</button>
+                            <Link to='/createProduct'><button className='create'>Create</button></Link>
                         </div>
                         <div id="statistics">
                             <span>
@@ -136,13 +172,13 @@ interface Product {
                 </span>
                 <div className='logos'>
                     <span>
-                        <img src={adidas} alt="adidas" />
+                        <Link to='https://www.adidas.fr/'><img src={adidas} alt="adidas" /></Link>
                     </span>
                     <span>
-                        <img src={puma} alt="puma" />
+                       <Link to='https://eu.puma.com/fr/fr/home'><img src={puma} alt="puma" /></Link> 
                     </span>
                     <span>
-                        <img src={lacoste} alt="lacoste" />
+                        <Link to='https://www.lacoste.com/fr/'><img src={lacoste} alt="lacoste" /></Link>
                     </span>
                 </div>
                 <div className='aboutUs'>

@@ -7,7 +7,7 @@ import styles from "../styles/SignIn.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../store";
 import {signinUser} from "../store/signinReduser"
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import SignUp from "./SignUp";
 
 
@@ -19,29 +19,39 @@ interface FormData {
 
 
 const SignIn: FunctionComponent = () => {
-
+  let navigate = useNavigate()
 
   const onNewUserCreateClick = () => {
-    <Link to="/signUp" > </Link>
+    navigate("/signUp" )
   }
 
   const [formData, setFormData] = useState<FormData>({
     email: '',
-    password: '',
+    password: ''
   });
   const user = useSelector((state: RootState) => state)
-  console.log(user)
+  console.log(user,"user")
   const dispatch = useDispatch<AppDispatch>()
   const [error, setError] = useState<string>('');
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     const { email,password } = formData
-    if (!email || !password) {
+    if (!email) {
       setError('Please Fill all fields');
-      return;
+      return (
+        alert("Please check your email address  ")
+      )
     }
+    if(!password){
+      setError('Please Fill all fields');
+      return (
+        alert("Please check your password")
+      )
+    }
+  
     dispatch(signinUser({ ...formData}));
+    navigate("/" )
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -70,7 +80,7 @@ const SignIn: FunctionComponent = () => {
       >
         <span>New user?</span>
         <span className={styles.create_AnAccount} 
-        onClick={onNewUserCreateClick}> Create an account</span>
+        onClick={onNewUserCreateClick}   > Create an account</span>
       </div>
       <div className={styles.or}>Or</div>
       <div   className={styles.email_AddressParent1}>
