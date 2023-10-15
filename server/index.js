@@ -9,14 +9,14 @@ const path = require('path');
 const config = require(path.join(__dirname, '../config/global.json'));
 const server = http.createServer(app);
 
-const io = socketIo(server,{
-  cors:true,
-  origins:["http://127.0.0.1:3000"],
- });
+// const io = socketIo(server,{
+//   cors:true,
+//   origins:["http://127.0.0.1:3000"]
+//  });
 require("./models/model")
 
 
-//const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
+const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
 
 //require('./models/model');
 
