@@ -27,10 +27,10 @@ import ClientCard from './components/ClientCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';
-import {Messages} from "./components/messages"
+// import {Messages} from "./pages/Messages"
 import CreateProduct from './components/CreateProduct';
 
-
+import CreateBrand from './components/CreateBrand';
 import UpdateAccount from "./components/editProfile/update"
 
 
@@ -53,7 +53,7 @@ function App() {
         <Route path="/edit" element={<EditProfile />} />
         <Route path="/about" element={<About />} />
         <Route path="/stats" element={<Stats />} />
-        <Route path="/messages" element={<Messages />} />
+        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route path="/drops" element={<Drops />} />
         <Route path="/brandpage" element={<BrandPage />} />
         <Route path="/brandstore" element={<BrandStorePage/>}/>
@@ -62,7 +62,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
 
-        {/* <Route path="/createBrand" element={<CreateBrand/>}/> */}
+        <Route path="/createBrand" element={<CreateBrand/>}/>
 
 
         
