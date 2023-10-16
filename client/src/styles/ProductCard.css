@@ -78,7 +78,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: -3rem;
     gap: 49px; 
     padding: 0 20px;
 }
