@@ -6,6 +6,7 @@ import '../styles/CreateProduct.module..css';
 import { AppDispatch } from '../store';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 
 interface User {
@@ -61,7 +62,7 @@ const CreateProduct = () => {
     <div>
        <NavBar/>
     <div className="create-product-container">
-      <h1 className="title">Welcome, {user.name}!</h1>
+      <h1 className="title-create">Welcome, {user.name}!</h1>
       <form className="create-product-form" onSubmit={handleSubmit}>
         <label className="form-label">
           <input className="form-input" placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
@@ -92,7 +93,7 @@ const CreateProduct = () => {
         <div className="group---Item3" />
 
         <br />
-        <button className="form-button" type="submit">Create Product</button>
+        <Link to='/'> <button className="form-button" type="submit">Create Product</button></Link>
       </form>
     </div>
     <Footer/>
