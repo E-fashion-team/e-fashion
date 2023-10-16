@@ -35,6 +35,7 @@ const OneMessage = (props: Prop) => {
         <div className="messageContainer">
           <div className='messageInfo'>
             <div className="text-wrapper-25">{props.messageInfo.User?.name}</div>
+            <br />
             <div className="text-wrapper-26">{moment(props.messageInfo?.createdAt).format('LT')}</div>
           </div>
             <p className="text-wrapper-27">{props.messageInfo.message}</p>
