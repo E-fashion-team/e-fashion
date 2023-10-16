@@ -12,7 +12,7 @@ import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
-import { Messages } from "./components/messages";
+
 
 import { Market } from "./components/Market";
 import  FasShow  from "./components/FasShow";
@@ -27,7 +27,7 @@ import ClientCard from './components/BrandCard';
 import FashionShows from './components/FashionShows';
 import Chat from './components/message1';
 import Drops from './components/Drops';
-import {Messages} from "./components/messages"
+import {Messages} from './components/messages';
 import CreateProduct from './components/CreateProduct';
 
 import CreateBrand from './components/CreateBrand';
@@ -66,18 +66,14 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<SignIn />} />
         <Route path="/*" element={<Error404/>} />
-
         <Route path="/createBrand" element={<CreateBrand/>}/>
-
-
-        
         <Route  path='/selfash' element={<FasShow/>}/>
         <Route  path='/clientCard' element={<ClientCard/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
         <Route path="/message" element={<Chat />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/update"    element={<UpdateAccount />}/>
-<Route path='/xxx'element={<Viewer/>}/>
+        <Route path='/view'element={<Viewer/>}/>
    
   
 
