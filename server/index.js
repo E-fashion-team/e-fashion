@@ -55,13 +55,6 @@ io.on('connection', (socket) => {
   
   console.log('A user zeineb');
   
-
-  console.log('A user connected');
-  // console.log(io)
-
-  socket.on('stream', (data) => {
-    socket.broadcast.emit('stream', data);
-  });
   
   socket.on('chat message', (msg) => {
     io.emit('chat message', [msg]);

@@ -63,8 +63,8 @@ function App() {
         <Route path="/brandstore" element={<BrandStorePage/>}/>
         <Route path="/studio" element={<CreatorStudioPage />} />
         <Route path="/market" element={<Market />} />
-        <Route path="/" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="/*" element={<Error404/>} />
 
         <Route path="/createBrand" element={<CreateBrand/>}/>
