@@ -80,7 +80,6 @@ export const Messages = () => {
         try {
           const response = await axios.get('http://127.0.0.1:5000/api/room/messageByRoom/1')
           dispatch(setMessages(response.data[0].Messages.reverse()));
-          console.log('this is messages: ', messages)
         } catch (err) {
           console.log(err)
         }
