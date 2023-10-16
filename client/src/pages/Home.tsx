@@ -244,6 +244,7 @@ const Home = () => {
                         </h2>
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
+                    {/* products */}
                     <div className='productSection'>
                        <ProductCardContainer />
                     </div>
