@@ -1,6 +1,7 @@
 
 const sequalize =require('sequelize')
 const {db}=require("../models/model")
+const {Op} = require('sequelize')
 
 module.exports={
     getAllProduct: async function (req,res){
@@ -57,6 +58,28 @@ module.exports={
         } catch (error) {
             throw error
         }
-     }
-   
-   }
+     },
+     search: async function (req, res) {
+        try {
+          let whereCondition = {}; // Initialize an empty object for the WHERE condition
+      
+          if (req.params.query) {
+            // If a query parameter is provided, set the name filter
+            whereCondition.name = {
+              [Op.like]: req.params.query
+            };
+          }
+      
+          // Use the whereCondition object in the findAll method
+          const response = await db.Product.findAll({
+            where: whereCondition
+          });
+      
+          // If the query is successful, respond with a status code of 200 and the response data
+          res.status(200).send(response);
+        } catch (error) {
+          // If an error occurs during the query, respond with a status code of 500 and the error message
+          throw error
+        }
+      }
+    }

@@ -91,7 +91,6 @@ const Home = () => {
 
     useEffect(()=>{
         dispatch(fetchProducts())
-        dispatch(fetchUsers())
     },[])
 
 

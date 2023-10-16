@@ -83,7 +83,7 @@ export const BrandStorePage = (props:any) => {
                                 </div>
                                
                             </div>
-                            <div className="text-wrapper-21">Lorem Ipsum</div>
+                            <div className="text-wrapper-21">{data.name}</div>
                         </div>
                         <div className="QTY-sec">
                             <div className="text-wrapper-22">QTY</div>

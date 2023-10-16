@@ -26,16 +26,16 @@ export const getUser = createAsyncThunk("getUser", async (userId: any) => {
         console.error(err);
     }
 });
-export const getAllUser = createAsyncThunk("getAllUser", async () => {
-    try {
-        const response = await axios.get(`http://localhost:5000/api/user/allUsers`);
-        const user = response.data;
-        return user
-    } catch (err) {
+// export const getAllUser = createAsyncThunk("getAllUser", async () => {
+//     try {
+//         const response = await axios.get(`http://localhost:5000/api/user/allUsers`);
+//         const user = response.data;
+//         return user
+//     } catch (err) {
        
-        console.error(err);
-    }
-});
+//         console.error(err);
+//     }
+// });
 
 export const getUserSlice = createSlice({
     name: "activeUser",
