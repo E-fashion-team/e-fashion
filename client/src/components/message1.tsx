@@ -1,7 +1,8 @@
 import React, { useState,useEffect,useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMessage } from '../store/chatSlice';
-import io from 'socket.io-client';
+import {io} from 'socket.io-client';
+
 import OneMessage from "./OneMessage";
 import vec from "../images/messages/Vector (2).svg"
 import vec1 from "../images/messages/Vector.svg"
@@ -20,6 +21,7 @@ import axios from 'axios';
 import "../styles/messages.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import Viewer from './Viewer';
 
 const socket = io('http://localhost:5000')
 
@@ -96,7 +98,8 @@ return (<div>
           <div className="overlap-wrapper">
               <div className="overlap">
                   <div className="overlap-2">
-                      <div className="text-wrapper-14">Messages</div>
+                    <Viewer/>
+                      {/* <div className="text-wrapper-14">Messages</div> */}
                       <div className="overlap-2">
                           <div className="line-6"/>
                           <div className="line-7" />

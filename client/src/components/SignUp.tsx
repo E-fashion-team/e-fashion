@@ -166,8 +166,8 @@ if (!day || !month || !year) {
 <span>Already a Member?</span>
 <span className="--span">{` `}</span>
 </span>
-<span className="--span">
-<span className="sign--In1">Sign In</span>
+<span  className="--span">
+<span className="sign--In1" >Sign In</span>
 </span>
 </div>
 <div className="email--Address--Parent">
