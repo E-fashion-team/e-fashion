@@ -88,18 +88,15 @@ app.all('/*', function (req, res) {
 
 
 // torbaga's start point
-let counter = 0
 io.on('connection', (socket) => {
-  console.log('ToRBaGa connected ', counter++);
+  console.log('group chat connected');
   
   socket.on('send', (user, message) => {
-    console.log('sent from front: ', user, message)
     socket.emit('sendBack', user, message)
-    console.log('sent back')
   });
   
   socket.on('disconnect', () => {
-    console.log('ToRBaGa disconnected');
+    console.log('group chat disconnected');
   });
 });
 
