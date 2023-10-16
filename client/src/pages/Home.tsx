@@ -14,7 +14,7 @@ import ClientCard from '../components/BrandCard'
 import { Link } from 'react-router-dom'
 
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
-import ProductCard from '../components/ProductCard'
+import ProductCard from '../components/NewTrending'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import { useSelector,useDispatch } from 'react-redux'
@@ -28,6 +28,7 @@ import UpcomingBrands from '../components/UpcomingBrands'
 import axios from 'axios'
 import FashionCard from '../components/FashionistaCard'
 import FashionistaCard from '../components/UpcomigCreators'
+import ProductCardContainer from '../components/NewTrending'
 
 interface UpcomingBrandsProps {
     users: User[];
@@ -62,20 +63,19 @@ interface Product {
     follower="follower",
     brand= "brand",
     fashionista="fashionista"
-     
-    
-    
     }
     interface User {
-     
       id: number;
       name: string;
       image:string;
       email: number;  
       password:string
+
       Role:Role
     
-    
+
+      role:string
+
     }
 
 
@@ -131,7 +131,7 @@ const Home = () => {
                         <h1>Clothes are the Spirit of Fation</h1>
                         <p className='lightParag' >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         <div className='buttons'>
-                            <button className='explore'>Explore Now</button>
+                         <Link to="/explore" >  <button className='explore'>Explore Now</button></Link>
                             <Link to='/createProduct'><button className='create'>Create</button></Link>
                         </div>
                         <div id="statistics">
@@ -238,10 +238,9 @@ const Home = () => {
                         </h2>
                         <p className='lightParag' >Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     </span>
+                    {/* products */}
                     <div className='productSection'>
-                        {
-                        products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
-                        }
+                       <ProductCardContainer />
                     </div>
                     <span>
                         <h2>
