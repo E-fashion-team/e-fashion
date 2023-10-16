@@ -113,11 +113,9 @@ const CreateProduct = () => {
 
         <br />
 
-        <button className="form-button" type="submit"   onClick={()=>{navigate("/home")}}
+      
 
-      >Create Product</button>
-
-        <Link to='/'> <button className="form-button" type="submit">Create Product</button></Link>
+        <Link to='/home'> <button className="form-button" type="submit">Create Product</button></Link>
 
       </form>
     </div>
