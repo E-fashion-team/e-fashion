@@ -12,10 +12,11 @@ import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
-// import { Messages } from "./components/messages";
+import { Messages } from "./components/messages";
+
 import { Market } from "./components/Market";
-import { FasShow } from "./components/FasShow";
-import axios from 'axios'
+import  FasShow  from "./components/FasShow";
+
 import About from './components/About';
 import Home from './pages/Home';
 import { Stats } from './components/Statistique';
@@ -30,6 +31,8 @@ import Drops from './components/Drops';
 import CreateProduct from './components/CreateProduct';
 
 import CreateBrand from './components/CreateBrand';
+import Viewer from './components/Viewer';
+
 import UpdateAccount from "./components/editProfile/update"
 import Error404 from './components/Erroe';
 import FullProductCard from './components/ProductCard';
@@ -54,14 +57,14 @@ function App() {
         <Route path="/edit" element={<EditProfile />} />
         <Route path="/about" element={<About />} />
         <Route path="/stats" element={<Stats />} />
-        {/* <Route path="/messages" element={<Messages />} /> */}
+        <Route path="/messages" element={<Messages />} />
         <Route path="/drops" element={<Drops />} />
         <Route path="/brandpage" element={<BrandPage />} />
         <Route path="/brandstore" element={<BrandStorePage/>}/>
         <Route path="/studio" element={<CreatorStudioPage />} />
         <Route path="/market" element={<Market />} />
-        <Route path="/" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="/*" element={<Error404/>} />
 
         <Route path="/createBrand" element={<CreateBrand/>}/>
@@ -74,8 +77,7 @@ function App() {
         <Route path="/message" element={<Chat />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/update"    element={<UpdateAccount />}/>
-        <Route path="/productCards"    element={<FullProductCard />}/>
-
+<Route path='/xxx'element={<Viewer/>}/>
    
   
 
