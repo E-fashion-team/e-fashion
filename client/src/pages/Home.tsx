@@ -97,7 +97,6 @@ const Home = () => {
 
     
 
-    // const users =  useSelector((state : RootState)=>state.User.products)
 
     
 
@@ -114,20 +113,11 @@ const Home = () => {
 
 
     
-    // const [products, setProducts] = useState<object[]>([])
-
-    // useEffect(() => {
-    //     setProducts(data)
-    // }, [])
-
+   
     return (
         <div>
             <NavBar />
-    {/* {products.map((product:Product) => (
-  <div key={product.id}>
-    <ProductCard prod={product} />
-  </div>
-))} */}
+ 
         <div>
         <div id='homePage'>
 
@@ -240,8 +230,7 @@ const Home = () => {
                         <div>
 
                         </div>
-                        {//?* products will be mapped and rendered here
-                        }
+                     
                     </span>
                     <span>
                         <h2>
@@ -271,8 +260,7 @@ const Home = () => {
                     </span>
                     <UpcomingBrands />
                     <span>
-                        {//* only Upcoming Brands will be mapped and rendered here
-                        }
+                   
                     </span>
                 </div>
                     <span>

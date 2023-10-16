@@ -18,8 +18,7 @@ import comm from '../../images/edit profile/rrrrr.svg'
 import share from '../../images/edit profile/share.svg'
 import sss from '../../images/edit profile/sssss.svg'
 
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+
 import axios from "axios"
 
 import img4 from "../../images/Rectangle 1889.png"
@@ -30,7 +29,7 @@ import NavBar from "../NavBar"
 import Footer from "../Footer"
 import UpdateAccount from "./update"
 import { Link } from "react-router-dom"
-import  getUser  from  "../../store/signinReduser";
+
 
 
 
@@ -48,8 +47,7 @@ const EditProfile: FunctionComponent = () => {
   const userJSON: string | null = localStorage.getItem("user"); 
   const userParse:User = userJSON ? JSON.parse(userJSON) : null;
 
-  
-// const userParse = useSelector((state: {getUser: {user: User}}) => state.getUser.user)
+
 console.log(userParse.name,"zzz")
 const [allimage, setAllImage] = useState<string[]>([])
 const [image, setImage] = useState<string>('')
@@ -286,9 +284,7 @@ setAllImage(allimage)
 </div>
 )
 
-{/* // <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"  onChange={(e)=>{profileUpload(e)}} />
-// <button>submit</button> */}
-{/* // </div> */}
+
   
   
 };
