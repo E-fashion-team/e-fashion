@@ -42,21 +42,7 @@ export const Messages = () => {
     
     console.log("this is userFromRedux: ", userFromRedux);
 
-    // interface userObj {
-    //     "id": number;
-    //     "name": string;
-    //     "image": string;
-    //     "email": string;
-    //     "password": string;
-    //     "dateOfBirth": string;
-    //     "role": string;
-    // }
-    
-    // interface Object {
-    //     user: string;
-    //     message: string;
-    //     createdAt: string;
-    // }
+
 
     const handleSendSocket = () => {
       if (message.trim()) {
