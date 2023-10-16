@@ -95,7 +95,6 @@ export const Messages = () => {
     
     useEffect(() => {
         fetchMessages()
-        // add socket to dependency array to activate live chat
     }, [])
 
     useEffect(() => {
