@@ -13,18 +13,18 @@ interface Product {
   UserId:number;
 }
 
-const ProductCard = ({ products }: { products: Product[] }) => {
+const NewTrending = ({ products }: { products: Product[] }) => {
 
   const [liked, setLiked] = useState(false);
   const [productList, setProductList] = useState<Product[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setProductList(products);
+    setProductList(products.slice(0, 3));
   }, [products]);
 
   return (
-    <div className='productCard-container' >
+    <div className='productCard-container'>
       {productList.map((product) => (
         <div className='productCard' key={product.id}>
           <span className='imgContainer'>
@@ -80,7 +80,7 @@ const ProductCard = ({ products }: { products: Product[] }) => {
     </div>
   );
 };
-const FullProductCard= () => {
+const ProductCardContainer= () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -95,10 +95,10 @@ const FullProductCard= () => {
   }, []);
 
   return (
-    <div >
-      <ProductCard products={products} />
+    <div className='productCard-container'>
+      <NewTrending products={products} />
     </div>
   );
 }
 
-export default FullProductCard;
+export default ProductCardContainer;

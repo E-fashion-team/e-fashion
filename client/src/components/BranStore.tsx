@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import asset from "../images/BrandStorepage/+.png"
 import asset1 from "../images/BrandStorepage/Vector.svg"
 import asset2 from '../images/BrandStorepage/image 13.png'
@@ -7,7 +7,8 @@ import asset4 from "../images/BrandStorepage/Vector (1).svg"
 import "../styles/BrandStorePage.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { number } from "prop-types";
 
 
 interface Product {
@@ -29,6 +30,10 @@ interface Product {
 export const BrandStorePage = (props:any) => {
     const location = useLocation();
     const data  = location.state;
+    const [count,setCount] = useState(1);
+    useEffect(()=>{
+        
+    },[count])
 
     return (
     <div>
@@ -48,7 +53,7 @@ export const BrandStorePage = (props:any) => {
                                     <div className="text-wrapper-17">Current Bid</div>
                                     <div className="group-4">
                                         <div className="frame-2">
-                                            <div className="text-wrapper-18">Buy Now</div>
+                                            <Link to='/error'><div className="text-wrapper-18">Buy Now</div></Link>
                                         </div>
                                         <img className="vector" alt="Vector" src="vector.svg" />
                                     </div>
@@ -84,12 +89,15 @@ export const BrandStorePage = (props:any) => {
                             <div className="text-wrapper-22">QTY</div>
                             <div className="group-9">
                                 <div className="overlap-group-3">
-                                    <div className="text-wrapper-23">1</div>
+                                    <div className="text-wrapper-23">{count}</div>
                                
                                 </div>
-                                <img className="frame-5" alt="Frame" src={asset} />
+                                <img className="frame-5" alt="Frame" src={asset} onClick={()=>{
+                                    setCount(count+1);
+                                    console.log(count)
+                                    }}/>
                             </div>
-                            <div className="rectangle-wrapper">
+                            <div className="rectangle-wrapper" onClick={()=>{setCount(count-1)}}>
                                 <div className="rectangle-3" />
                             </div>
                         </div>

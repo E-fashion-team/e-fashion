@@ -8,6 +8,7 @@ import '../styles/footer.css'
 
 const Footer = () => {
     return (
+        <div className='in-the-midle'> 
         <div className='footer'>
             
         <div className="group-18">
@@ -47,6 +48,7 @@ const Footer = () => {
                         </div>
                     </div>
                  
+                    </div>
                     </div>
     )
 }

@@ -1,5 +1,5 @@
 import React,{ FunctionComponent, useCallback,useState, ChangeEvent, FormEvent  } from "react";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "../../styles/update.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,6 +25,7 @@ import icon from "../../images/Vector.png"
   }
   
 const UpdateAccount:FunctionComponent=()=>{
+  let navigate = useNavigate()
     const userJSON: string | null = localStorage.getItem("user"); 
     const userParse:FormData = userJSON ? JSON.parse(userJSON) : null;
     const[userUp ,setUserUp] = useState<FormData>(userParse); 
@@ -36,14 +37,25 @@ const UpdateAccount:FunctionComponent=()=>{
    
     const modifyProfile = (user:User,e: React.MouseEvent) => {
         e.preventDefault();
+
+      if(user.newPassword.length <8){
+        alert("Enter a strong password: " );
+        return 
+      }
         if (user.newPassword === user.confirmPassword) {
           axios
             .post(`http://localhost:5000/api/user/modify`, user)
             .then((res) => {
-              console.log(user,"aa")
-              alert("succes");
+            
+              alert("You successfully updated your account");
+              navigate("/home" )
               })
-            .catch((err) => console.log(err));
+            .catch((err) =>
+          
+            
+              alert("check your password is incorrect")
+          
+            );
         }
       };
     
@@ -56,16 +68,16 @@ const UpdateAccount:FunctionComponent=()=>{
       
         <div className="email-Address-Parent">
         <input className="email-Address" type="text" name="email" defaultValue={userUp.email} onChange={(e) => setEmail(e.target.value)}/>
-        {/* <div className="group-Item" /> */}
+      
         </div>
         <div className="vector-Parent">
        
         <input className="email-Address" type="password" name="password" placeholder="Password"    onChange={(e) => setCurrentPassword(e.target.value)}/>
-        {/* <div className="group-Item" /> */}
+    
         <input className="email-Address1" type="password" name="password" placeholder="NewPassword"     onChange={(e) => setNewPassword(e.target.value)}/>
-        {/* <div className="group-Item" /> */}
+     
         <input className="email-Address2" type="password" name="password" placeholder="confirmPassword"   onChange={(e) => setConfirmPassword(e.target.value)}/>
-        {/* <div className="group-Item" /> */}
+  
         </div>
         <div className="group-Parent">
         <div className="full-Name-Parent">
@@ -83,8 +95,8 @@ const UpdateAccount:FunctionComponent=()=>{
                 if (
                   newPassword !== confirmPassword
                 ) {
-                  alert("problem");
-                  
+                  alert("your new password and confirm password do not match please check ")
+                  return
                 } else {
                   modifyProfile(
                     {

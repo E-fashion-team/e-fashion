@@ -1,0 +1,24 @@
+.err {
+    height: 115px;
+    width: 829px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    
+}
+
+.err .text-wrapperrr {
+    color: #fcf3f3;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 60px;
+    font-style: var(--heading-110px-medium-font-style);
+    font-weight: var(--heading-110px-medium-font-weight);
+    left: 0;
+    letter-spacing: var(--heading-110px-medium-letter-spacing);
+    line-height: var(--heading-110px-medium-line-height);
+    top: 0;
+    white-space: nowrap;
+ 
+}

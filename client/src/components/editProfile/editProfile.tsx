@@ -18,8 +18,7 @@ import comm from '../../images/edit profile/rrrrr.svg'
 import share from '../../images/edit profile/share.svg'
 import sss from '../../images/edit profile/sssss.svg'
 
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+
 import axios from "axios"
 
 import img4 from "../../images/Rectangle 1889.png"
@@ -30,7 +29,7 @@ import NavBar from "../NavBar"
 import Footer from "../Footer"
 import UpdateAccount from "./update"
 import { Link } from "react-router-dom"
-import  getUser  from  "../../store/signinReduser";
+
 
 
 
@@ -48,15 +47,14 @@ const EditProfile: FunctionComponent = () => {
   const userJSON: string | null = localStorage.getItem("user"); 
   const userParse:User = userJSON ? JSON.parse(userJSON) : null;
 
-  
-// const userParse = useSelector((state: {getUser: {user: User}}) => state.getUser.user)
+
 console.log(userParse.name,"zzz")
 const [allimage, setAllImage] = useState<string[]>([])
 const [image, setImage] = useState<string>('')
     const[userImage ,setImageUser] = useState<string>('');
     const[user ,setUser] = useState<User>(userParse);
     const[userId,setUserId]=useState<number>(userParse.id);
-    console.log(user,'user')
+  
     ////////////////////////////update//////////////////
     const UpdateUser=(id:number,image1:string)=>{
         axios.put(`http://localhost:5000/api/user/${id}`,{id:user.id,name:user.name,email:user.email,image:image1,password:user.password,dateOfBirth:user.dateOfBirth})
@@ -97,8 +95,7 @@ setAllImage(allimage)
   console.log(response.data["secure_url"])
     setImageUser(response.data["secure_url"])
     setUser({id:user.id,name:user.name,email:user.email,image:response.data["secure_url"],password:user.password,dateOfBirth:user.dateOfBirth})
-    // UpdateUser(user.id,response.data["secure_url"])
-    console.log(user,1111111111)
+  
     UpdateUser(user.id,response.data["secure_url"])
 
 
@@ -123,7 +120,7 @@ setAllImage(allimage)
                         <img className="edit-cover-image" alt="Edit cover image" src={asset}  />
                         <div className="profile-pic">
                             <div className="overlap-group-2">
-                                <img className="ellipse" alt="Ellipse"  defaultValue={img1} src={userImage} />
+                                <img className="ellipse"   defaultValue={img1} src={userImage} />
                                 <div className="ellipse-2" />
                                 <input type="file" className="vector" alt="Vector" src={asset1} onChange={(e)=>{profileUpload1(e)}} />
                             </div>
@@ -287,9 +284,7 @@ setAllImage(allimage)
 </div>
 )
 
-{/* // <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"  onChange={(e)=>{profileUpload(e)}} />
-// <button>submit</button> */}
-{/* // </div> */}
+
   
   
 };

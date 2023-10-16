@@ -29,6 +29,10 @@ interface FormData {
 
 
 const SignUp: FunctionComponent = () => {
+
+
+
+
   const onAlreadyAMemberClick = useCallback(() => {
     // Please sync "Sign In" to the project
   }, []);
@@ -65,16 +69,50 @@ const years = Array.from({ length: currentYear - startYear + 1 }, (_, index) => 
   const [error, setError] = useState<string>('');
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
-    const { day, month, year } = formData.dateOfBirth;
-    if (!day || !month || !year) {
-      setError('Invalid date of birth.');
-     
-      return;
-    }
+    if(!formData.name || !formData.email  || !formData.dateOfBirth || !formData.role){
+      return (
+ alert("hello please enter your data")
+    )
+}
+
+ const emailRegex =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;;
+ if (!emailRegex.test(formData.email)) {
+  setError('Please enter a valid email address.')
+  return (
+   
+    alert("Please enter a valid email address.")
+   
+  )
+  
+}
+const strongPasswordRegex = /^"(?=.*[a-z])(?=.*[A-Z]).{8,}"/;
+if (formData.password.length<8) {
+
+  setError('Please use a stronger password.');
+  return(
+ 
+   alert(" Please use a stronger password")
+  
+  )
+ 
+}
+const { day, month, year } = formData.dateOfBirth;
+if (!day || !month || !year) {
+  setError('Invalid date of birth.');
+  return (
+
+   alert(" Invalid date of birth.")
+ )
+
+
+
+}
+ 
 
     const paddedDay = day.padStart(2, '0');
     const paddedMonth = month.padStart(2, '0');
     const paddedYear = year.padStart(4, '0');
+
     const formattedDateOfBirth = `${paddedYear}-${paddedMonth}-${paddedDay}`;
 
     // Dispatch signupUser action with the updated formData
