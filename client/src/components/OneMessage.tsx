@@ -25,9 +25,6 @@ interface Prop {
 
 
 const OneMessage = (props: Prop) => {
-
-  console.log(props.messageInfo)
-
   return (
     <div className="overlap-7">
         {/* <div className="ellipse-14" /> */}

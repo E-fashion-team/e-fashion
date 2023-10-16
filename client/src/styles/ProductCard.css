@@ -1,0 +1,85 @@
+.productCard {
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.productCard .imgContainer img {
+    width: 337px;
+    height: 380px;
+    border-radius: 10px;
+}
+
+.productCard .productInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productCard .productInfo .leftSection {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.productCard .productInfo .leftSection h4 {
+    font-size: 20px;
+}
+
+.productCard .productInfo .leftSection .top {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.productCard .productInfo .rightSection {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.productCard .productInfo .rightSection .top {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.productCard .productInfo .rightSection .bottom {
+    font-size: 20px;
+}
+
+.productCard .btnSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productCard .btnSection .buyBtn {
+    background: linear-gradient(214deg, #B75CFF 6.04%, #671AE4 92.95%);
+    color: white;
+    font-size: 20px;
+    width: 85%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.productCard .btnSection .buyBtn:hover {
+    background: none;
+    background-color: #671AE4;
+}
+
+.productCard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin-top: -3rem;
+    gap: 49px; 
+    padding: 0 20px;
+}
+

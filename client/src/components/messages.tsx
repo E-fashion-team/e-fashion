@@ -33,7 +33,7 @@ export const Messages = () => {
     const messages = useSelector((state: {messages: {data: any}}) => state.messages.data)
     const userFromRedux = useSelector((state: RootState) => state.activeUser.user)
     // const userState = useSelector((state: RootState) => state.activeUser);
-    console.log("this is userId: ", user.id);
+    // console.log("this is userId: ", user.id);
     
     useEffect(() => {
         // Dispatch the `getUser` action to fetch the user data
@@ -59,17 +59,17 @@ export const Messages = () => {
     // }
 
     const handleSendSocket = () => {
-    //   if (message.trim()) {
+      if (message.trim()) {
         socket.emit('send', user, message);
         setMessage('');
-    //   }
+      }
     };
 
     const handleSendDB = async () => {
       try {
         if(message.trim()) {
-            const response = await axios.post('http://127.0.0.1:5000/api/message/message/1', {message: message, userId: user.id})
-            console.log("this is data: ", response.data)
+            const response = await axios.post('http://127.0.0.1:5000/api/message/message/1', {message: message, UserId: user.id})
+            console.log('lookin for user: ', response.data)
         }
       } catch (err) {
         console.log(err)
@@ -83,54 +83,31 @@ export const Messages = () => {
         } catch (err) {
           console.log(err)
         }
-        console.log('this is messages: ', messages)
     };
 
     
     
     const handleSend = () => {
-        socket.on('sendBack', (user, message)=> {
-            console.log('received: ', message)
-            dispatch(setMessages([{message: message, User: user}, ...messages]));
-        })
         handleSendSocket()
         handleSendDB()
     }
     
+    useEffect(() => {
+        fetchMessages()
+    }, [])
+
+    useEffect(() => {
+        const listener = (user: any, message: any) => {
+            console.log('received from socket: ', message);
+            dispatch(setMessages([{message: message, User: user}, ...messages]));
+        };
     
-    useEffect(()=>{
-            socket.on('sendBack', (user, message)=> {
-                console.log('received: ', message)
-                dispatch(setMessages([{message: message, User: user}, ...messages]));
-            })
-            fetchMessages()
-            // socket.emit('send')
-            
-        }, [])
-
-
-
-        // chat's
-        // 
-        // useEffect(() => {
-        //     socket.on('message', (message) => {
-        //       setMessages((prevMessages) => [...prevMessages, message]);
-        //     });
-        //   }, []);
-        
-        //   const sendMessage = () => {
-        //     socket.emit('message', message);
-        //     setMessage('');
-        //   };
-
-        
-
-    // useEffect(() => {
-        // scrollPage.current?.scrollIntoView({behavior: "smooth   "})
-        // scrollMessages.current?.scrollIntoView({ block: "end" })
-    // }, [])
-
-
+        socket.on('sendBack', listener);
+    
+        return () => {
+            socket.off('sendBack', listener);
+        };
+    }, [messages]);
     return (<div>
     <div>
         <NavBar/>

@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useEffect } from "react";
 import { data } from '../torbagaDummyData' //this line will be deleted when we import the real data from redux's store
 import "../styles/AllNFT.scss";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/NewTrending";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -26,10 +26,10 @@ interface Product {
     image:string;
   category:Category,
   UserId:number
-  
-  
   }
-
+  interface ProductCardProps {
+    prod: Product;
+  }
 const AllNFT = () => {
 
     const dispatch:AppDispatch = useDispatch()
@@ -115,7 +115,7 @@ const AllNFT = () => {
                 </div>
             </div>
             <div className="cards">{
-                 products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
+                //  products.map((product:Product) => <ProductCard key={product.id} prod={product}/>)
                 // products.map((product) => <ProductCard/>)
             }</div>
             <div></div>

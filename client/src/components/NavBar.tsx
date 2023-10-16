@@ -1,11 +1,23 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import '../styles/navBar.css'
 import vector1 from '../images/Vector (1).svg'
 import ellipse from '../images/Ellipse 258.svg'
 import group from '../images/Group 48095728.svg'
 import { Link } from 'react-router-dom';
-
+interface User {
+    id:number,
+    email: string;
+    name: string;
+    password: string;
+    image:string,
+    dateOfBirth:string,
+   
+    
+  }
 const NavBar = () => {
+    const userJSON: string | null = localStorage.getItem("user"); 
+    const userParse:User = userJSON ? JSON.parse(userJSON) : null;
+    const[user ,setUser] = useState<User>(userParse);
     return (
         <div className='fofo'>
         <div className='footer'>
@@ -22,7 +34,7 @@ const NavBar = () => {
                     <input className="inputBox" id="inputBox" type="text" placeholder="Search Items, Fashion, Collection and Users" />
                 </div>
             </div>
-            <img className="ellipse" alt="Ellipse" src={ellipse} />
+            <img className="ellipse"  src={user.image} />
             {/* <img className="img" alt="Vector" src={img} /> */}
             <div className="group">
                 <Link to='/explore'><div className="text-wrapper-3">Explore</div></Link>

@@ -27,22 +27,31 @@ const SignIn: FunctionComponent = () => {
 
   const [formData, setFormData] = useState<FormData>({
     email: '',
-    password: '',
+    password: ''
   });
   const user = useSelector((state: RootState) => state)
-  console.log(user)
+  console.log(user,"user")
   const dispatch = useDispatch<AppDispatch>()
   const [error, setError] = useState<string>('');
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault();
     const { email,password } = formData
-    if (!email || !password) {
+    if (!email) {
       setError('Please Fill all fields');
-      return;
+      return (
+        alert("Please check your email address  ")
+      )
     }
+    if(!password){
+      setError('Please Fill all fields');
+      return (
+        alert("Please check your password")
+      )
+    }
+  
     dispatch(signinUser({ ...formData}));
-    navigate("/" )
+    navigate("/home" )
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
