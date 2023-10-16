@@ -6,7 +6,13 @@ import '../styles/CreateProduct.module..css';
 import { AppDispatch } from '../store';
 import NavBar from './NavBar';
 import Footer from './Footer';
+
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import home from '../pages/Home';
+
 import { Link } from 'react-router-dom';
+
 
 
 interface User {
@@ -24,8 +30,21 @@ const CreateProduct = () => {
   const [typeProd, setTypeProd] = useState('');
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const user: User = JSON.parse(localStorage.getItem('user') || '{}');
+  let navigate = useNavigate()
 
-  
+  const profileUpload= async (e:any)=>{
+    const formData=new FormData()
+    formData.append("file",e.target.files[0])
+    formData.append("upload_preset","oztadvnr")
+    await axios.post("https://api.cloudinary.com/v1_1/dl4qexes8/upload",formData).then((response)=>{
+    setImage(response.data["secure_url"])
+
+    
+    }).catch((error)=>{
+      throw error
+    })
+    
+      }
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const parsedPrice = parseFloat(price);
@@ -88,12 +107,18 @@ const CreateProduct = () => {
 
         <br />
         <label className="form-label">
-          <input className="form-input" placeholder='Image' value={image} onChange={(event) => setImage(event.target.value)} />
+          <input className="form-input"   type="file" placeholder='Image'   onChange={(e)=>{profileUpload(e)}} />
         </label>
         <div className="group---Item3" />
 
         <br />
+
+        <button className="form-button" type="submit"   onClick={()=>{navigate("/home")}}
+
+      >Create Product</button>
+
         <Link to='/'> <button className="form-button" type="submit">Create Product</button></Link>
+
       </form>
     </div>
     <Footer/>

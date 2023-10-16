@@ -51,7 +51,7 @@ const SignIn: FunctionComponent = () => {
     }
   
     dispatch(signinUser({ ...formData}));
-    navigate("/" )
+    navigate("/home" )
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {

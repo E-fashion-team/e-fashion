@@ -46,7 +46,7 @@ function App() {
 
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path='/fashionshow'element={<FashionShow/>}/>
         <Route  path='/fashionShows' element={<FashionShows/>}/>
@@ -60,9 +60,9 @@ function App() {
         <Route path="/brandstore" element={<BrandStorePage/>}/>
         <Route path="/studio" element={<CreatorStudioPage />} />
         <Route path="/market" element={<Market />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/error" element={<Error404/>} />
+        <Route path="/*" element={<Error404/>} />
 
         <Route path="/createBrand" element={<CreateBrand/>}/>
 

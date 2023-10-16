@@ -48,7 +48,7 @@ const UpdateAccount:FunctionComponent=()=>{
             .then((res) => {
             
               alert("You successfully updated your account");
-              navigate("/" )
+              navigate("/home" )
               })
             .catch((err) =>
           
