@@ -1,4 +1,4 @@
-// Viewer.tsx
+
 import React, { useEffect, useRef } from 'react';
 import Peer from 'peerjs';
 import NavBar from './NavBar';
@@ -18,7 +18,7 @@ function Viewer() {
           
           call.answer(stream);
           call.on('stream', (remoteStream:any) => {
-            // Display remote stream
+          
             if (videoRef.current) {
               videoRef.current.srcObject = remoteStream;
             }

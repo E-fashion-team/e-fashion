@@ -25,6 +25,16 @@ app.use('/ws://localhost:5000', peerServer);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const routerMessages=require("./routers/messegeRouter.js")
+const routerUsers=require("./routers/userRouter.js")
+const routerProduct=require("./routers/productRouter.js")
+const routerBrand=require("./routers/brandRouter.js")
+const routerRoom=require("./routers/roomRouter.js")
+app.use("/api/message",routerMessages)
+app.use("/api/product",routerProduct)
+app.use("/api/user",routerUsers)
+app.use("/api/room",routerRoom)
+app.use("/api/brand",routerBrand)
 
 // server.js
 io.on('connection', (socket) => {
@@ -79,16 +89,6 @@ io.on('connection', (socket) => {
 });
 
 
-const routerMessages=require("./routers/messegeRouter.js")
-const routerUsers=require("./routers/userRouter.js")
-const routerProduct=require("./routers/productRouter.js")
-const routerBrand=require("./routers/brandRouter.js")
-const routerRoom=require("./routers/roomRouter.js")
-app.use("/api/message",routerMessages)
-app.use("/api/product",routerProduct)
-app.use("/api/user",routerUsers)
-app.use("/api/room",routerRoom)
-app.use("/api/brand",routerBrand)
 
 server.listen(5000, () => {
   console.log('Server is running on port 5000');

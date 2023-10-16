@@ -20,21 +20,12 @@ function Streamer() {
           console.log('video');
        
 
-        // peer.on('call', (call:any) => {
-        //   console.log('stream')
-        //   call.answer(stream);
-        //   call.on('stream', (remoteStream:any) => {
-        //     // Display remote stream
-        //     if (videoRef.current) {
-        //       videoRef.current.srcObject = remoteStream;
-        //     }
-        //   });
-        // });
+   
       })
       .catch((error) => {
         console.error('Error accessing media devices: ', error);
       });
-  }, [videoRef]);
+  }, []);
 
   return (
     <div>
