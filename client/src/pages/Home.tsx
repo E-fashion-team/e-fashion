@@ -24,11 +24,13 @@ import UpcomingBrands from '../components/UpcomingBrands'
 import axios from 'axios'
 import FashionCard from '../components/FashionistaCard'
 import FashionistaCard from '../components/UpcomigCreators'
+import { getAllUsers } from '../store/AllUsersSlice'
+
+
 
 interface UpcomingBrandsProps {
     users: User[];
   }
-import { fetchUsers } from '../components/UsersData/UsersData'
 
 
 enum Category{
@@ -68,7 +70,6 @@ const Home = () => {
 
     useEffect(()=>{
         dispatch(fetchProducts())
-        dispatch(fetchUsers())
     },[])
 
 

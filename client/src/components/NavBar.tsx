@@ -11,8 +11,8 @@ const NavBar = () => {
         <div className='footer'>
         <div className="header">
             <div className="text-wrapper">Logo</div>
-            <div className="div"> <Link to="/">Home</Link></div>
-            <div className="text-wrapper-2">Personal Collection</div>
+            <div className="div"><Link to="/" style={{textDecoration: 'none', color: 'white'}}>Home</Link></div>
+            <Link to='/NFT'><div className="text-wrapper-2">NFTs</div></Link>
             <div className="search-bar">
                 <div className="inputBox_container">
                     <svg className="search_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" >
@@ -25,24 +25,22 @@ const NavBar = () => {
             <img className="ellipse" alt="Ellipse" src={ellipse} />
             {/* <img className="img" alt="Vector" src={img} /> */}
             <div className="group">
-                <div className="text-wrapper-3">Explore</div>
-                <img className="vector-2" alt="Vector" src={vector1} />
+                <Link to='/explore'><div className="text-wrapper-3">Explore</div></Link>
+               
             </div>
-            <img className="group-2" alt="Group" src={group} />
-            <div className="text-wrapper-4">Drops</div>
+            <Link to='/messages'><img className="group-2" alt="Group" src={group} /></Link>
+            <Link to='/drops'><div className="text-wrapper-4">Drops</div></Link>
             <div className="group-3">
 
                 {/* <img className="vector-3" alt="Vector" src={vector2} /> */}
                 <div>
                     <details className="text-wrapper-3">
                         <ul>
-                            <Link to='/stats'><li><a href="#" className="Dtext-wrapper">Stats</a></li></Link>
-                            <li><a href="#" className="Ddiv">Shows</a></li>
-                            <Link to='/about'><li><a href="#" className="Dtext-wrapper-2">About Us</a></li></Link>
-                            <li><a href="#" className="Dtext-wrapper-3">Community</a></li>
-                            <Link to='/studio'><li><a href="#" className="Dtext-wrapper-4">Creator Studio</a></li></Link>
-                            <Link to='/edit'><li><a href="#" className="Dtext-wrapper-5">Edit Profile</a></li></Link>
-                            <li><a href="#" className="Dtext-wrapper-6">Setting</a></li>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to='/stats'><li><a href="#" className="Dtext-wrapper">Stats</a></li></Link>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to='/about'><li><a href="#" className="Dtext-wrapper-2">About Us</a></li></Link>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to='/studio'><li><a href="#" className="Dtext-wrapper-4">Creator Studio</a></li></Link>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to='/edit'><li><a href="#" className="Dtext-wrapper-5">Edit Profile</a></li></Link>
+                            
                         </ul>
                     </details>
                 </div>
