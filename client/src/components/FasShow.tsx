@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import Peer from 'peerjs';
 
+
 function Streamer() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 

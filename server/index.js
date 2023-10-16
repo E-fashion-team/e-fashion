@@ -5,11 +5,8 @@ const socketIo = require('socket.io');
 const { ExpressPeerServer } = require('peer');
 const cors = require('cors');
 const app = express();
-const port=5000
-const bodyparser = require("body-parser");
-const jwt = require("jsonwebtoken");
 
-const axios = require('axios')
+
 app.use(cors()); // Add cors middleware early
 
 const server = http.createServer(app);
@@ -58,6 +55,10 @@ io.on('connection', (socket) => {
   
   console.log('A user zeineb');
   
+
+  console.log('A user connected');
+  // console.log(io)
+
   socket.on('stream', (data) => {
     socket.broadcast.emit('stream', data);
   });
@@ -72,23 +73,20 @@ io.on('connection', (socket) => {
   });
 });
 // torbaga's start point
-
 io.on('connection', (socket) => {
-  console.log('ToRBaGa connected');
+  console.log('group chat connected');
   
   socket.on('send', (user, message) => {
-    console.log('sent from front: ', user, message)
     socket.emit('sendBack', user, message)
-    console.log('sent back')
   });
   
-  
   socket.on('disconnect', () => {
-    console.log('ToRBaGa disconnected');
+    console.log('group chat disconnected');
   });
 });
 
 
+// torbaga's end point
 
 server.listen(5000, () => {
   console.log('Server is running on port 5000');

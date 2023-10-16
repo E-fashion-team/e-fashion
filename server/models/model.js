@@ -39,7 +39,7 @@ const connection= new Sequelize('fashion', 'root', 'root', {
  
 db.User.hasMany(db.Message)
 db.Message.belongsTo(db.User)
-// connection.sync({ force: true})
+// connection.sync({ alter: true})
 
 
  module.exports.db=db
