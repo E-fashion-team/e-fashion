@@ -70,13 +70,8 @@ interface Product {
       image:string;
       email: number;  
       password:string
-<<<<<<< HEAD
-      role:string
-    
-=======
 
       Role:Role
->>>>>>> e486d84bd9d5657270965118cc63cfa7a9bdfd39
     
 
       role:string

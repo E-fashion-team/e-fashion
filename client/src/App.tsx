@@ -12,12 +12,8 @@ import { CreatorStudioPage } from "./components/CreatorStudio";
 import AllNFT from "./pages/AllNFT";
 import { BrandPage } from "./components/BrandPage";
 import { BrandStorePage } from "./components/BranStore";
-<<<<<<< HEAD
 import { Messages } from "./components/messages";
 
-=======
-// import { Messages } from "./components/messages";
->>>>>>> e486d84bd9d5657270965118cc63cfa7a9bdfd39
 import { Market } from "./components/Market";
 import  FasShow  from "./components/FasShow";
 
@@ -81,12 +77,7 @@ function App() {
         <Route path="/message" element={<Chat />} />
         <Route path="/createProduct" element={<CreateProduct />} />
         <Route path="/update"    element={<UpdateAccount />}/>
-<<<<<<< HEAD
 <Route path='/xxx'element={<Viewer/>}/>
-=======
-        <Route path="/productCards"    element={<FullProductCard />}/>
-
->>>>>>> e486d84bd9d5657270965118cc63cfa7a9bdfd39
    
   
 
