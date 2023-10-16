@@ -9,23 +9,20 @@ const path = require('path');
 const config = require(path.join(__dirname, '../config/global.json'));
 const server = http.createServer(app);
 
-// const io = socketIo(server,{
-//   cors:true,
-//   origins:["http://127.0.0.1:3000"]
-//  });
+const io = socketIo(server, {
+  cors:true,
+  origins:["http://127.0.0.1:3000"],
+ });
 require("./models/model")
 
 
-const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
+// const io = socketIo(server, { cors: { origin: 'http://localhost:3000' } });
 
 //require('./models/model');
 
 const port=5000
 const bodyparser = require("body-parser");
 const jwt = require("jsonwebtoken");
-
-
-app.use(express.json())
 
 
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -64,6 +61,7 @@ app.use("/api/brand",routerBrand)
 io.on('connection', (socket) => {
 
   console.log('A user connected');
+  // console.log(io)
 
   socket.on('stream', (data) => {
     socket.broadcast.emit('stream', data);
@@ -90,23 +88,20 @@ app.all('/*', function (req, res) {
 
 
 // torbaga's start point
-
 io.on('connection', (socket) => {
-  console.log('ToRBaGa connected');
+  console.log('group chat connected');
   
   socket.on('send', (user, message) => {
-    console.log('sent from front: ', user, message)
     socket.emit('sendBack', user, message)
-    console.log('sent back')
   });
   
-  
   socket.on('disconnect', () => {
-    console.log('ToRBaGa disconnected');
+    console.log('group chat disconnected');
   });
 });
 
 
+// torbaga's end point
 
 
 server.listen(port, () => {

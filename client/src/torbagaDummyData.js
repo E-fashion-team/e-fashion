@@ -26,7 +26,7 @@ export const prod = [
       "name": "Nike Air Force 1",
       "price": 222,
       "image": "https://www.sneakers-actus.fr/wp-content/uploads/2021/08/Nike-Air-Max-2021-Verona-Ghost-couv.jpg",
-      "category": "men",
+      "category": "women",
       "typeProd": "product",
       "createdAt": "2023-10-13T15:13:53.000Z",
       "updatedAt": "2023-10-13T15:13:53.000Z",
